@@ -1,0 +1,44 @@
+div, span, li, ul, span, p, body, html {padding: 0; margin: 0; }
+body{ background: #eee;}
+a{text-decoration: none;}
+.bgf { background: #fff; overflow: hidden;}
+.m-t-10{ margin-top: 10px;}
+.m-l-50{ margin-left: 50px;}
+.f-12{ font-size: 12px;}
+.g-c{color:#ccc;}
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  background: #eee;
+  color: #333;
+}
+
+.banner-index {
+  width: 100%;
+  height: 130px;
+  background: red;
+  img{
+    height: 100%;
+    width: 100%;
+  }
+}
+.p-tag{
+  line-height: 25px;
+  font-size: 14px;
+  padding: 10px;
+}
+.align-right{
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.text-center{ text-align: center;}
+.p-10{ padding: 10px;}
+.form-home{
+  .el-radio{
+    width: 100%;
+    margin-top: 10px;
+  }
+  .el-checkbox{
+    width: 100%;
+  }
+}
