@@ -8,10 +8,10 @@
               ref="form"
               :model="form"
               label-position="left"
-              label-width="100px"
+              label-width="120px"
               size="mini"
       >
-        <el-form-item label="昵称">
+        <el-form-item label="宝贝昵称">
           <el-input v-model="form.name" placeholder="请输入昵称"></el-input>
         </el-form-item>
         <el-form-item label="性别">
@@ -27,8 +27,14 @@
         <el-form-item label="年龄">
           <el-input v-model="form.age" placeholder="请输入年龄"></el-input>
         </el-form-item>
-        <el-form-item label="职业发展预期">
-          <el-select v-model="form.jobs" placeholder="请选择职业发展预期">
+        <el-form-item label="有无一老一小险">
+          <el-radio-group v-model="form.medicalSafe" size="small">
+            <el-radio :label="1" class="w-30">有</el-radio>
+            <el-radio :label="2" class="w-30">无</el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item label="家庭收入稳定性">
+          <el-select v-model="form.jobs" placeholder="家庭收入稳定性">
             <el-option
                     v-for="(item, index) in jobsPlan"
                     :key="index"
@@ -36,56 +42,6 @@
                     :value="item.value"
             ></el-option>
           </el-select>
-        </el-form-item>
-        <el-form-item label="税后收入">
-          <el-input v-model="form.salary"></el-input>
-        </el-form-item>
-      </el-form>
-    </div>
-    <div class="bgf p-10 m-t-10 no-bottom">
-      <el-form
-              :model="form"
-              label-position="left"
-              label-width="160px"
-              size="mini"
-      >
-        <el-form-item label="有无社保/新农村医疗">
-          <el-radio-group v-model="form.medicalSafe" size="small">
-            <el-radio :label="1" class="w-30">有</el-radio>
-            <el-radio :label="2" class="w-30">无</el-radio>
-          </el-radio-group>
-        </el-form-item>
-      </el-form>
-    </div>
-
-    <div class="bgf p-10 m-t-10 no-bottom">
-      <el-form
-              :model="form"
-              label-position="left"
-              label-width="160px"
-              size="mini"
-      >
-        <el-form-item label="房贷或房租支出">
-          <el-radio-group v-model="form.payHouse" size="small">
-            <el-radio :label="1" class="w-30">有</el-radio>
-            <el-radio :label="2" class="w-30">无</el-radio>
-          </el-radio-group>
-        </el-form-item>
-      </el-form>
-    </div>
-
-    <div class="bgf p-10 m-t-10 no-bottom">
-      <el-form
-              :model="form"
-              label-position="left"
-              label-width="160px"
-              size="mini"
-      >
-        <el-form-item label="其他贷款偿付支出">
-          <el-radio-group v-model="form.otherPay" size="small">
-            <el-radio :label="1" class="w-30">有</el-radio>
-            <el-radio :label="2" class="w-30">无</el-radio>
-          </el-radio-group>
         </el-form-item>
       </el-form>
     </div>
@@ -116,12 +72,7 @@
           <el-checkbox class="w-100-c" :label="3" name="type"
           >意外险
           </el-checkbox>
-          <el-checkbox class="w-100-c" :label="4" name="type"
-          >寿险
-          </el-checkbox>
-          <el-checkbox class="w-100-c" :label="5" name="type"
-          >养老险
-          </el-checkbox>
+
         </el-checkbox-group>
       </div>
 
@@ -249,7 +200,7 @@
       },
       submit() {
         this.$router.push({
-          path: "/person/contrastList"
+          path: "/children/healty/healtyContrastList"
         });
       }
     }

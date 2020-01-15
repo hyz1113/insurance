@@ -1,14 +1,25 @@
 <template>
   <div>
     <el-table
+            border
+            :show-summary="showSummary"
             :data="tableData"
             :height="height"
             :row-class-name="tableRowClassName"
+            :summary-method="getSummaries"
     >
       <el-table-column v-for="(item,index) in tableConfig"
-                       :prop="item.value"
+                       :prop="item.value?item.value:''"
                        :key="index"
-                       :label="item.label"></el-table-column>
+                       :label="item.label">
+        <template v-if="item.secondTh" >
+          <el-table-column v-for="(itm,inx) in item.secondTh"
+                           :key="inx"
+                           :prop="itm.value?itm.value:''"
+                           :label="itm.label"
+          ></el-table-column>
+        </template>
+      </el-table-column>
       <!--<el-table-column-->
       <!--prop="person"-->
       <!--label="30岁男性（50万）"-->
@@ -34,7 +45,11 @@
       height:{
         require: false,
         default: 'auto'
-      }
+      },
+      showSummary:{
+        require: false,
+        default: false
+      },
     },
     created() {
 
@@ -50,6 +65,35 @@
           return "event-row";
         }
         return "";
+      },
+      getSummaries(param){
+        //debugger
+        const { columns, data } = param;
+        const sums = [];
+        columns.forEach((column, index) => {
+          if (index === 0) {
+            sums[index] = '总价';
+            return;
+          }
+          //debugger
+          const values = data.map(item => Number(item[column.property]));
+          if (!values.every(value => isNaN(value))) {
+            sums[index] = values.reduce((prev, curr) => {
+              const value = Number(curr);
+              if (!isNaN(value)) {
+                return prev + curr;
+              } else {
+                return prev;
+              }
+            }, 0);
+            sums[index] += ' 元';
+          } else {
+            sums[index] = 'N/A';
+          }
+        });
+
+        return sums;
+
       }
     }
   };

@@ -28,6 +28,31 @@ const routes = [
     path: "/person/case",
     name: "case",
     component: () => import("../views/person/case")
+  },
+  {
+    path: "/children/index",
+    name: "childrenIndex",
+    component: () => import("../views/children/index")
+  },
+  {
+    path: "/children/eduInfo",
+    name: "eduInfo",
+    component: () => import("../views/children/eduInfo")
+  },
+  {
+    path: "/children/healty/healtyInfo",
+    name: "healtyInfo",
+    component: () => import("../views/children/healty/healtyInfo")
+  },
+  {
+    path: "/children/healty/healtyContrastList",
+    name: "healtyContrastList",
+    component: () => import("../views/children/healty/healtyContrastList")
+  },
+  {
+    path: "/children/healty/case",
+    name: "healtyCase",
+    component: () => import("../views/children/healty/case")
   }
 
 ];

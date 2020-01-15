@@ -51,8 +51,8 @@
       >
         <el-form-item label="有无社保/新农村医疗">
           <el-radio-group v-model="form.medicalSafe" size="small">
-            <el-radio :label="1" class="w-30">有</el-radio>
-            <el-radio :label="2" class="w-30">无</el-radio>
+            <el-radio label="1" class="w-30">有</el-radio>
+            <el-radio label="2" class="w-30">无</el-radio>
           </el-radio-group>
         </el-form-item>
       </el-form>

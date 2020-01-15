@@ -22,25 +22,11 @@
           <el-form ref="form" :model="form" label-width="0px" size="mini">
             <el-form-item label="" prop="resource">
               <el-radio-group v-model="form.resource">
-                <el-radio :label="1">为自己做个人规划</el-radio>
-                <el-radio :label="2">为孩子做长期规划</el-radio>
-                <el-radio :label="3">以家庭为单位做规划</el-radio>
+                <el-radio :label="1">以孩子的健康为主做长期规划</el-radio>
+                <el-radio :label="2">以孩子教育金为主做长期规划</el-radio>
               </el-radio-group>
             </el-form-item>
-            <el-form-item class="m-l-50" v-show="form.resource == 3">
-              <el-checkbox-group v-model="form.type">
-                <el-checkbox :label="1" name="type">夫妻2人家庭</el-checkbox>
-                <el-checkbox :label="2" name="type"
-                >夫妻3人家庭（1小孩）
-                </el-checkbox
-                >
-                <el-checkbox :label="3" name="type"
-                >夫妻4人家庭（2小孩）
-                </el-checkbox
-                >
-              </el-checkbox-group>
-            </el-form-item>
-            <el-form-item>
+           <el-form-item>
               <div class="text-center f-12 g-c">更多规划类型算法陆续开发中</div>
             </el-form-item>
             <el-form-item class="text-center">
@@ -76,27 +62,20 @@
     },
     methods: {
       onSubmit() {
-        let pathL = "/baseInfo";
+        let pathL = "/children";
         switch (this.form.resource) {
           case 1: {
-            pathL = `/person${pathL}`;
+            pathL = `${pathL}/eduInfo`;
           }
             break;
           case 2: {
-            pathL = `/children/index`;
+            pathL = `${pathL}/healty/healtyInfo`;
           }
             break;
-          case 3: {
-            pathL = `/family${pathL}`;
-          }
-            break;
+
         }
         this.$router.push({
-          path: pathL,
-          query: {
-            name: this.form.resource,
-            value: [...this.form.type]
-          }
+          path: pathL
         });
       }
     }

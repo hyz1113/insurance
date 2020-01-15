@@ -5,6 +5,7 @@ body { background: #eee;}
 a {text-decoration: none;}
 
 .bgf { background: #fff; overflow: hidden;}
+.bg-light-green { background: #f0f9eb;}
 
 .m-t-10 { margin-top: 10px;}
 .m-r-10 { margin-right: 10px;}
@@ -27,6 +28,9 @@ a {text-decoration: none;}
 .w-50 { width: 50px;}
 
 .w-100-c { width: 100%;}
+.pull-right{ float: right}
+.pull-left{ float: left}
+.lh20{ line-height: 20px;}
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -37,7 +41,7 @@ a {text-decoration: none;}
 .banner-index {
   width: 100%;
   height: 130px;
-  background: red;
+
 
   img {
     height: 100%;
@@ -81,7 +85,8 @@ a {text-decoration: none;}
 
 .row-align-left {display: flex; flex: 1; align-items: flex-start;}
 
-.row-align-center {display: flex; flex: 1; align-items: center;}
+.row-align-center {display: flex; flex: 1; align-items: flex-start;}
+.column-align-left { flex-flow:column wrap;  display: flex; flex: 1; align-items: flex-start; justify-content: flex-start;}
 
 .title {
   @extend .f-12;
