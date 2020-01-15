@@ -8,6 +8,9 @@ import "@/styles/css.scss";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 
+// 引用基础组件
+import "@/components";
+
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
