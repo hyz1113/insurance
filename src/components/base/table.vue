@@ -12,7 +12,7 @@
                        :prop="item.value?item.value:''"
                        :key="index"
                        :label="item.label">
-        <template v-if="item.secondTh" >
+        <template v-if="item.secondTh">
           <el-table-column v-for="(itm,inx) in item.secondTh"
                            :key="inx"
                            :prop="itm.value?itm.value:''"
@@ -42,22 +42,26 @@
         require: true,
         default: []
       },
-      height:{
+      countCulumn: {
         require: false,
-        default: 'auto'
+        default() {
+          return [];
+        }
       },
-      showSummary:{
+      height: {
+        require: false,
+        default: "auto"
+      },
+      showSummary: {
         require: false,
         default: false
-      },
+      }
     },
     created() {
 
     },
     data() {
-      return {
-
-      };
+      return {};
     },
     methods: {
       tableRowClassName({ rowIndex }) {
@@ -66,29 +70,27 @@
         }
         return "";
       },
-      getSummaries(param){
+      getSummaries(param) {
         //debugger
         const { columns, data } = param;
         const sums = [];
+        const countArr = this.countCulumn.join(",");
+        console.log(countArr);
         columns.forEach((column, index) => {
           if (index === 0) {
-            sums[index] = '总价';
+            sums[index] = "总计";
             return;
           }
-          //debugger
           const values = data.map(item => Number(item[column.property]));
-          if (!values.every(value => isNaN(value))) {
+          if (countArr.includes(column.property)) {
             sums[index] = values.reduce((prev, curr) => {
-              const value = Number(curr);
-              if (!isNaN(value)) {
-                return prev + curr;
-              } else {
-                return prev;
-              }
+              console.log(prev, curr);
+              return prev + curr;
+
             }, 0);
-            sums[index] += ' 元';
+            sums[index] += " 元";
           } else {
-            sums[index] = 'N/A';
+            sums[index] = "";
           }
         });
 

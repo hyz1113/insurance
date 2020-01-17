@@ -53,12 +53,17 @@ const routes = [
     path: "/children/healty/case",
     name: "healtyCase",
     component: () => import("../views/children/healty/case")
+  },
+  {
+    path: "/children/healty/economicCase",
+    name: "economicCase",
+    component: () => import("../views/children/healty/economicCase")
   }
 
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: "hash",
   routes
 });
 

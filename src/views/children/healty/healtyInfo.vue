@@ -2,7 +2,7 @@
   <div>
     <div class="bgf p-10 ">
       <el-divider>
-        <el-link type="info" plain size="mini">个人基本信息</el-link>
+        <el-link type="info" plain size="mini">孩子基本信息</el-link>
       </el-divider>
       <el-form
               ref="form"

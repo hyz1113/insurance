@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="banner-index">
-      <img
-              src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578932775976&di=a29f5f057ea87de4f08db2b8c4b2512d&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D2506197831%2C1636712722%26fm%3D214%26gp%3D0.jpg"
-      />
+      <img src="../assets/2.png" />
     </div>
     <div class="bgf p-tag">
       <p>
@@ -80,14 +78,17 @@
         switch (this.form.resource) {
           case 1: {
             pathL = `/person${pathL}`;
+
           }
             break;
           case 2: {
             pathL = `/children/index`;
+
           }
             break;
           case 3: {
             pathL = `/family${pathL}`;
+
           }
             break;
         }
@@ -98,6 +99,7 @@
             value: [...this.form.type]
           }
         });
+
       }
     }
   };

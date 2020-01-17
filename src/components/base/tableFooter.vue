@@ -2,7 +2,7 @@
   <div class="table-footer m-t-10">
     <b class="m-r-10">安心选</b>
     <span>做最硬核的评测 说最真的话</span>
-    <span class="count">总计 {{count}}元</span>
+    <!--<span class="count">总计 {{count}}元</span>-->
   </div>
 </template>
 

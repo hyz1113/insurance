@@ -38,120 +38,145 @@
     <div class="bgf p-10 m-t-10">
       <div class="title"><b class="b">个人保护伞经济型方案：</b></div>
       <div class="title">
-        <el-link type="success" class="f-12-i">预算千元左右 保障不差白菜价</el-link>
+        <el-link type="success" class="f-12-i"
+          >预算千元左右 保障不差白菜价</el-link
+        >
       </div>
-      <base-table height="200" :tableConfig="tableConfig" :tableData="tableData"></base-table>
-      <base-tableFooter :tableData="tableData" :resource="tableData" label="payment"></base-tableFooter>
+      <base-table
+        height="200"
+        :tableConfig="tableConfig"
+        :tableData="tableData"
+      ></base-table>
+      <base-tableFooter
+        :tableData="tableData"
+        :resource="tableData"
+        label="payment"
+      ></base-tableFooter>
     </div>
 
     <div class="bgf p-10 m-t-10">
       <div class="title"><b class="b">个人保护伞进阶型方案：</b></div>
       <div class="title">
-        <el-link type="success" class="f-12-i">预算三千元左右 给娃一辈子的重疾保障</el-link>
+        <el-link type="success" class="f-12-i"
+          >预算三千元左右 给娃一辈子的重疾保障</el-link
+        >
       </div>
-      <base-table :tableConfig="tableConfig" :tableData="tableData"></base-table>
-      <base-tableFooter :tableData="tableData" :resource="tableData" label="payment"></base-tableFooter>
+      <base-table
+        :tableConfig="tableConfig"
+        :tableData="tableData"
+      ></base-table>
+      <base-tableFooter
+        :tableData="tableData"
+        :resource="tableData"
+        label="payment"
+      ></base-tableFooter>
     </div>
 
     <div class="bgf p-10 m-t-10">
       <div class="title"><b class="b">个人保护伞充分保障型方案：</b></div>
       <div class="title">
-        <el-link type="success" class="f-12-i">每年5000元左右 坐拥400万+顶配保障</el-link>
+        <el-link type="success" class="f-12-i"
+          >每年5000元左右 坐拥400万+顶配保障</el-link
+        >
       </div>
-      <base-table :tableConfig="tableConfig" :tableData="tableData"></base-table>
-      <base-tableFooter :tableData="tableData" :resource="tableData" label="payment"></base-tableFooter>
+      <base-table
+        :tableConfig="tableConfig"
+        :tableData="tableData"
+      ></base-table>
+      <base-tableFooter
+        :tableData="tableData"
+        :resource="tableData"
+        label="payment"
+      ></base-tableFooter>
     </div>
 
     <div class="bgf p-10 m-t-10">
       <div class="title"><b class="b">最后结束语：</b></div>
       <div class="article-block">
-        根据您所填信息建议您使用： <b class="g-error">
-        进阶型方案
-      </b>
-        <p> 不存在百搭的保险方案，每个家庭、每个人都很独特，挑选合适自己的。
-        </p>
+        根据您所填信息建议您使用：
+        <b class="g-error">
+          进阶型方案
+        </b>
+        <p>不存在百搭的保险方案，每个家庭、每个人都很独特，挑选合适自己的。</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "case",
-    data() {
-      return {
-        tableConfig: [
-          {
-            label: "产品",
-            value: "name"
-          },
-          {
-            label: "产品名称",
-            value: "prod"
-          },
-          {
-            label: "保额",
-            value: "person"
-          },
-          {
-            label: "保额期限",
-            value: "insuranceDate"
-          },
-          {
-            label: "缴费年限",
-            value: "payment"
-          },
-          {
-            label: "年缴保费",
-            value: "yearPayment"
-          }
-
-        ],
-        tableData: [
-          {
-            name: "中国人保",
-            prod: "好医保·长期医疗（新版）",
-            person: "256",
-            insuranceDate: "1年",
-            payment: "20",
-            yearPayment: "15岁"
-          },
-          {
-            name: "复星联合健康",
-            prod: "超越保长期医疗险计划1（专家版）",
-            person: "316",
-            insuranceDate: "1年",
-            payment: "20",
-            yearPayment: "15岁"
-          },
-          {
-            name: "微保&泰康人寿",
-            prod: "微医保·长期医疗险",
-            person: "196",
-            insuranceDate: "1年",
-            payment: "20",
-            yearPayment: "15岁"
-          },
-          {
-            name: "众慧相互",
-            prod: "慧享e生",
-            person: "256",
-            insuranceDate: "1年",
-            payment: "20",
-            yearPayment: "15岁"
-          }
-        ]
-
-      };
-    },
-    methods: {
-      tableRowClassName({ rowIndex }) {
-        if (rowIndex % 2 == 0) {
-          return "event-row";
+export default {
+  name: "case",
+  data() {
+    return {
+      tableConfig: [
+        {
+          label: "产品",
+          value: "name"
+        },
+        {
+          label: "产品名称",
+          value: "prod"
+        },
+        {
+          label: "保额",
+          value: "person"
+        },
+        {
+          label: "保额期限",
+          value: "insuranceDate"
+        },
+        {
+          label: "缴费年限",
+          value: "payment"
+        },
+        {
+          label: "年缴保费",
+          value: "yearPayment"
         }
-        return "";
+      ],
+      tableData: [
+        {
+          name: "中国人保",
+          prod: "好医保·长期医疗（新版）",
+          person: "256",
+          insuranceDate: "1年",
+          payment: "20",
+          yearPayment: "15岁"
+        },
+        {
+          name: "复星联合健康",
+          prod: "超越保长期医疗险计划1（专家版）",
+          person: "316",
+          insuranceDate: "1年",
+          payment: "20",
+          yearPayment: "15岁"
+        },
+        {
+          name: "微保&泰康人寿",
+          prod: "微医保·长期医疗险",
+          person: "196",
+          insuranceDate: "1年",
+          payment: "20",
+          yearPayment: "15岁"
+        },
+        {
+          name: "众慧相互",
+          prod: "慧享e生",
+          person: "256",
+          insuranceDate: "1年",
+          payment: "20",
+          yearPayment: "15岁"
+        }
+      ]
+    };
+  },
+  methods: {
+    tableRowClassName({ rowIndex }) {
+      if (rowIndex % 2 == 0) {
+        return "event-row";
       }
-
+      return "";
     }
-  };
+  }
+};
 </script>
