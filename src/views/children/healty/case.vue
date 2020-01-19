@@ -74,23 +74,29 @@
       <div class="title"><b class="b">少儿保护伞经济型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >预算千元左右 保障不差白菜价
-        </el-link
-        >
+          >预算千元左右 保障不差白菜价
+        </el-link>
       </div>
       <base-table
-              :countCulumn="countCulumn"
-              showSummary="true"
-              :tableConfig="tableConfig"
-              :tableData="tableData"
+        :countCulumn="countCulumn"
+        showSummary="true"
+        :tableConfig="tableConfig"
+        :tableData="tableData"
       ></base-table>
       <base-tableFooter
-              :tableData="tableData"
-              :resource="tableData"
-              label="payment"
+        :tableData="tableData"
+        :resource="tableData"
+        label="payment"
       ></base-tableFooter>
       <div class="table-block m-t-10 row-align-center">
-        <el-button type="success" round size="mini" class="row-align-center" @click="$router.push({path:'/children/healty/economicCase'})">经济型方案 点击进入</el-button>
+        <el-button
+          type="success"
+          round
+          size="mini"
+          class="row-align-center"
+          @click="$router.push({ path: '/children/healty/economicCase' })"
+          >经济型方案 点击进入</el-button
+        >
       </div>
     </div>
 
@@ -98,23 +104,29 @@
       <div class="title"><b class="b">少儿保护伞进阶型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >预算三千元左右  给娃一辈子的重疾保障
-        </el-link
-        >
+          >预算三千元左右 给娃一辈子的重疾保障
+        </el-link>
       </div>
       <base-table
-              :countCulumn="countCulumn"
-              showSummary="true"
-              :tableConfig="tableConfig"
-              :tableData="tableData"
+        :countCulumn="countCulumn"
+        showSummary="true"
+        :tableConfig="tableConfig"
+        :tableData="tableData"
       ></base-table>
       <base-tableFooter
-              :tableData="tableData"
-              :resource="tableData"
-              label="payment"
+        :tableData="tableData"
+        :resource="tableData"
+        label="payment"
       ></base-tableFooter>
       <div class="table-block m-t-10 row-align-center">
-        <el-button type="success" round size="mini" class="row-align-center" @click="$router.push({path:'/children/healty/advancedCase'})">进阶型方案详解  点击进入</el-button>
+        <el-button
+          type="success"
+          round
+          size="mini"
+          class="row-align-center"
+          @click="$router.push({ path: '/children/healty/advancedCase' })"
+          >进阶型方案详解 点击进入</el-button
+        >
       </div>
     </div>
 
@@ -122,23 +134,29 @@
       <div class="title"><b class="b">少儿保护伞充分保障型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >每年5000元左右  坐拥400万+顶配保障
-        </el-link
-        >
+          >每年5000元左右 坐拥400万+顶配保障
+        </el-link>
       </div>
       <base-table
-              :countCulumn="countCulumn"
-              showSummary="true"
-              :tableConfig="tableConfig"
-              :tableData="tableData"
+        :countCulumn="countCulumn"
+        showSummary="true"
+        :tableConfig="tableConfig"
+        :tableData="tableData"
       ></base-table>
       <base-tableFooter
-              :tableData="tableData"
-              :resource="tableData"
-              label="payment"
+        :tableData="tableData"
+        :resource="tableData"
+        label="payment"
       ></base-tableFooter>
       <div class="table-block m-t-10 row-align-center">
-        <el-button type="success" round size="mini" class="row-align-center" @click="$router.push({path:'/children/healty/securityCase'})">充分保障型方案详解  点击进入</el-button>
+        <el-button
+          type="success"
+          round
+          size="mini"
+          class="row-align-center"
+          @click="$router.push({ path: '/children/healty/securityCase' })"
+          >充分保障型方案详解 点击进入</el-button
+        >
       </div>
     </div>
 
@@ -150,82 +168,84 @@
           进阶型方案
         </b>
         <p>不存在百搭的保险方案，每个家庭、每个人都很独特，挑选合适自己的。</p>
-        <p>最后的最后，给孩子买保险前，先把大人的保险买了！毕竟，孩子最大的依靠，不是保险，是父母。</p>
+        <p>
+          最后的最后，给孩子买保险前，先把大人的保险买了！毕竟，孩子最大的依靠，不是保险，是父母。
+        </p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "case",
-    data() {
-      return {
-        countCulumn: ["age0", "age5"],
-        tableConfig: [
-          {
-            label: "保险类型",
-            value: "type"
-          },
-          {
-            label: "产品名称",
-            value: "name"
-          },
-          {
-            label: "保额",
-            value: "money"
-          },
-          {
-            label: "保障期限",
-            value: "year"
-          },
-          {
-            label: "缴费年限",
-            value: "yearValue"
-          },
-          {
-            label: "年交保费（男宝）",
-            secondTh: [
-              {
-                label: "0岁",
-                value: "age0"
-              },
-              {
-                label: "5岁",
-                value: "age5"
-              }
-            ]
-          }
-        ],
-        tableData: [
-          {
-            type: "中国人保",
-            name: "好医保·长期医疗（新版）",
-            money: 21,
-            year: 12,
-            yearValue: 12,
-            age0: 23,
-            age5: 24
-          },
-          {
-            type: "中国人保",
-            name: "好医保·长期医疗（新版）",
-            money: 21,
-            year: 12,
-            yearValue: 12,
-            age0: 66,
-            age5: "78"
-          }
-        ]
-      };
-    },
-    methods: {
-      tableRowClassName({ rowIndex }) {
-        if (rowIndex % 2 == 0) {
-          return "event-row";
+export default {
+  name: "case",
+  data() {
+    return {
+      countCulumn: ["age0", "age5"],
+      tableConfig: [
+        {
+          label: "保险类型",
+          value: "type"
+        },
+        {
+          label: "产品名称",
+          value: "name"
+        },
+        {
+          label: "保额",
+          value: "money"
+        },
+        {
+          label: "保障期限",
+          value: "year"
+        },
+        {
+          label: "缴费年限",
+          value: "yearValue"
+        },
+        {
+          label: "年交保费（男宝）",
+          secondTh: [
+            {
+              label: "0岁",
+              value: "age0"
+            },
+            {
+              label: "5岁",
+              value: "age5"
+            }
+          ]
         }
-        return "";
+      ],
+      tableData: [
+        {
+          type: "中国人保",
+          name: "好医保·长期医疗（新版）",
+          money: 21,
+          year: 12,
+          yearValue: 12,
+          age0: 23,
+          age5: 24
+        },
+        {
+          type: "中国人保",
+          name: "好医保·长期医疗（新版）",
+          money: 21,
+          year: 12,
+          yearValue: 12,
+          age0: 66,
+          age5: "78"
+        }
+      ]
+    };
+  },
+  methods: {
+    tableRowClassName({ rowIndex }) {
+      if (rowIndex % 2 == 0) {
+        return "event-row";
       }
+      return "";
     }
-  };
+  }
+};
 </script>
