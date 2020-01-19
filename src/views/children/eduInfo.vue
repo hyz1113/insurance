@@ -249,7 +249,7 @@
       },
       submit() {
         this.$router.push({
-          path: "/person/contrastList"
+          path: "/children/edu/eduContrastList"
         });
       }
     }

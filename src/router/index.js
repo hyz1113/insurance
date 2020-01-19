@@ -40,6 +40,11 @@ const routes = [
     component: () => import("../views/children/eduInfo")
   },
   {
+    path: "/children/edu/eduContrastList",
+    name: "eduContrastList",
+    component: () => import("../views/children/edu/eduContrastList")
+  },
+  {
     path: "/children/healty/healtyInfo",
     name: "healtyInfo",
     component: () => import("../views/children/healty/healtyInfo")
