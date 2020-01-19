@@ -58,6 +58,16 @@ const routes = [
     path: "/children/healty/economicCase",
     name: "economicCase",
     component: () => import("../views/children/healty/economicCase")
+  },
+  {
+    path: "/children/healty/advancedCase",
+    name: "advancedCase",
+    component: () => import("../views/children/healty/advancedCase")
+  },
+  {
+    path: "/children/healty/securityCase",
+    name: "securityCase",
+    component: () => import("../views/children/healty/securityCase")
   }
 
 ];

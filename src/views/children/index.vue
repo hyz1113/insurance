@@ -64,11 +64,11 @@
       onSubmit() {
         let pathL = "/children";
         switch (this.form.resource) {
-          case 1: {
+          case 2: {
             pathL = `${pathL}/eduInfo`;
           }
             break;
-          case 2: {
+          case 1: {
             pathL = `${pathL}/healty/healtyInfo`;
           }
             break;
