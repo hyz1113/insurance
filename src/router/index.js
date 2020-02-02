@@ -73,7 +73,22 @@ const routes = [
     path: "/children/healty/securityCase",
     name: "securityCase",
     component: () => import("../views/children/healty/securityCase")
-  }
+  },
+  {
+    path: "/family/baseInfo",
+    name: "personbaseInfo",
+    component: () => import("../views/family/baseInfo")
+  },
+  {
+    path: "/family/contrastList",
+    name: "contrastList",
+    component: () => import("../views/family/contrastList")
+  },
+  {
+    path: "/family/case",
+    name: "familycase",
+    component: () => import("../views/family/case")
+  },
 
 ];
 
