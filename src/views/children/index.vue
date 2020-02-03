@@ -63,17 +63,23 @@
     methods: {
       onSubmit() {
         let pathL = "/children";
-        switch (this.form.resource) {
-          case 2: {
-            pathL = `${pathL}/eduInfo`;
-          }
-            break;
-          case 1: {
-            pathL = `${pathL}/healty/healtyInfo`;
-          }
-            break;
+        if(this.form.resource){
+          switch (this.form.resource) {
+            case 2: {
+              pathL = `${pathL}/eduInfo`;
+            }
+              break;
+            case 1: {
+              pathL = `${pathL}/healty/healtyInfo`;
+            }
+              break;
 
+          }
+        }else{
+          this.$message('请选择规划项！');
+          return;
         }
+
         this.$router.push({
           path: pathL
         });

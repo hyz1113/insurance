@@ -67,8 +67,8 @@
           class="row-align-center"
           size="mini"
           type="success"
-          @click="$router.push({ path: '/family/case' })"
-          >下一步 规划方案
+          @click="$router.push({ path: '/children/healty/healtyContrastList',query:{type:'family'} })"
+          >少儿险产品对比
         </el-button>
       </div>
     </div>

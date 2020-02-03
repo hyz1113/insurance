@@ -5,9 +5,11 @@ body { background: #eee;}
 a {text-decoration: none;}
 
 .bgf { background: #fff; overflow: hidden;}
+
 .bg-light-green { background: #f0f9eb;}
 
 .m-t-10 { margin-top: 10px;}
+
 .m-r-10 { margin-right: 10px;}
 
 .m-l-50 { margin-left: 50px;}
@@ -25,12 +27,16 @@ a {text-decoration: none;}
 .f-12-i { font-size: 12px !important;}
 
 .w-30 { width: 30px;}
+
 .w-50 { width: 50px;}
 
 .w-100-c { width: 100%;}
-.pull-right{ float: right}
-.pull-left{ float: left}
-.lh20{ line-height: 20px;}
+
+.pull-right { float: right}
+
+.pull-left { float: left}
+
+.lh20 { line-height: 20px;}
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -86,7 +92,8 @@ a {text-decoration: none;}
 .row-align-left {display: flex; flex: 1; align-items: flex-start;}
 
 .row-align-center {display: flex; flex: 1; align-items: flex-start;}
-.column-align-left { flex-flow:column wrap;  display: flex; flex: 1; align-items: flex-start; justify-content: flex-start;}
+
+.column-align-left { flex-flow: column wrap; display: flex; flex: 1; align-items: flex-start; justify-content: flex-start;}
 
 .title {
   @extend .f-12;
@@ -127,12 +134,22 @@ a {text-decoration: none;}
   @extend .f-12;
 
   span { @extend .g-c;}
-  .count{
+
+  .count {
     float: right;
     @extend .g-6;
     font-weight: bold;
   }
 }
-.el-button span{
-  margin:0 auto;
+
+.el-button span {
+  margin: 0 auto;
+}
+
+.copyright {
+  @extend .text-center;
+  color: #409EFF;
+  line-height: 20px;
+  @extend .f-12;
+  margin-bottom: 10px;
 }

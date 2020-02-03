@@ -109,18 +109,8 @@
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
-      <el-link type="success">身份验证【本次内测仅针对受邀用户开放】</el-link>
+      <base-inputTel></base-inputTel>
 
-      <div class="m-t-10 row-align-left">
-        <el-input
-          size="mini"
-          v-model="tel"
-          placeholder="请输入受邀手机号"
-        ></el-input>
-        <el-button @click="checkTel" type="primary" size="mini"
-          >验证
-        </el-button>
-      </div>
       <div class="m-t-10 row-align-center">
         <el-button
           class="row-align-center"

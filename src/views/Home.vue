@@ -7,7 +7,7 @@
       <p>
         为了给你提供专业且适合的个人/家庭保险解决方案，需要对您的实际情况和具体需求进行了解，问卷填答时10分钟左右，我们回做好信息保密，请您如实填写......
       </p>
-      <router-link to="/about" class="align-right">
+      <router-link class="align-right">
         <el-button type="text" plain size="mini">案例展示—点击查看</el-button>
       </router-link>
     </div>
@@ -17,11 +17,11 @@
           <el-link type="info" plain size="mini">选择为谁规划</el-link>
         </el-divider>
         <div class="form-home">
-          <el-form ref="form" :model="form" label-width="0px" size="mini">
+          <el-form ref="form" :model="form" label-width="40px" size="mini">
             <el-form-item label="" prop="resource">
               <el-radio-group v-model="form.resource">
-                <el-radio :label="1">为自己做个人规划</el-radio>
-                <el-radio :label="2">为孩子做长期规划</el-radio>
+                <el-radio :label="1">为自己做个人规划</el-radio><br/>
+                <el-radio :label="2">为孩子做长期规划</el-radio><br/>
                 <el-radio :label="3">以家庭为单位做规划</el-radio>
               </el-radio-group>
             </el-form-item>
@@ -75,10 +75,9 @@
     methods: {
       onSubmit() {
         let pathL = "/baseInfo";
-        switch (this.form.resource) {
+        if(this.form.resource){switch (this.form.resource) {
           case 1: {
             pathL = `/person${pathL}`;
-
           }
             break;
           case 2: {
@@ -91,6 +90,11 @@
 
           }
             break;
+        }
+
+        }else {
+          this.$message('请选择规划项');
+          return;
         }
         this.$router.push({
           path: pathL,
