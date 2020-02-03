@@ -4,108 +4,37 @@
       <el-divider>
         <el-link type="info" plain size="mini">孩子基本信息</el-link>
       </el-divider>
-      <el-form
-        ref="form"
-        :model="form"
-        label-position="left"
-        label-width="120px"
-        size="mini"
-      >
-        <el-form-item label="宝贝昵称">
-          <el-input v-model="form.name" placeholder="请输入昵称"></el-input>
-        </el-form-item>
-        <el-form-item label="性别">
-          <el-radio-group
-            v-model="form.sex"
-            size="small"
-            placeholder="请选择性别"
-          >
-            <el-radio :label="1" class="w-30">男</el-radio>
-            <el-radio :label="2" class="w-30">女</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item label="年龄">
-          <el-input v-model="form.age" placeholder="请输入年龄"></el-input>
-        </el-form-item>
-        <el-form-item label="有无一老一小险">
-          <el-radio-group v-model="form.medicalSafe" size="small">
-            <el-radio :label="1" class="w-30">有</el-radio>
-            <el-radio :label="2" class="w-30">无</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item label="家庭收入稳定性">
-          <el-select v-model="form.jobs" placeholder="家庭收入稳定性">
-            <el-option
-              v-for="(item, index) in jobsPlan"
-              :key="index"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
-      </el-form>
+      <base-baseform
+              :formConfig="formConfig"
+              :formData="form"
+              :rules="rules"
+              labelWidth="130px"
+      ></base-baseform>
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
-      <el-form
-        :model="form"
-        label-position="left"
-        label-width="160px"
-        size="mini"
-      >
-        <el-form-item label="有无买过商业保险">
-          <el-radio-group v-model="form.otherInsurance" size="small">
-            <el-radio :label="1" class="w-30">有</el-radio>
-            <el-radio :label="2" class="w-30">无</el-radio>
-          </el-radio-group>
-        </el-form-item>
-      </el-form>
-      <div class="m-l-50 m-t-10">
-        <el-checkbox-group v-model="form.insuranceType">
-          <el-checkbox class="w-100-c" :label="1" name="type"
-            >重疾险
-          </el-checkbox>
-          <el-checkbox class="w-100-c" :label="2" name="type"
-            >消费型医疗险
-          </el-checkbox>
-          <el-checkbox class="w-100-c" :label="3" name="type"
-            >意外险
-          </el-checkbox>
-        </el-checkbox-group>
-      </div>
+      <base-baseform
+              :formConfig="formConfigD"
+              :formData="form"
+              :rules="rules"
+              labelWidth="130px"
+      ></base-baseform>
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
-      <el-form
-        :model="form"
-        label-position="left"
-        label-width="220px"
-        size="mini"
-      >
-        <el-form-item label="有无慢性病或家族遗传病史">
-          <el-radio-group v-model="form.othermedical" size="small">
-            <el-radio :label="1" class="w-30">有</el-radio>
-            <el-radio :label="2" class="w-30">无</el-radio>
-          </el-radio-group>
-        </el-form-item>
-      </el-form>
-      <div class="f-12">（评估未来健康风险值）</div>
+      <base-baseform
+              :formConfig="formConfigE"
+              :formData="form"
+              labelWidth="130px"
+      ></base-baseform>
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
-      <el-form
-        :model="form"
-        label-position="left"
-        label-width="220px"
-        size="mini"
-      >
-        <el-form-item label="体检结果是否有异常(最近一次)">
-          <el-radio-group v-model="form.healthCheck" size="small">
-            <el-radio :label="1" class="w-30">有</el-radio>
-            <el-radio :label="2" class="w-30">无</el-radio>
-          </el-radio-group>
-        </el-form-item>
-      </el-form>
+      <base-baseform
+              :formConfig="formConfigF"
+              :formData="form"
+              labelWidth="130px"
+      ></base-baseform>
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
@@ -138,28 +67,194 @@
 </template>
 
 <script>
+  const CheckInt = (rule, value, callback) => {
+    //debugger;
+    value = Number(value);
+    debugger
+    if (!(value > 18 && value < 60)) {
+      callback(new Error("年龄需大于18岁小于60岁!"));
+    } else {
+      callback();
+    }
+  };
 export default {
   name: "personbaseInfo",
   data: () => {
     return {
-      jobsPlan: [
+      rules: {
+        age: {
+          validator: CheckInt,
+          trigger: "blur"
+        }
+      },
+      formConfig: [
         {
-          label: "非常稳定",
-          value: 1
+          type: "input",
+          label: "宝贝昵称",
+          value: "name",
+          tip: "请输入宝贝昵称"
         },
         {
-          label: "比较稳定",
-          value: 2
+          type: "radio",
+          label: "性别",
+          value: "sex",
+          tip: "请选择性别",
+          option: {
+            disabled: false,
+            data: [
+              {
+                label: "男",
+                value: 1
+              },
+              {
+                label: "女",
+                value: 2
+              }
+            ]
+          }
         },
         {
-          label: "不太稳定",
-          value: 3
+          type: "input",
+          label: "年龄",
+          value: "age",
+          tip: "未满1周岁填0岁"
+        },
+        {
+          type: "radio",
+          label: "有无一老一小险",
+          value: "hasOldchild",
+          tip: "请选择有无一老一小险",
+          option: {
+            disabled: false,
+            data: [
+              {
+                label: "有",
+                value: 1
+              },
+              {
+                label: "无",
+                value: 2
+              }
+            ]
+          }
+        },
+        {
+          type: "select",
+          label: "家庭收入稳定性",
+          value: "inComestable",
+          tip: "请选择家庭收入稳定性",
+          hide: false,
+          option: {
+            disabled: false,
+            data: [
+              {
+                label: "非常稳定",
+                value: 1
+              },
+              {
+                label: "比较稳定",
+                value: 2
+              },
+              {
+                label: "不太稳定",
+                value: 3
+              }
+            ]
+          }
+        }
+      ],
+      formConfigD: [
+        {
+          type: "radio",
+          label: "有无买过商业保险",
+          value: "otherInsurance",
+          tip: "有无买过商业保险",
+          option: {
+            disabled: false,
+            data: [
+              {
+                label: "有",
+                value: 1
+              },
+              {
+                label: "无",
+                value: 2
+              }
+            ]
+          }
+        },
+        {
+          type: "checkbox",
+          label: "",
+          value: "insuranceType",
+          tip: "",
+          hide: false,
+          option: {
+            disabled: false,
+            data: [
+              {
+                label: "重疾险",
+                value: 1
+              },
+              {
+                label: "消费型医疗险",
+                value: 2
+              },
+              {
+                label: "意外险",
+                value: 3
+              }
+            ]
+          }
+        }
+      ],
+      formConfigE: [
+        {
+          type: "radio",
+          label: "有无慢性病或家族遗传病史",
+          value: "othermedical",
+          mesg: "（评估未来健康风险值）",
+          option: {
+            disabled: false,
+            data: [
+              {
+                label: "有",
+                value: 1
+              },
+              {
+                label: "无",
+                value: 2
+              }
+            ]
+          }
+        }
+      ],
+      formConfigF: [
+        {
+          type: "radio",
+          label: "体检结果是否有异常",
+          value: "healthCheck",
+          mesg: "（最近一次）",
+          option: {
+            disabled: false,
+            data: [
+              {
+                label: "有",
+                value: 1
+              },
+              {
+                label: "无",
+                value: 2
+              }
+            ]
+          }
         }
       ],
       form: {
         name: "",
         sex: 1,
         age: 1,
+        hasOldchild:1,//有无老小
         jobs: 1,
         salary: 1000, //工资
         medicalSafe: 1, //医保
