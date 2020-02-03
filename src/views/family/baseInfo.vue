@@ -7,12 +7,12 @@
       <base-baseform
               :formConfig="formConfig"
               :formData="formData"
-              labelWidth="60px"
+              labelWidth="90px"
       ></base-baseform>
       <base-baseform
               :formConfig="formConfigA"
               :formData="formData"
-              labelWidth="155px"
+              labelWidth="185px"
       ></base-baseform>
     </div>
     <div class="bgf p-10 m-t-10">
@@ -27,7 +27,7 @@
       <base-baseform
               :formConfig="formConfigffA"
               :formData="formDataff"
-              labelWidth="155px"
+              labelWidth="185px"
       ></base-baseform>
     </div>
 
@@ -43,7 +43,7 @@
       <base-baseform
               :formConfig="formConfigffChildA"
               :formData="formDataffChild"
-              labelWidth="155px"
+              labelWidth="185px"
       ></base-baseform>
     </div>
 
@@ -59,7 +59,7 @@
       <base-baseform
               :formConfig="formConfigScChildA"
               :formData="formDataScChild"
-              labelWidth="155px"
+              labelWidth="185px"
       ></base-baseform>
     </div>
 
