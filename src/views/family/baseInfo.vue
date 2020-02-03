@@ -12,7 +12,17 @@
       <base-baseform
               :formConfig="formConfigA"
               :formData="formData"
-              labelWidth="185px"
+              labelWidth="145px"
+      ></base-baseform>
+      <base-baseform
+            :formConfig="formConfigB"
+            :formData="formData"
+            labelWidth="180px"
+    ></base-baseform>
+      <base-baseform
+              :formConfig="formConfigC"
+              :formData="formData"
+              labelWidth="180px"
       ></base-baseform>
     </div>
     <div class="bgf p-10 m-t-10">
@@ -27,7 +37,12 @@
       <base-baseform
               :formConfig="formConfigffA"
               :formData="formDataff"
-              labelWidth="185px"
+              labelWidth="145px"
+      ></base-baseform>
+      <base-baseform
+              :formConfig="formConfigffB"
+              :formData="formDataff"
+              labelWidth="180px"
       ></base-baseform>
     </div>
 
@@ -43,7 +58,12 @@
       <base-baseform
               :formConfig="formConfigffChildA"
               :formData="formDataffChild"
-              labelWidth="185px"
+              labelWidth="145px"
+      ></base-baseform>
+      <base-baseform
+              :formConfig="formConfigffChildB"
+              :formData="formDataffChild"
+              labelWidth="180px"
       ></base-baseform>
     </div>
 
@@ -57,9 +77,14 @@
               labelWidth="80px"
       ></base-baseform>
       <base-baseform
-              :formConfig="formConfigScChildA"
+            :formConfig="formConfigScChildA"
+            :formData="formDataScChild"
+            labelWidth="145px"
+    ></base-baseform>
+      <base-baseform
+              :formConfig="formConfigScChildB"
               :formData="formDataScChild"
-              labelWidth="185px"
+              labelWidth="180px"
       ></base-baseform>
     </div>
 
@@ -224,7 +249,9 @@
                 }
               ]
             }
-          },
+          }
+        ],
+        formConfigB: [
           {
             type: "radio",
             label: "有无慢性病或家族遗传病史",
@@ -243,7 +270,9 @@
                 }
               ]
             }
-          },
+          }
+        ],
+        formConfigC: [
           {
             type: "radio",
             label: "体检结果是否有异常",
@@ -359,6 +388,10 @@
               ]
             }
           },
+
+        ],
+        formConfigffB: [
+
           {
             type: "radio",
             label: "有无慢性病或家族遗传病史",
@@ -511,7 +544,9 @@
                 }
               ]
             }
-          },
+          }
+        ],
+        formConfigffChildB: [
           {
             type: "radio",
             label: "有无慢性病或家族遗传病史",
@@ -664,7 +699,9 @@
                 }
               ]
             }
-          },
+          }
+        ],
+        formConfigScChildB: [
           {
             type: "radio",
             label: "有无慢性病或家族遗传病史",
