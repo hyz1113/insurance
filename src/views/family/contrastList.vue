@@ -67,7 +67,12 @@
           class="row-align-center"
           size="mini"
           type="success"
-          @click="$router.push({ path: '/children/healty/healtyContrastList',query:{type:'family'} })"
+          @click="
+            $router.push({
+              path: '/children/healty/healtyContrastList',
+              query: { type: 'family' }
+            })
+          "
           >少儿险产品对比
         </el-button>
       </div>

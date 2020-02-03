@@ -2,7 +2,7 @@
   <div>
     <div class="banner-index">
       <img
-              src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578932775976&di=a29f5f057ea87de4f08db2b8c4b2512d&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D2506197831%2C1636712722%26fm%3D214%26gp%3D0.jpg"
+        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578932775976&di=a29f5f057ea87de4f08db2b8c4b2512d&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D2506197831%2C1636712722%26fm%3D214%26gp%3D0.jpg"
       />
     </div>
     <div class="bgf p-tag">
@@ -26,14 +26,13 @@
                 <el-radio :label="2">以孩子教育金为主做长期规划</el-radio>
               </el-radio-group>
             </el-form-item>
-           <el-form-item>
+            <el-form-item>
               <div class="text-center f-12 g-c">更多规划类型算法陆续开发中</div>
             </el-form-item>
             <el-form-item class="text-center">
               <el-button type="success" plain @click="onSubmit" size="mini"
-              >下一步
-              </el-button
-              >
+                >下一步
+              </el-button>
             </el-form-item>
           </el-form>
         </div>
@@ -43,47 +42,48 @@
 </template>
 
 <script>
-  export default {
-    name: "home",
-    data() {
-      return {
-        form: {
-          resource: "",
-          type: []
-        }
-      };
-    },
-    watch: {
-      "form.resource"() {
-        if (this.form.resource != 3) {
-          this.form.type = [];
-        }
+export default {
+  name: "home",
+  data() {
+    return {
+      form: {
+        resource: "",
+        type: []
       }
-    },
-    methods: {
-      onSubmit() {
-        let pathL = "/children";
-        if(this.form.resource){
-          switch (this.form.resource) {
-            case 2: {
-              pathL = `${pathL}/eduInfo`;
-            }
-              break;
-            case 1: {
-              pathL = `${pathL}/healty/healtyInfo`;
-            }
-              break;
-
-          }
-        }else{
-          this.$message('请选择规划项！');
-          return;
-        }
-
-        this.$router.push({
-          path: pathL
-        });
+    };
+  },
+  watch: {
+    "form.resource"() {
+      if (this.form.resource != 3) {
+        this.form.type = [];
       }
     }
-  };
+  },
+  methods: {
+    onSubmit() {
+      let pathL = "/children";
+      if (this.form.resource) {
+        switch (this.form.resource) {
+          case 2:
+            {
+              pathL = `${pathL}/eduInfo`;
+            }
+            break;
+          case 1:
+            {
+              pathL = `${pathL}/healty/healtyInfo`;
+            }
+            break;
+        }
+      } else {
+        this.$message("请选择规划项！");
+        return;
+      }
+
+      this.$router.push({
+        path: pathL
+      });
+    }
+  }
+};
 </script>

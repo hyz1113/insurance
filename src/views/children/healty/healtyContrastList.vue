@@ -8,7 +8,7 @@
     <div class="bgf p-10">
       <div class="title">1、对比流程采用的保险产品来自以下保险公司。</div>
       <div class="p-10">
-        <img class="w-100-c" src="../../../assets/1.png"/>
+        <img class="w-100-c" src="../../../assets/1.png" />
       </div>
     </div>
 
@@ -26,8 +26,8 @@
       </div>
       <div class="m-t-10">
         <base-table
-                :tableConfig="tableConfig"
-                :tableData="tableData"
+          :tableConfig="tableConfig"
+          :tableData="tableData"
         ></base-table>
       </div>
     </div>
@@ -36,7 +36,7 @@
       <div class="title">4、市场在售少儿医疗险对比（性价比排名）：</div>
       <div class="table-block row-align-center">
         <el-link class="title text-center row-align-center" type="warning"
-        >少儿百万医疗险性价比排名
+          >少儿百万医疗险性价比排名
         </el-link>
       </div>
       <div class="table-block">
@@ -44,8 +44,8 @@
       </div>
       <div class="m-t-10">
         <base-table
-                :tableConfig="tableConfig1"
-                :tableData="tableData1"
+          :tableConfig="tableConfig1"
+          :tableData="tableData1"
         ></base-table>
       </div>
     </div>
@@ -54,7 +54,7 @@
       <div class="title">5、市场在售少儿重疾险排名（性价比排名）：</div>
       <div class="table-block row-align-center">
         <el-link class="title text-center row-align-center" type="warning"
-        >少儿重疾险性价比排名
+          >少儿重疾险性价比排名
         </el-link>
       </div>
       <div class="table-block">
@@ -63,17 +63,17 @@
 
       <div class="m-t-10">
         <base-table
-                :tableConfig="tableConfig1"
-                :tableData="tableData1"
+          :tableConfig="tableConfig1"
+          :tableData="tableData1"
         ></base-table>
       </div>
       <div class="m-t-10 row-align-center">
         <el-button
-                class="row-align-center"
-                size="mini"
-                type="success"
-                @click="goCase"
-        >下一步 规划方案
+          class="row-align-center"
+          size="mini"
+          type="success"
+          @click="goCase"
+          >下一步 规划方案
         </el-button>
       </div>
     </div>
@@ -81,115 +81,115 @@
 </template>
 
 <script>
-  export default {
-    name: "contrastList",
-    data() {
-      return {
-        tableConfig: [
-          {
-            label: "公司",
-            value: "name"
-          },
-          {
-            label: "产品",
-            value: "prod"
-          },
-          {
-            label: "0岁男宝宝保障50万(保障期限)",
-            value: "person"
-          },
-          {
-            label: "保费",
-            value: "person"
-          }
-        ],
-        tableConfig1: [
-          {
-            label: "公司",
-            value: "name"
-          },
-          {
-            label: "产品",
-            value: "prod"
-          },
-          {
-            label: "产品亮点",
-            value: "special"
-          },
-          {
-            label: "等级",
-            value: "level"
-          }
-        ],
-        tableData: [
-          {
-            name: "中国人保",
-            prod: "好医保·长期医疗（新版）",
-            person: "256"
-          },
-          {
-            name: "复星联合健康",
-            prod: "超越保长期医疗险计划1（专家版）",
-            person: "316"
-          },
-          {
-            name: "微保&泰康人寿",
-            prod: "微医保·长期医疗险",
-            person: "196"
-          },
-          {
-            name: "众慧相互",
-            prod: "慧享e生",
-            person: "256"
-          }
-        ],
-        tableData1: [
-          {
-            name: "中国人保",
-            prod: "好医保·长期医疗（新版）",
-            person: "256",
-            special: "性价比高",
-            level: "A"
-          },
-          {
-            name: "中国人保",
-            prod: "好医保·长期医疗（新版）",
-            person: "256",
-            special: "性价比高",
-            level: "A"
-          },
-          {
-            name: "中国人保",
-            prod: "好医保·长期医疗（新版）",
-            person: "256",
-            special: "性价比高",
-            level: "A"
-          },
-          {
-            name: "中国人保",
-            prod: "好医保·长期医疗（新版）",
-            person: "256",
-            special: "性价比高",
-            level: "A"
-          }
-        ]
-      };
+export default {
+  name: "contrastList",
+  data() {
+    return {
+      tableConfig: [
+        {
+          label: "公司",
+          value: "name"
+        },
+        {
+          label: "产品",
+          value: "prod"
+        },
+        {
+          label: "0岁男宝宝保障50万(保障期限)",
+          value: "person"
+        },
+        {
+          label: "保费",
+          value: "person"
+        }
+      ],
+      tableConfig1: [
+        {
+          label: "公司",
+          value: "name"
+        },
+        {
+          label: "产品",
+          value: "prod"
+        },
+        {
+          label: "产品亮点",
+          value: "special"
+        },
+        {
+          label: "等级",
+          value: "level"
+        }
+      ],
+      tableData: [
+        {
+          name: "中国人保",
+          prod: "好医保·长期医疗（新版）",
+          person: "256"
+        },
+        {
+          name: "复星联合健康",
+          prod: "超越保长期医疗险计划1（专家版）",
+          person: "316"
+        },
+        {
+          name: "微保&泰康人寿",
+          prod: "微医保·长期医疗险",
+          person: "196"
+        },
+        {
+          name: "众慧相互",
+          prod: "慧享e生",
+          person: "256"
+        }
+      ],
+      tableData1: [
+        {
+          name: "中国人保",
+          prod: "好医保·长期医疗（新版）",
+          person: "256",
+          special: "性价比高",
+          level: "A"
+        },
+        {
+          name: "中国人保",
+          prod: "好医保·长期医疗（新版）",
+          person: "256",
+          special: "性价比高",
+          level: "A"
+        },
+        {
+          name: "中国人保",
+          prod: "好医保·长期医疗（新版）",
+          person: "256",
+          special: "性价比高",
+          level: "A"
+        },
+        {
+          name: "中国人保",
+          prod: "好医保·长期医疗（新版）",
+          person: "256",
+          special: "性价比高",
+          level: "A"
+        }
+      ]
+    };
+  },
+  methods: {
+    tableRowClassName({ rowIndex }) {
+      if (rowIndex % 2 == 0) {
+        return "event-row";
+      }
+      return "";
     },
-    methods: {
-      tableRowClassName({ rowIndex }) {
-        if (rowIndex % 2 == 0) {
-          return "event-row";
-        }
-        return "";
-      },
-      goCase() {
-        let type = this.$route.query.type;
-        if (type == "family") {
-          this.$router.push({ path: '/family/case' })
-        } else {
-          this.$router.push({ path: "/children/healty/case" });
-        }
+    goCase() {
+      let type = this.$route.query.type;
+      if (type == "family") {
+        this.$router.push({ path: "/family/case" });
+      } else {
+        this.$router.push({ path: "/children/healty/case" });
       }
     }
-  };
+  }
+};
 </script>
