@@ -104,18 +104,18 @@
 </template>
 
 <script>
-  import { isValidMoneySecond } from "@/utils/RegExp.js";
-
   const CheckInt = (rule, value, callback) => {
-    //debugger;
     value = Number(value);
-    if (!value) {
-      callback();
-    } else if (!isValidMoneySecond(value)) {
-      callback(new Error("输入范围0-9999 单位为万元/年"));
-    } else {
-      callback();
+    let reg = /^\d+(\.\d{1})?$/;
+    if (!reg.test(value)) {
+      callback(new Error("只能有一位小数"));
+      return;
     }
+    if (!(value > 0 && value<9999)) {
+      callback(new Error("输入范围0-9999 单位为万元/年"));
+      return;
+    }
+    callback();
   };
   export default {
     name: "personbaseInfo",

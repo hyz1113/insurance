@@ -70,7 +70,7 @@ const isValidCardNumber = str => {
 const isValidMoney = str => /^(?!0{1,4})(\d{1,4}|10{4}|0)$/.test(str);
 
 // 0.1 - 9999.9
-const isValidMoneySecond = str => /^\d{1,4}\.\d{1}$/.test(str);
+const isValidMoneySecond = str => /^d*\.{0,1}\d{0,1}$/.test(str);
 
 
 // 中文
