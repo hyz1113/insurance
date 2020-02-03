@@ -7,7 +7,7 @@
       <p>
         为了给你提供专业且适合的个人/家庭保险解决方案，需要对您的实际情况和具体需求进行了解，问卷填答时10分钟左右，我们回做好信息保密，请您如实填写......
       </p>
-      <router-link class="align-right">
+      <router-link to="/" class="align-right">
         <el-button type="text" plain size="mini">案例展示—点击查看</el-button>
       </router-link>
     </div>
