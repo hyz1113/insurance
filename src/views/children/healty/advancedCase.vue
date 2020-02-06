@@ -12,7 +12,7 @@
         </div>
         <base-table
           :countCulumn="countCulumn"
-          showSummary="true"
+          :showSummary="true"
           :tableConfig="tableConfig"
           :tableData="tableData"
         ></base-table>
