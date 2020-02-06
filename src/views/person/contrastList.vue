@@ -58,7 +58,7 @@
       </div>
       <div>
         <base-table
-          :tableConfig="tableConfig1"
+          :tableConfig="tableConfig2"
           :tableData="tableData1"
         ></base-table>
       </div>
@@ -95,6 +95,28 @@ export default {
         }
       ],
       tableConfig1: [
+        {
+          label: "公司",
+          value: "name"
+        },
+        {
+          label: "产品",
+          value: "prod"
+        },
+        {
+          label: "30岁（有社保）",
+          value: "special"
+        },
+        {
+          label: "产品亮点",
+          value: "special"
+        },
+        {
+          label: "等级",
+          value: "level"
+        }
+      ],
+      tableConfig2: [
         {
           label: "公司",
           value: "name"

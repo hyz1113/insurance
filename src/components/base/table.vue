@@ -1,6 +1,7 @@
 <template>
   <div>
     <el-table
+            size="mini"
             border
             :show-summary="showSummary"
             :data="tableData"
@@ -11,11 +12,13 @@
       <el-table-column v-for="(item,index) in tableConfig"
                        :prop="item.value?item.value:''"
                        :key="index"
+                       :width="item.width?item.width:''"
                        :label="item.label">
         <template v-if="item.secondTh">
           <el-table-column v-for="(itm,inx) in item.secondTh"
                            :key="inx"
                            :prop="itm.value?itm.value:''"
+                           :width="item.width?item.width:''"
                            :label="itm.label"
           ></el-table-column>
         </template>

@@ -111,7 +111,8 @@ export default {
       tableConfig: [
         {
           label: "产品",
-          value: "name"
+          value: "name",
+          width:'50px'
         },
         {
           label: "产品名称",
@@ -119,19 +120,23 @@ export default {
         },
         {
           label: "保额",
-          value: "person"
+          value: "person",
+          width:'50px'
         },
         {
           label: "保额期限",
-          value: "insuranceDate"
+          value: "insuranceDate",
+          width:'40px'
         },
         {
           label: "缴费年限",
-          value: "payment"
+          value: "payment",
+          width:'40px'
         },
         {
           label: "年缴保费",
-          value: "yearPayment"
+          value: "yearPayment",
+          width:'40px'
         }
       ],
       tableData: [

@@ -327,7 +327,8 @@ export default {
       tableConfig: [
         {
           label: "保险类型",
-          value: "type"
+          value: "type",
+          width:'40px'
         },
         {
           label: "产品名称",
@@ -335,18 +336,22 @@ export default {
         },
         {
           label: "保额",
-          value: "money"
+          value: "money",
+          width:'40px'
         },
         {
           label: "保障期限",
-          value: "year"
+          value: "year",
+          width:'40px'
         },
         {
           label: "缴费年限",
-          value: "yearValue"
+          value: "yearValue",
+          width:'40px'
         },
         {
           label: "年交保费（男宝）",
+          width:'50px',
           secondTh: [
             {
               label: "0岁",
