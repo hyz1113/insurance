@@ -328,7 +328,7 @@ export default {
         {
           label: "保险类型",
           value: "type",
-          width:'40px'
+          width: "40px"
         },
         {
           label: "产品名称",
@@ -337,21 +337,21 @@ export default {
         {
           label: "保额",
           value: "money",
-          width:'40px'
+          width: "40px"
         },
         {
           label: "保障期限",
           value: "year",
-          width:'40px'
+          width: "40px"
         },
         {
           label: "缴费年限",
           value: "yearValue",
-          width:'40px'
+          width: "40px"
         },
         {
           label: "年交保费（男宝）",
-          width:'40px',
+          width: "40px",
           secondTh: [
             {
               label: "0岁",

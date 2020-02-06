@@ -267,9 +267,9 @@ export default {
       tel: null //受邀手机号
     };
   },
-  watch:{
-    'form.otherInsurance'(){
-      this.formConfigD[1].hide=!this.formConfigD[1].hide;
+  watch: {
+    "form.otherInsurance"() {
+      this.formConfigD[1].hide = !this.formConfigD[1].hide;
     }
   },
   methods: {

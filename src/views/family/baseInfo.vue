@@ -301,7 +301,7 @@ export default {
         insuranceType: [],
         othermedical: 1,
         healthCheck: 1,
-        otherInsurance:2,
+        otherInsurance: 2
       },
 
       ////配偶项
@@ -438,7 +438,7 @@ export default {
         insuranceType: [],
         othermedical: 1,
         healthCheck: 1,
-        otherInsurance:2,
+        otherInsurance: 2
       },
 
       ////大孩项
@@ -594,7 +594,7 @@ export default {
         insuranceType: [],
         othermedical: 1,
         healthCheck: 1,
-        otherInsurance:2,
+        otherInsurance: 2
       },
 
       ////二孩项
@@ -750,7 +750,7 @@ export default {
         insuranceType: [],
         othermedical: 1,
         healthCheck: 1,
-        otherInsurance:2,
+        otherInsurance: 2
       },
 
       ////家庭综合项
@@ -847,18 +847,18 @@ export default {
       tel: null //受邀手机号
     };
   },
-  watch:{
-    'formData.otherInsurance'(){
-      this.formConfigA[2].hide=!this.formConfigA[2].hide;
+  watch: {
+    "formData.otherInsurance"() {
+      this.formConfigA[2].hide = !this.formConfigA[2].hide;
     },
-    'formDataff.otherInsurance'(){
-      this.formConfigffA[2].hide=!this.formConfigffA[2].hide;
+    "formDataff.otherInsurance"() {
+      this.formConfigffA[2].hide = !this.formConfigffA[2].hide;
     },
-    'formDataffChild.otherInsurance'(){
-      this.formConfigffChildA[2].hide=!this.formConfigffChildA[2].hide;
+    "formDataffChild.otherInsurance"() {
+      this.formConfigffChildA[2].hide = !this.formConfigffChildA[2].hide;
     },
-    'formDataScChild.otherInsurance'(){
-      this.formConfigScChildA[2].hide=!this.formConfigScChildA[2].hide;
+    "formDataScChild.otherInsurance"() {
+      this.formConfigScChildA[2].hide = !this.formConfigScChildA[2].hide;
     }
   },
   methods: {

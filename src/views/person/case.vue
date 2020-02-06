@@ -112,32 +112,31 @@ export default {
         {
           label: "产品",
           value: "name",
-          width:'50px'
+          width: "50px"
         },
         {
           label: "产品名称",
-          value: "prod",
-
+          value: "prod"
         },
         {
           label: "保额",
           value: "person",
-          width:'50px'
+          width: "50px"
         },
         {
           label: "保额期限",
           value: "insuranceDate",
-          width:'40px'
+          width: "40px"
         },
         {
           label: "缴费年限",
           value: "payment",
-          width:'40px'
+          width: "40px"
         },
         {
           label: "年缴保费",
           value: "yearPayment",
-          width:'40px'
+          width: "40px"
         }
       ],
       tableData: [

@@ -7,45 +7,41 @@
 </template>
 
 <script>
-  export default {
-    name: "tableFooter",
-    props: {
-      tableData: {
-        require: true,
-        default: []
-      },
-      label: {
-        require: true,
-        default: ""
-      }
+export default {
+  name: "tableFooter",
+  props: {
+    tableData: {
+      require: true,
+      default: []
     },
-    data() {
-      return {
-        count: 0
-      };
-    },
-    mounted() {
-      this.calc();
-    },
-    methods: {
-      calc() {
-        let that = this;
-        this.tableData.forEach((item) => {
-          Object.keys(item).forEach((itm) => {
-            console.log(itm, that.label);
-            //console.log(item[itm]);
-            if (itm == that.label) {
-              that.count += Number(item[itm]);
-
-            }
-          });
-
-        });
-      }
+    label: {
+      require: true,
+      default: ""
     }
-  };
+  },
+  data() {
+    return {
+      count: 0
+    };
+  },
+  mounted() {
+    this.calc();
+  },
+  methods: {
+    calc() {
+      let that = this;
+      this.tableData.forEach(item => {
+        Object.keys(item).forEach(itm => {
+          console.log(itm, that.label);
+          //console.log(item[itm]);
+          if (itm == that.label) {
+            that.count += Number(item[itm]);
+          }
+        });
+      });
+    }
+  }
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
