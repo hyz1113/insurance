@@ -192,44 +192,18 @@
         ],
         formConfigB: [
           {
-            type: "radio",
+            type: "input",
             label: "房贷或房租支出（万/年）",
             value: "payHouse",
-            tip: "房贷或房租支出",
-            option: {
-              disabled: false,
-              data: [
-                {
-                  label: "有",
-                  value: 1
-                },
-                {
-                  label: "无",
-                  value: 2
-                }
-              ]
-            }
+            tip: "请输入"
           }
         ],
         formConfigC: [
           {
-            type: "radio",
+            type: "input",
             label: "其他贷款偿付支出（万/年）",
             value: "otherPay",
-            tip: "其他贷款偿付支出",
-            option: {
-              disabled: false,
-              data: [
-                {
-                  label: "有",
-                  value: 1
-                },
-                {
-                  label: "无",
-                  value: 2
-                }
-              ]
-            }
+            tip: "其他贷款偿付支出"
           }
         ],
         formConfigD: [
@@ -257,7 +231,7 @@
             label: "",
             value: "insuranceType",
             tip: "",
-            hide: false,
+            hide: true,
             option: {
               disabled: false,
               data: [
@@ -350,8 +324,12 @@
         tel: null //受邀手机号
       };
     },
+    watch:{
+      'form.otherInsurance'(){
+        this.formConfigD[1].hide=!this.formConfigD[1].hide;
+       }
+    },
     methods: {
-
       submit() {
         this.$router.push({
           path: "/person/contrastList"

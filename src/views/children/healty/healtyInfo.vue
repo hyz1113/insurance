@@ -187,7 +187,7 @@ export default {
           label: "",
           value: "insuranceType",
           tip: "",
-          hide: false,
+          hide: true,
           option: {
             disabled: false,
             data: [
@@ -266,6 +266,11 @@ export default {
       },
       tel: null //受邀手机号
     };
+  },
+  watch:{
+    'form.otherInsurance'(){
+      this.formConfigD[1].hide=!this.formConfigD[1].hide;
+    }
   },
   methods: {
     checkTel() {
