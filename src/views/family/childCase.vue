@@ -43,7 +43,6 @@
         >
       </div>
       <base-table
-        height="200"
         :tableConfig="tableConfig"
         :tableData="tableData"
       ></base-table>

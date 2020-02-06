@@ -43,7 +43,8 @@
         >
       </div>
       <base-table
-        height="200"
+        :countCulumn="countCulumn"
+        :showSummary="true"
         :tableConfig="tableConfig"
         :tableData="tableData"
       ></base-table>
@@ -62,6 +63,8 @@
         >
       </div>
       <base-table
+              :showSummary="true"
+        :countCulumn="countCulumn"
         :tableConfig="tableConfig"
         :tableData="tableData"
       ></base-table>
@@ -80,6 +83,8 @@
         >
       </div>
       <base-table
+              :showSummary="true"
+        :countCulumn="countCulumn"
         :tableConfig="tableConfig"
         :tableData="tableData"
       ></base-table>
@@ -108,6 +113,7 @@ export default {
   name: "case",
   data() {
     return {
+      countCulumn: ["age0"],
       tableConfig: [
         {
           label: "产品",
@@ -134,9 +140,16 @@ export default {
           width: "40px"
         },
         {
-          label: "年缴保费",
+          label: "年缴保费(元)",
           value: "yearPayment",
-          width: "40px"
+          width: "86px",
+          secondTh: [
+            {
+              label: "男性30岁",
+              value: "age0",
+              width: "30px"
+            }
+          ]
         }
       ],
       tableData: [
@@ -146,6 +159,7 @@ export default {
           person: "256",
           insuranceDate: "1年",
           payment: "20",
+          age0: 23,
           yearPayment: "15岁"
         },
         {
@@ -154,6 +168,7 @@ export default {
           person: "316",
           insuranceDate: "1年",
           payment: "20",
+          age0: 23,
           yearPayment: "15岁"
         },
         {
@@ -162,6 +177,7 @@ export default {
           person: "196",
           insuranceDate: "1年",
           payment: "20",
+          age0: 23,
           yearPayment: "15岁"
         },
         {
@@ -170,6 +186,7 @@ export default {
           person: "256",
           insuranceDate: "1年",
           payment: "20",
+          age0: 23,
           yearPayment: "15岁"
         }
       ]

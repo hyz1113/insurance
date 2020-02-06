@@ -181,7 +181,7 @@ export default {
   name: "case",
   data() {
     return {
-      countCulumn: ["age0", "age5"],
+      countCulumn: ["age0"],
       tableConfig: [
         {
           label: "保险类型",
@@ -208,17 +208,12 @@ export default {
           width: "40px"
         },
         {
-          label: "年交保费（男宝）",
-          width: "50px",
+          label: "年交保费(元)",
+          width: "80px",
           secondTh: [
             {
-              label: "0岁",
+              label: "男宝0岁",
               value: "age0",
-              width: "30px"
-            },
-            {
-              label: "5岁",
-              value: "age5",
               width: "30px"
             }
           ]
