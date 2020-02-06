@@ -92,7 +92,7 @@
       ></base-tableFooter>
     </div>
 
-    <div class="m-t-10 row-align-center">
+    <div class="m-t-10 row-align-center" v-if="!$route.query.value">
       <el-button
         class="row-align-center"
         size="mini"

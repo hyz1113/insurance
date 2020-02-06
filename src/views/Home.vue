@@ -100,7 +100,7 @@
           path: pathL,
           query: {
             name: this.form.resource,
-            value: [...this.form.type]
+            value: [...this.form.type].join(',')
           }
         });
 

@@ -62,7 +62,8 @@
           :tableData="tableData1"
         ></base-table>
       </div>
-      <div class="m-t-10 row-align-center">
+
+      <div class="m-t-10 row-align-center" v-if="$route.query.value">
         <el-button
           class="row-align-center"
           size="mini"
@@ -74,6 +75,20 @@
             })
           "
           >少儿险产品对比
+        </el-button>
+      </div>
+      <div class="m-t-10 row-align-center" v-else>
+        <el-button
+                class="row-align-center"
+                size="mini"
+                type="success"
+                @click="
+            $router.push({
+              path: '/family/case',
+              query: { type: 'family',value:1 }
+            })
+          "
+        >下一步 规化方案
         </el-button>
       </div>
     </div>
@@ -193,6 +208,7 @@ export default {
       ]
     };
   },
+
   methods: {
     tableRowClassName({ rowIndex }) {
       if (rowIndex % 2 == 0) {

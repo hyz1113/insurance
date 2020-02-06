@@ -46,7 +46,7 @@
       ></base-baseform>
     </div>
 
-    <div class="bgf p-10 m-t-10">
+    <div class="bgf p-10 m-t-10" v-show="isFirst">
       <el-divider>
         <el-link type="info" plain size="mini">大孩基本信息</el-link>
       </el-divider>
@@ -67,7 +67,7 @@
       ></base-baseform>
     </div>
 
-    <div class="bgf p-10 m-t-10">
+    <div class="bgf p-10 m-t-10" v-show="hasSecond">
       <el-divider>
         <el-link type="info" plain size="mini">二孩基本信息</el-link>
       </el-divider>
@@ -146,6 +146,8 @@ export default {
   name: "personbaseInfo",
   data: () => {
     return {
+      isFirst:false,
+      hasSecond:false,
       ////个人项
       formConfig: [
         {
@@ -847,6 +849,16 @@ export default {
       tel: null //受邀手机号
     };
   },
+  mounted(){
+    const value=this.$route.query.value;
+    if(value.includes('2')){
+      this.isFirst=true;
+    }
+    if(value.includes('3')){
+      this.hasSecond=true;
+      this.isFirst=true;
+    }
+  },
   watch: {
     "formData.otherInsurance"() {
       this.formConfigA[2].hide = !this.formConfigA[2].hide;
@@ -864,7 +876,10 @@ export default {
   methods: {
     submit() {
       this.$router.push({
-        path: "/family/contrastList"
+        path: "/family/contrastList",
+        query:{
+          value:(this.isFirst || this.hasSecond)?true:false
+        }
       });
     }
   }
