@@ -39,20 +39,19 @@
       <div class="title"><b class="b">家庭保护伞（成人）经济型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >预算千元左右 保障不差白菜价
-        </el-link
-        >
+          >预算千元左右 保障不差白菜价
+        </el-link>
       </div>
       <base-table
-              :showSummary="true"
-              :countCulumn="countCulumn"
-              :tableConfig="tableConfig"
-              :tableData="tableData"
+        :showSummary="true"
+        :countCulumn="countCulumn"
+        :tableConfig="tableConfig"
+        :tableData="tableData"
       ></base-table>
       <base-tableFooter
-              :tableData="tableData"
-              :resource="tableData"
-              label="payment"
+        :tableData="tableData"
+        :resource="tableData"
+        label="payment"
       ></base-tableFooter>
     </div>
 
@@ -60,20 +59,19 @@
       <div class="title"><b class="b">家庭保护伞（成人）进阶型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >预算三千元左右 给娃一辈子的重疾保障
-        </el-link
-        >
+          >预算三千元左右 给娃一辈子的重疾保障
+        </el-link>
       </div>
       <base-table
-              :showSummary="true"
-              :countCulumn="countCulumn"
-              :tableConfig="tableConfig"
-              :tableData="tableData"
+        :showSummary="true"
+        :countCulumn="countCulumn"
+        :tableConfig="tableConfig"
+        :tableData="tableData"
       ></base-table>
       <base-tableFooter
-              :tableData="tableData"
-              :resource="tableData"
-              label="payment"
+        :tableData="tableData"
+        :resource="tableData"
+        label="payment"
       ></base-tableFooter>
     </div>
 
@@ -83,30 +81,29 @@
       </div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >每年5000元左右 坐拥400万+顶配保障
-        </el-link
-        >
+          >每年5000元左右 坐拥400万+顶配保障
+        </el-link>
       </div>
       <base-table
-              :showSummary="true"
-              :countCulumn="countCulumn"
-              :tableConfig="tableConfig"
-              :tableData="tableData"
+        :showSummary="true"
+        :countCulumn="countCulumn"
+        :tableConfig="tableConfig"
+        :tableData="tableData"
       ></base-table>
       <base-tableFooter
-              :tableData="tableData"
-              :resource="tableData"
-              label="payment"
+        :tableData="tableData"
+        :resource="tableData"
+        label="payment"
       ></base-tableFooter>
     </div>
 
     <div class="m-t-10 row-align-center" v-if="$store.state.hasChildNum">
       <el-button
-              class="row-align-center"
-              size="mini"
-              type="success"
-              @click="goCase"
-      >下一页 孩子的保障方案
+        class="row-align-center"
+        size="mini"
+        type="success"
+        @click="goCase"
+        >下一页 孩子的保障方案
       </el-button>
     </div>
 
@@ -124,106 +121,106 @@
 </template>
 
 <script>
-  export default {
-    name: "case",
-    data() {
-      return {
-        countCulumn: ["age0", "age5"],
-        tableConfig: [
-          {
-            label: "产品",
-            value: "name",
-            width: "40px"
-          },
-          {
-            label: "产品名称",
-            value: "prod"
-          },
-          {
-            label: "保额",
-            value: "person",
-            width: "40px"
-          },
-          {
-            label: "保额期限",
-            value: "insuranceDate",
-            width: "40px"
-          },
-          {
-            label: "缴费年限",
-            value: "payment",
-            width: "40px"
-          },
-          {
-            label: "年缴保费",
-            value: "yearPayment",
-            width: "50px",
-            secondTh: [
-              {
-                label: "30岁男",
-                value: "age0"
-              },
-              {
-                label: "30岁女",
-                value: "age5"
-              }
-            ]
-          }
-        ],
-        tableData: [
-          {
-            name: "中国人保",
-            prod: "好医保·长期医疗（新版）",
-            person: "256",
-            insuranceDate: "1年",
-            payment: "20",
-            age0: 90,
-            age5: 90,
-            yearPayment: "15岁"
-          },
-          {
-            name: "复星联合健康",
-            prod: "超越保长期医疗险计划1（专家版）",
-            person: "316",
-            insuranceDate: "1年",
-            payment: "20",
-            age0: 90,
-            age5: 90,
-            yearPayment: "15岁"
-          },
-          {
-            name: "微保&泰康人寿",
-            prod: "微医保·长期医疗险",
-            person: "196",
-            insuranceDate: "1年",
-            payment: "20",
-            age0: 10,
-            age5: 90,
-            yearPayment: "15岁"
-          },
-          {
-            name: "众慧相互",
-            prod: "慧享e生",
-            person: "256",
-            insuranceDate: "1年",
-            payment: "20",
-            age0: 90,
-            age5: 90,
-            yearPayment: "15岁"
-          }
-        ]
-      };
-    },
-    methods: {
-      tableRowClassName({ rowIndex }) {
-        if (rowIndex % 2 == 0) {
-          return "event-row";
+export default {
+  name: "case",
+  data() {
+    return {
+      countCulumn: ["age0", "age5"],
+      tableConfig: [
+        {
+          label: "产品",
+          value: "name",
+          width: "40px"
+        },
+        {
+          label: "产品名称",
+          value: "prod"
+        },
+        {
+          label: "保额",
+          value: "person",
+          width: "40px"
+        },
+        {
+          label: "保额期限",
+          value: "insuranceDate",
+          width: "40px"
+        },
+        {
+          label: "缴费年限",
+          value: "payment",
+          width: "40px"
+        },
+        {
+          label: "年缴保费",
+          value: "yearPayment",
+          width: "50px",
+          secondTh: [
+            {
+              label: "30岁男",
+              value: "age0"
+            },
+            {
+              label: "30岁女",
+              value: "age5"
+            }
+          ]
         }
-        return "";
-      },
-      goCase() {
-        this.$router.push({ path: "/children/healty/case" });
+      ],
+      tableData: [
+        {
+          name: "中国人保",
+          prod: "好医保·长期医疗（新版）",
+          person: "256",
+          insuranceDate: "1年",
+          payment: "20",
+          age0: 90,
+          age5: 90,
+          yearPayment: "15岁"
+        },
+        {
+          name: "复星联合健康",
+          prod: "超越保长期医疗险计划1（专家版）",
+          person: "316",
+          insuranceDate: "1年",
+          payment: "20",
+          age0: 90,
+          age5: 90,
+          yearPayment: "15岁"
+        },
+        {
+          name: "微保&泰康人寿",
+          prod: "微医保·长期医疗险",
+          person: "196",
+          insuranceDate: "1年",
+          payment: "20",
+          age0: 10,
+          age5: 90,
+          yearPayment: "15岁"
+        },
+        {
+          name: "众慧相互",
+          prod: "慧享e生",
+          person: "256",
+          insuranceDate: "1年",
+          payment: "20",
+          age0: 90,
+          age5: 90,
+          yearPayment: "15岁"
+        }
+      ]
+    };
+  },
+  methods: {
+    tableRowClassName({ rowIndex }) {
+      if (rowIndex % 2 == 0) {
+        return "event-row";
       }
+      return "";
+    },
+    goCase() {
+      this.$router.push({ path: "/children/healty/case" });
     }
-  };
+  }
+};
 </script>

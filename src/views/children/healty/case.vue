@@ -74,30 +74,29 @@
       <div class="title"><b class="b">少儿保护伞经济型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >预算千元左右 保障不差白菜价
+          >预算千元左右 保障不差白菜价
         </el-link>
       </div>
       <base-table
-              :countCulumn="countCulumn"
-              :showSummary="true"
-              :tableConfig="tableConfig"
-              :tableData="tableData"
+        :countCulumn="countCulumn"
+        :showSummary="true"
+        :tableConfig="tableConfig"
+        :tableData="tableData"
       ></base-table>
       <base-tableFooter
-              :tableData="tableData"
-              :resource="tableData"
-              label="payment"
+        :tableData="tableData"
+        :resource="tableData"
+        label="payment"
       ></base-tableFooter>
       <div class="table-block m-t-10 row-align-center">
         <el-button
-                type="success"
-                round
-                size="mini"
-                class="row-align-center"
-                @click="$router.push({ path: '/children/healty/economicCase' })"
-        >经济型方案 点击进入
-        </el-button
-        >
+          type="success"
+          round
+          size="mini"
+          class="row-align-center"
+          @click="$router.push({ path: '/children/healty/economicCase' })"
+          >经济型方案 点击进入
+        </el-button>
       </div>
     </div>
 
@@ -105,30 +104,29 @@
       <div class="title"><b class="b">少儿保护伞进阶型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >预算三千元左右 给娃一辈子的重疾保障
+          >预算三千元左右 给娃一辈子的重疾保障
         </el-link>
       </div>
       <base-table
-              :countCulumn="countCulumn"
-              :showSummary="true"
-              :tableConfig="tableConfig"
-              :tableData="tableData"
+        :countCulumn="countCulumn"
+        :showSummary="true"
+        :tableConfig="tableConfig"
+        :tableData="tableData"
       ></base-table>
       <base-tableFooter
-              :tableData="tableData"
-              :resource="tableData"
-              label="payment"
+        :tableData="tableData"
+        :resource="tableData"
+        label="payment"
       ></base-tableFooter>
       <div class="table-block m-t-10 row-align-center">
         <el-button
-                type="success"
-                round
-                size="mini"
-                class="row-align-center"
-                @click="$router.push({ path: '/children/healty/advancedCase' })"
-        >进阶型方案详解 点击进入
-        </el-button
-        >
+          type="success"
+          round
+          size="mini"
+          class="row-align-center"
+          @click="$router.push({ path: '/children/healty/advancedCase' })"
+          >进阶型方案详解 点击进入
+        </el-button>
       </div>
     </div>
 
@@ -136,30 +134,29 @@
       <div class="title"><b class="b">少儿保护伞充分保障型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >每年5000元左右 坐拥400万+顶配保障
+          >每年5000元左右 坐拥400万+顶配保障
         </el-link>
       </div>
       <base-table
-              :countCulumn="countCulumn"
-              :showSummary="true"
-              :tableConfig="tableConfig"
-              :tableData="tableData"
+        :countCulumn="countCulumn"
+        :showSummary="true"
+        :tableConfig="tableConfig"
+        :tableData="tableData"
       ></base-table>
       <base-tableFooter
-              :tableData="tableData"
-              :resource="tableData"
-              label="payment"
+        :tableData="tableData"
+        :resource="tableData"
+        label="payment"
       ></base-tableFooter>
       <div class="table-block m-t-10 row-align-center">
         <el-button
-                type="success"
-                round
-                size="mini"
-                class="row-align-center"
-                @click="$router.push({ path: '/children/healty/securityCase' })"
-        >充分保障型方案详解 点击进入
-        </el-button
-        >
+          type="success"
+          round
+          size="mini"
+          class="row-align-center"
+          @click="$router.push({ path: '/children/healty/securityCase' })"
+          >充分保障型方案详解 点击进入
+        </el-button>
       </div>
     </div>
 
@@ -180,111 +177,113 @@
 </template>
 
 <script>
-  export default {
-    name: "case",
-    data() {
-      return {
-        countCulumn: ["age0"],
-        tableConfig: [
-          {
-            label: "保险类型",
-            value: "type",
-            width: "40px"
-          },
-          {
-            label: "产品名称",
-            value: "name"
-          },
-          {
-            label: "保额",
-            value: "money",
-            width: "50px"
-          },
-          {
-            label: "保障期限",
-            value: "year",
-            width: "40px"
-          },
-          {
-            label: "缴费年限",
-            value: "yearValue",
-            width: "40px"
-          },
-          {
-            label: "年交保费(元)",
-            width: "50px",
-            secondTh: [
-              {
-                label: "男宝0岁",
-                value: "age0",
-                width: "30px"
-              }
-            ]
-          }
-        ],
-        tableData: [
-          {
-            type: "中国人保",
-            name: "好医保·长期医疗（新版）",
-            money: 21,
-            year: 12,
-            yearValue: 12,
-            age0: 23,
-            age5: 24
-          },
-          {
-            type: "中国人保",
-            name: "好医保·长期医疗（新版）",
-            money: 21,
-            year: 12,
-            yearValue: 12,
-            age0: 66,
-            age5: 45
-          }
-        ]
-      };
-    },
-    mounted() {
-      let record1={
-        label: "大孩男宝10岁",
-        value: "age0",
-        width: "30px"
-      };
-      let record2={
-        label: "二孩男宝15岁",
-        value: "age5",
-        width: "30px"
-      };
-      switch (this.$store.state.hasChildNum) {
-        case 0: {
-          this.countCulumn.push("age5");
-          this.tableConfig[5].secondTh[0].label="男宝10岁";
+export default {
+  name: "case",
+  data() {
+    return {
+      countCulumn: ["age0"],
+      tableConfig: [
+        {
+          label: "保险类型",
+          value: "type",
+          width: "40px"
+        },
+        {
+          label: "产品名称",
+          value: "name"
+        },
+        {
+          label: "保额",
+          value: "money",
+          width: "50px"
+        },
+        {
+          label: "保障期限",
+          value: "year",
+          width: "40px"
+        },
+        {
+          label: "缴费年限",
+          value: "yearValue",
+          width: "40px"
+        },
+        {
+          label: "年交保费(元)",
+          width: "50px",
+          secondTh: [
+            {
+              label: "男宝0岁",
+              value: "age0",
+              width: "30px"
+            }
+          ]
         }
-          break;
-        case 1: {
+      ],
+      tableData: [
+        {
+          type: "中国人保",
+          name: "好医保·长期医疗（新版）",
+          money: 21,
+          year: 12,
+          yearValue: 12,
+          age0: 23,
+          age5: 24
+        },
+        {
+          type: "中国人保",
+          name: "好医保·长期医疗（新版）",
+          money: 21,
+          year: 12,
+          yearValue: 12,
+          age0: 66,
+          age5: 45
+        }
+      ]
+    };
+  },
+  mounted() {
+    let record1 = {
+      label: "大孩男宝10岁",
+      value: "age0",
+      width: "30px"
+    };
+    let record2 = {
+      label: "二孩男宝15岁",
+      value: "age5",
+      width: "30px"
+    };
+    switch (this.$store.state.hasChildNum) {
+      case 0:
+        {
+          this.countCulumn.push("age5");
+          this.tableConfig[5].secondTh[0].label = "男宝10岁";
+        }
+        break;
+      case 1:
+        {
           this.tableConfig[5].secondTh[0] = {
             label: "男宝10岁",
             value: "age0",
             width: "30px"
           };
         }
-          break;
-        case 2: {
+        break;
+      case 2:
+        {
           this.countCulumn.push("age5");
           this.tableConfig[5].secondTh[0] = record1;
           this.tableConfig[5].secondTh.push(record2);
         }
-          break;
-      }
-
-    },
-    methods: {
-      tableRowClassName({ rowIndex }) {
-        if (rowIndex % 2 == 0) {
-          return "event-row";
-        }
-        return "";
-      }
+        break;
     }
-  };
+  },
+  methods: {
+    tableRowClassName({ rowIndex }) {
+      if (rowIndex % 2 == 0) {
+        return "event-row";
+      }
+      return "";
+    }
+  }
+};
 </script>

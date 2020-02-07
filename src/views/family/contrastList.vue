@@ -71,7 +71,7 @@
           @click="
             $router.push({
               path: '/children/healty/healtyContrastList',
-              query: { type: 'family'}
+              query: { type: 'family' }
             })
           "
           >少儿险产品对比
@@ -79,16 +79,16 @@
       </div>
       <div class="m-t-10 row-align-center" v-else>
         <el-button
-                class="row-align-center"
-                size="mini"
-                type="success"
-                @click="
+          class="row-align-center"
+          size="mini"
+          type="success"
+          @click="
             $router.push({
               path: '/family/case',
-              query: { type: 'family'}
+              query: { type: 'family' }
             })
           "
-        >下一步 规化方案
+          >下一步 规化方案
         </el-button>
       </div>
     </div>
@@ -118,27 +118,26 @@ export default {
         {
           label: "公司",
           value: "name",
-          width:'60px'
+          width: "60px"
         },
         {
           label: "产品",
-          value: "prod",
-
+          value: "prod"
         },
         {
           label: "产品亮点",
           value: "special",
-          width:'60px'
+          width: "60px"
         },
         {
           label: "30岁（有社保）",
           value: "special",
-          width:'100px'
+          width: "100px"
         },
         {
           label: "等级",
           value: "level",
-          width:'40px'
+          width: "40px"
         }
       ],
       tableConfig2: [

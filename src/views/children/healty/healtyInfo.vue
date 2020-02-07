@@ -24,16 +24,16 @@
     <div class="clear ovh bgf" v-show="show">
       <div class="pull-left list-check-height" style="width: 140px;">
         <base-baseform
-                :formConfig="formConfigD1"
-                :formData="form"
-                labelWidth="15px"
+          :formConfig="formConfigD1"
+          :formData="form"
+          labelWidth="15px"
         ></base-baseform>
       </div>
       <div class="pull-left">
         <base-baseform
-                :formConfig="formConfigD2"
-                :formData="form"
-                labelWidth="15px"
+          :formConfig="formConfigD2"
+          :formData="form"
+          labelWidth="15px"
         ></base-baseform>
       </div>
     </div>
@@ -322,7 +322,7 @@ export default {
         healthCheck: 1, //健康检查
         insuranceType: [] //商业保险类型
       },
-      show:false,
+      show: false,
       tel: null //受邀手机号
     };
   },

@@ -98,7 +98,7 @@ export default {
         {
           label: "公司",
           value: "name",
-          width:'40px'
+          width: "40px"
         },
         {
           label: "产品",
@@ -107,17 +107,17 @@ export default {
         {
           label: "30岁（有社保）",
           value: "special",
-          width:'80px'
+          width: "80px"
         },
         {
           label: "产品亮点",
           value: "special",
-          width:'40px'
+          width: "40px"
         },
         {
           label: "等级",
           value: "level",
-          width:'40px'
+          width: "40px"
         }
       ],
       tableConfig2: [

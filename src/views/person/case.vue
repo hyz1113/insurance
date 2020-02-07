@@ -63,7 +63,7 @@
         >
       </div>
       <base-table
-              :showSummary="true"
+        :showSummary="true"
         :countCulumn="countCulumn"
         :tableConfig="tableConfig"
         :tableData="tableData"
@@ -83,7 +83,7 @@
         >
       </div>
       <base-table
-              :showSummary="true"
+        :showSummary="true"
         :countCulumn="countCulumn"
         :tableConfig="tableConfig"
         :tableData="tableData"
