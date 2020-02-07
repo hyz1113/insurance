@@ -15,9 +15,11 @@
         :key="index"
         :width="item.width ? item.width : ''"
         :label="item.label"
+        align='center'
       >
         <template v-if="item.secondTh">
           <el-table-column
+            align='center'
             v-for="(itm, inx) in item.secondTh"
             :key="inx"
             :prop="itm.value ? itm.value : ''"
@@ -26,13 +28,7 @@
           ></el-table-column>
         </template>
       </el-table-column>
-      <!--<el-table-column-->
-      <!--prop="person"-->
-      <!--label="30岁男性（50万）"-->
-      <!--&gt;</el-table-column>-->
-      <!--<el-table-column prop="special" label="产品亮点"></el-table-column>-->
-      <!--<el-table-column prop="level" label="等级"></el-table-column>-->
-    </el-table>
+     </el-table>
   </div>
 </template>
 
@@ -75,20 +71,21 @@ export default {
       return "";
     },
     getSummaries(param) {
-      //debugger
+
       const { columns, data } = param;
       const sums = [];
       const countArr = this.countCulumn.join(",");
-      console.log(countArr);
       columns.forEach((column, index) => {
         if (index === 0) {
           sums[index] = "总计";
           return;
         }
-        const values = data.map(item => Number(item[column.property]));
+        const values = data.map(item => {
+
+          return parseInt(item[column.property])
+        });
         if (countArr.includes(column.property)) {
           sums[index] = values.reduce((prev, curr) => {
-            console.log(prev, curr);
             return prev + curr;
           }, 0);
           sums[index] += " 元";

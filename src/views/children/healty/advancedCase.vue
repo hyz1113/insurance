@@ -319,8 +319,8 @@ export default {
           money: 21,
           year: 12,
           yearValue: 12,
-          age0: 23,
-          age5: 24
+          age0: "23元",
+          age5: "23元"
         },
         {
           type: "中国人保",
@@ -328,8 +328,8 @@ export default {
           money: 21,
           year: 12,
           yearValue: 12,
-          age0: 66,
-          age5: "78"
+          age0: "23元",
+          age5: "78元"
         }
       ]
     };

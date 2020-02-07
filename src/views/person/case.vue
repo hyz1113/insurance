@@ -159,7 +159,7 @@ export default {
           person: "256",
           insuranceDate: "1年",
           payment: "20",
-          age0: 23,
+          age0: "23元",
           yearPayment: "15岁"
         },
         {
@@ -168,7 +168,7 @@ export default {
           person: "316",
           insuranceDate: "1年",
           payment: "20",
-          age0: 23,
+          age0: "23元",
           yearPayment: "15岁"
         },
         {
@@ -177,7 +177,7 @@ export default {
           person: "196",
           insuranceDate: "1年",
           payment: "20",
-          age0: 23,
+          age0: "23元",
           yearPayment: "15岁"
         },
         {
@@ -186,7 +186,7 @@ export default {
           person: "256",
           insuranceDate: "1年",
           payment: "20",
-          age0: 23,
+          age0: "23元",
           yearPayment: "15岁"
         }
       ]

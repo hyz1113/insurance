@@ -208,8 +208,8 @@ export default {
           width: "40px"
         },
         {
-          label: "年交保费(元)",
-          width: "50px",
+          label: "年交保费",
+          width: "60px",
           secondTh: [
             {
               label: "男宝0岁",
@@ -226,8 +226,8 @@ export default {
           money: 21,
           year: 12,
           yearValue: 12,
-          age0: 23,
-          age5: 24
+          age0: "23元",
+          age5: "24元"
         },
         {
           type: "中国人保",
@@ -235,8 +235,8 @@ export default {
           money: 21,
           year: 12,
           yearValue: 12,
-          age0: 66,
-          age5: 45
+          age0: "23元",
+          age5: "24元"
         }
       ]
     };
