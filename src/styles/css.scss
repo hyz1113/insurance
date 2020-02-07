@@ -37,6 +37,8 @@ a {text-decoration: none;}
 .pull-left { float: left}
 
 .lh20 { line-height: 20px;}
+.clear{ clear: both;}
+.ovh{ overflow: hidden;}
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -152,4 +154,7 @@ a {text-decoration: none;}
   line-height: 20px;
   @extend .f-12;
   margin-bottom: 10px;
+}
+.list-check-height{
+  .el-checkbox{ line-height: 28px; margin-bottom: 14px; margin-top: 3px;}
 }

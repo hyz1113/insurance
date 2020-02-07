@@ -21,6 +21,23 @@
       ></base-baseform>
     </div>
 
+    <div class="clear ovh bgf" v-show="show">
+      <div class="pull-left list-check-height" style="width: 140px;">
+        <base-baseform
+                :formConfig="formConfigD1"
+                :formData="form"
+                labelWidth="15px"
+        ></base-baseform>
+      </div>
+      <div class="pull-left">
+        <base-baseform
+                :formConfig="formConfigD2"
+                :formData="form"
+                labelWidth="15px"
+        ></base-baseform>
+      </div>
+    </div>
+
     <div class="bgf p-10 m-t-10 no-bottom">
       <base-baseform
         :formConfig="formConfigE"
@@ -181,13 +198,14 @@ export default {
               }
             ]
           }
-        },
+        }
+      ],
+      formConfigD1: [
         {
           type: "checkbox",
           label: "",
           value: "insuranceType",
           tip: "",
-          hide: true,
           option: {
             disabled: false,
             data: [
@@ -202,9 +220,49 @@ export default {
               {
                 label: "意外险",
                 value: 3
+              },
+              {
+                label: "寿险",
+                value: 4
+              },
+              {
+                label: "养老险",
+                value: 5
               }
             ]
           }
+        }
+      ],
+      formConfigD2: [
+        {
+          type: "input",
+          label: "",
+          value: "otherInMoneyList.value1",
+          tip: "保额（万）[保障上限]"
+        },
+        {
+          type: "input",
+          label: "",
+          value: "otherInMoneyList.value2",
+          tip: "保额（万）[保障上限]"
+        },
+        {
+          type: "input",
+          label: "",
+          value: "otherInMoneyList.value3",
+          tip: "保额（万）[保障上限]"
+        },
+        {
+          type: "input",
+          label: "",
+          value: "otherInMoneyList.value4",
+          tip: "保额（万）[保障上限]"
+        },
+        {
+          type: "input",
+          label: "",
+          value: "otherInMoneyList.value5",
+          tip: "保额（万）[保障上限]"
         }
       ],
       formConfigE: [
@@ -264,12 +322,13 @@ export default {
         healthCheck: 1, //健康检查
         insuranceType: [] //商业保险类型
       },
+      show:false,
       tel: null //受邀手机号
     };
   },
   watch: {
     "form.otherInsurance"() {
-      this.formConfigD[1].hide = !this.formConfigD[1].hide;
+      this.show = !this.show;
     }
   },
   methods: {
