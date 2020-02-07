@@ -56,7 +56,7 @@ const CheckMoney = (rule, value, callback) => {
   callback();
 };
 const CheckInt = (rule, value, callback) => {
-  debugger;
+  //debugger;
   value = Number(value);
   if (!(value > 18 && value < 60)) {
     callback(new Error("年龄需大于18岁小于60岁!"));

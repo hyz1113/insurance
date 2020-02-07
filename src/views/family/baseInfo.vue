@@ -1114,11 +1114,12 @@
       };
     },
     mounted() {
-      const value = this.$route.query.value;
-      if (value.includes("2")) {
+      //debugger
+      const value = this.$store.state.hasChildNum;
+      if (value==1) {
         this.isFirst = true;
       }
-      if (value.includes("3")) {
+      if (value==2) {
         this.hasSecond = true;
         this.isFirst = true;
       }
@@ -1140,10 +1141,7 @@
     methods: {
       submit() {
         this.$router.push({
-          path: "/family/contrastList",
-          query: {
-            value: (this.isFirst || this.hasSecond) ? true : false
-          }
+          path: "/family/contrastList"
         });
       }
     }

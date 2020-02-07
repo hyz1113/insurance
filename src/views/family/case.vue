@@ -100,7 +100,7 @@
       ></base-tableFooter>
     </div>
 
-    <div class="m-t-10 row-align-center" v-if="!$route.query.value">
+    <div class="m-t-10 row-align-center" v-if="$store.state.hasChildNum">
       <el-button
               class="row-align-center"
               size="mini"

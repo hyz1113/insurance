@@ -63,7 +63,7 @@
         ></base-table>
       </div>
 
-      <div class="m-t-10 row-align-center" v-if="$route.query.value">
+      <div class="m-t-10 row-align-center" v-if="$store.state.hasChildNum">
         <el-button
           class="row-align-center"
           size="mini"
@@ -71,7 +71,7 @@
           @click="
             $router.push({
               path: '/children/healty/healtyContrastList',
-              query: { type: 'family' }
+              query: { type: 'family'}
             })
           "
           >少儿险产品对比
@@ -85,7 +85,7 @@
                 @click="
             $router.push({
               path: '/family/case',
-              query: { type: 'family',value:1 }
+              query: { type: 'family'}
             })
           "
         >下一步 规化方案
@@ -117,23 +117,28 @@ export default {
       tableConfig1: [
         {
           label: "公司",
-          value: "name"
+          value: "name",
+          width:'60px'
         },
         {
           label: "产品",
-          value: "prod"
+          value: "prod",
+
         },
         {
           label: "产品亮点",
-          value: "special"
+          value: "special",
+          width:'60px'
         },
         {
           label: "30岁（有社保）",
-          value: "special"
+          value: "special",
+          width:'100px'
         },
         {
           label: "等级",
-          value: "level"
+          value: "level",
+          width:'40px'
         }
       ],
       tableConfig2: [
