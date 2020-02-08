@@ -52,7 +52,7 @@
                 round
                 size="mini"
                 class="row-align-center"
-                @click="$router.push({ path: '/children/healty/economicCase' })"
+                @click="$router.push({ path: '/' })"
                 >该款产品在线销售通道----点击进入
               </el-button>
             </div>
@@ -88,7 +88,7 @@
                 round
                 size="mini"
                 class="row-align-center"
-                @click="$router.push({ path: '/children/healty/economicCase' })"
+                @click="$router.push({ path: '/' })"
                 >备选产品在线销售通道----点击进入
               </el-button>
             </div>
@@ -140,7 +140,7 @@
                 round
                 size="mini"
                 class="row-align-center"
-                @click="$router.push({ path: '/children/healty/economicCase' })"
+                @click="$router.push({ path: '/' })"
                 >该款产品在线销售通道----点击进入
               </el-button>
             </div>
@@ -184,7 +184,7 @@
                 round
                 size="mini"
                 class="row-align-center"
-                @click="$router.push({ path: '/children/healty/economicCase' })"
+                @click="$router.push({ path: '/' })"
                 >备选产品在线销售通道----点击进入
               </el-button>
             </div>
@@ -223,7 +223,7 @@
                 round
                 size="mini"
                 class="row-align-center"
-                @click="$router.push({ path: '/children/healty/economicCase' })"
+                @click="$router.push({ path: '/' })"
                 >备选产品在线销售通道----点击进入
               </el-button>
             </div>
@@ -259,7 +259,7 @@
                 round
                 size="mini"
                 class="row-align-center"
-                @click="$router.push({ path: '/children/healty/economicCase' })"
+                @click="$router.push({ path: '/' })"
                 >备选产品在线销售通道----点击进入
               </el-button>
             </div>
@@ -297,7 +297,7 @@
                 round
                 size="mini"
                 class="row-align-center"
-                @click="$router.push({ path: '/children/healty/economicCase' })"
+                @click="$router.push({ path: '/' })"
                 >备选产品在线销售通道----点击进入
               </el-button>
             </div>
@@ -320,10 +320,10 @@
 
 <script>
 export default {
-  name: "economicCase",
+  name: "securityCase",
   data() {
     return {
-      countCulumn: ["age0", "age5"],
+      countCulumn: ["age0"],
       tableConfig: [
         {
           label: "保险类型",
@@ -337,7 +337,7 @@ export default {
         {
           label: "保额",
           value: "money",
-          width: "40px"
+          width: "50px"
         },
         {
           label: "保障期限",
@@ -350,16 +350,13 @@ export default {
           width: "40px"
         },
         {
-          label: "年交保费（男宝）",
-          width: "40px",
+          label: "年交保费",
+          width: "60px",
           secondTh: [
             {
-              label: "0岁",
-              value: "age0"
-            },
-            {
-              label: "5岁",
-              value: "age5"
+              label: "男宝0岁",
+              value: "age0",
+              width: "30px"
             }
           ]
         }
@@ -372,7 +369,7 @@ export default {
           year: 12,
           yearValue: 12,
           age0: "23元",
-          age5: "23元"
+          age5: "24元"
         },
         {
           type: "中国人保",
@@ -381,10 +378,46 @@ export default {
           year: 12,
           yearValue: 12,
           age0: "23元",
-          age5: "78元"
+          age5: "24元"
         }
       ]
     };
-  }
+  },
+  mounted() {
+    let record1 = {
+      label: "大孩男宝10岁",
+      value: "age0",
+      width: "30px"
+    };
+    let record2 = {
+      label: "二孩男宝15岁",
+      value: "age5",
+      width: "30px"
+    };
+    switch (this.$store.state.hasChildNum) {
+      case 0:
+      {
+        this.countCulumn.push("age5");
+        this.tableConfig[5].secondTh[0].label = "男宝10岁";
+      }
+        break;
+      case 1:
+      {
+        this.tableConfig[5].secondTh[0] = {
+          label: "男宝10岁",
+          value: "age0",
+          width: "30px"
+        };
+      }
+        break;
+      case 2:
+      {
+        this.countCulumn.push("age5");
+        this.tableConfig[5].secondTh[0] = record1;
+        this.tableConfig[5].secondTh.push(record2);
+      }
+        break;
+    }
+  },
 };
 </script>
