@@ -10,9 +10,9 @@
       <p>
         需要对您的实际情况进行了解，问卷填答耗时3分钟左右，我们会做好信息保密.
       </p>
-      <router-link to="/" class="align-right">
-        <el-button type="text" plain size="mini">案例展示—点击查看</el-button>
-      </router-link>
+      <!--<router-link to="/" class="align-right">-->
+        <!--<el-button type="text" plain size="mini">案例展示—点击查看</el-button>-->
+      <!--</router-link>-->
     </div>
     <div class="m-t-10 bgf">
       <div class="bgf p-10">

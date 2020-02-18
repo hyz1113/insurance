@@ -387,7 +387,7 @@ export default {
   methods: {
     submit() {
       this.$router.push({
-        path: "/person/contrastList"
+        path: "/confirmPg"
       });
     }
   }

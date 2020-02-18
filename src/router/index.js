@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "@/views/Home.vue";
+import confirmPg from "@/views/confirmPage.vue";
 import partRouter from "./partRouter";
 
 Vue.use(VueRouter);
@@ -11,6 +12,14 @@ const routes = [
     component: Home,
     meta:{
       title:'保险方案推荐',
+    }
+  },
+  {
+    path: "/confirmPg",
+    name: "confirmpg",
+    component: confirmPg,
+    meta:{
+      title:'安心选',
     }
   },
   ...partRouter

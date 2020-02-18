@@ -152,7 +152,7 @@ export default {
     },
     submit() {
       this.$router.push({
-        path: "/children/edu/eduContrastList"
+        path: "/confirmPg"
       });
     }
   }

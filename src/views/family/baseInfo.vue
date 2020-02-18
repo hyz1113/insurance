@@ -1140,7 +1140,7 @@ export default {
   methods: {
     submit() {
       this.$router.push({
-        path: "/family/contrastList"
+        path: "/confirmPg"
       });
     }
   }
