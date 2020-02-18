@@ -13,7 +13,7 @@
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
-      <base-inputTel></base-inputTel>
+      <base-inputTel @getTel="getTel"></base-inputTel>
 
       <div class="m-t-10 row-align-center">
         <el-button
@@ -82,13 +82,13 @@ export default {
         {
           type: "input",
           label: "宝贝昵称",
-          value: "name",
+          value: "babynickname",
           tip: "请输入宝贝昵称"
         },
         {
           type: "radio",
           label: "性别",
-          value: "sex",
+          value: "babygender",
           tip: "请选择性别",
           option: {
             disabled: false,
@@ -107,34 +107,24 @@ export default {
         {
           type: "input",
           label: "年龄",
-          value: "age",
+          value: "babyage",
           tip: "未满1周岁填0岁"
         },
         {
           type: "input",
           label: "家庭税后收入约（万/年）",
-          value: "familyIncome",
+          value: "familyincome",
           tip: "请输入家庭税后收入"
         }
       ],
 
       form: {
-        name: "",
-        sex: 1,
-        age: 1,
-        hasOldchild: 1, //有无老小
-        jobs: 1,
-        salary: 1000, //工资
-        medicalSafe: 1, //医保
-        payHouse: 1, //买房支出
-        otherPay: 1, //其他支出
-        otherInsurance: 2, //有无买其他保险
-        othermedical: 2, //有无其他疾病
-        healthCheck: 1, //健康检查
-        insuranceType: [] //商业保险类型
+        babynickname:null,
+        babygender:1,
+        familyincome:null,
+        invitenumber:null,
+        babyage:null,
       },
-
-      tel: null //受邀手机号
     };
   },
   watch: {
@@ -143,17 +133,25 @@ export default {
     }
   },
   methods: {
-    checkTel() {
-      if (!this.tel) {
-        this.$message("请输入受邀手机号！");
-      } else {
-        console.log("dd");
-      }
+    getTel(tel) {
+      this.form.invitenumber=tel;
     },
     submit() {
-      this.$router.push({
-        path: "/confirmPg"
-      });
+      let that=this;
+      this.$axios.post('/api', this.form).then(
+        data => {
+          debugger
+          console.log(data);
+          that.$router.push({
+            path: "/confirmPg"
+          });
+        },
+        err => {
+          console.log(err);
+        }
+      );
+
+
     }
   }
 };

@@ -77,7 +77,7 @@
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
-      <base-inputTel></base-inputTel>
+      <base-inputTel @getTel="getTel"></base-inputTel>
 
       <div class="m-t-10 row-align-center">
         <el-button
@@ -125,13 +125,13 @@ export default {
         {
           type: "input",
           label: "昵称",
-          value: "name",
+          value: "mynickname",
           tip: "请输入昵称"
         },
         {
           type: "radio",
           label: "性别",
-          value: "sex",
+          value: "mygender",
           tip: "请选择性别",
           option: {
             disabled: false,
@@ -150,13 +150,13 @@ export default {
         {
           type: "input",
           label: "年龄",
-          value: "age",
+          value: "myage",
           tip: "请输入年龄"
         },
         {
           type: "select",
           label: "职业发展预期",
-          value: "inComestable",
+          value: "jobfeature",
           tip: "请选择职业发展预期",
           hide: false,
           option: {
@@ -180,7 +180,7 @@ export default {
         {
           type: "input",
           label: "税后收入（万/年）",
-          value: "income",
+          value: "atincome",
           tip: "请输入税后收入"
         }
       ],
@@ -188,7 +188,7 @@ export default {
         {
           type: "radio",
           label: "有无社保/新农村医疗",
-          value: "medicalSafe",
+          value: "socialsecurity",
           option: {
             disabled: false,
             data: [
@@ -198,7 +198,7 @@ export default {
               },
               {
                 label: "无",
-                value: 2
+                value: 0
               }
             ]
           }
@@ -208,7 +208,7 @@ export default {
         {
           type: "input",
           label: "房贷或房租支出（万/年）",
-          value: "payHouse",
+          value: "housingex",
           tip: "请输入"
         }
       ],
@@ -216,7 +216,7 @@ export default {
         {
           type: "input",
           label: "其他贷款偿付支出（万/年）",
-          value: "otherPay",
+          value: "otherloan",
           tip: "其他贷款偿付支出"
         }
       ],
@@ -224,7 +224,7 @@ export default {
         {
           type: "radio",
           label: "有无买过商业保险",
-          value: "otherInsurance",
+          value: "comminsurance",
           tip: "有无买过商业保险",
           option: {
             disabled: false,
@@ -235,7 +235,7 @@ export default {
               },
               {
                 label: "无",
-                value: 2
+                value: 0
               }
             ]
           }
@@ -252,23 +252,23 @@ export default {
             data: [
               {
                 label: "重疾险",
-                value: 1
+                value: 'seriousillness'
               },
               {
                 label: "消费型医疗险",
-                value: 2
+                value: 'consumermedical'
               },
               {
                 label: "意外险",
-                value: 3
+                value: 'accident'
               },
               {
                 label: "寿险",
-                value: 4
+                value: 'life'
               },
               {
                 label: "养老险",
-                value: 5
+                value: 'endowment'
               }
             ]
           }
@@ -278,31 +278,31 @@ export default {
         {
           type: "input",
           label: "",
-          value: "otherInMoneyList.value1",
+          value: 'seriousillness',
           tip: "保额（万）[保障上限]"
         },
         {
           type: "input",
           label: "",
-          value: "otherInMoneyList.value2",
+          value: "consumermedical",
           tip: "保额（万）[保障上限]"
         },
         {
           type: "input",
           label: "",
-          value: "otherInMoneyList.value3",
+          value: "accident",
           tip: "保额（万）[保障上限]"
         },
         {
           type: "input",
           label: "",
-          value: "otherInMoneyList.value4",
+          value: "life",
           tip: "保额（万）[保障上限]"
         },
         {
           type: "input",
           label: "",
-          value: "otherInMoneyList.value5",
+          value: "endowment",
           tip: "保额（万）[保障上限]"
         }
       ],
@@ -310,7 +310,7 @@ export default {
         {
           type: "radio",
           label: "有无慢性病或家族遗传病史",
-          value: "othermedical",
+          value: "chronicdisease",
           mesg: "（评估未来健康风险值）",
           option: {
             disabled: false,
@@ -321,7 +321,7 @@ export default {
               },
               {
                 label: "无",
-                value: 2
+                value: 0
               }
             ]
           }
@@ -331,7 +331,7 @@ export default {
         {
           type: "radio",
           label: "体检结果是否有异常",
-          value: "healthCheck",
+          value: "physicalexam",
           mesg: "（最近一次）",
           option: {
             disabled: false,
@@ -342,31 +342,39 @@ export default {
               },
               {
                 label: "无",
-                value: 2
+                value: 0
               }
             ]
           }
         }
       ],
       form: {
-        name: "",
-        sex: 1,
-        age: 1,
-        salary: 1000, //工资
-        medicalSafe: 1, //医保
-        payHouse: 1, //买房支出
-        otherPay: 1, //其他支出
-        otherInsurance: 2, //有无买其他保险
-        othermedical: 2, //有无其他疾病
-        healthCheck: 1, //健康检查
-        insuranceType: [], //商业保险类型
-        inComestable: null, //职业规划
+        mynickname: "",//本人昵称
+        mygender:1,// 本人性别
+        myage: 1,//
+        jobfeature: 1000, //职业发展规划
+        atincome:null,
+        socialsecurity:1,
+        housingex:null,
+        otherloan:null,
+        comminsurance:null,
+        chronicdisease:null,
+        physicalexam:null,
+        bsdetail:{
+          seriousillness:'',
+          consumermedical:'',
+          accident:'',
+          life:'',
+          endowment:''
+        },//重疾病险
+        invitenumber:null,
+        insuranceType:[],
         otherInMoneyList: {
-          value1: "",
-          value2: "",
-          value3: "",
-          value4: "",
-          value5: ""
+          seriousillness:'',
+          consumermedical:'',
+          accident:'',
+          life:'',
+          endowment:''
         } //保险的额度
       },
       rules: {
@@ -375,20 +383,45 @@ export default {
           trigger: "blur"
         }
       },
-      show: false,
-      tel: null //受邀手机号
+      show: false
     };
   },
   watch: {
-    "form.otherInsurance"() {
+    "form.comminsurance"() {
       this.show = !this.show;
     }
   },
   methods: {
+    getTel(tel) {
+      this.form.invitenumber=tel;
+    },
     submit() {
-      this.$router.push({
-        path: "/confirmPg"
-      });
+      let sltKey=Object.keys(this.form.otherInMoneyList);
+      let that=this;
+      sltKey.forEach(item=>{
+        if(that.form[item]){
+          that.form.bsdetail[item]=that.form[item];
+          delete that.form[item];
+        }
+      })
+      let newForm=JSON.parse(JSON.stringify(this.form));
+      delete newForm.insuranceType;
+      delete newForm.otherInMoneyList;
+      //return;
+      this.$axios.post('/api', newForm).then(
+        data => {
+          debugger
+          console.log(data);
+          that.$router.push({
+            path: "/confirmPg"
+          });
+        },
+        err => {
+          console.log(err);
+        }
+      );
+
+
     }
   }
 };

@@ -55,7 +55,7 @@
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
-      <base-inputTel></base-inputTel>
+      <base-inputTel @getTel="getTel"></base-inputTel>
 
       <div class="m-t-10 row-align-center">
         <el-button
@@ -107,13 +107,13 @@ export default {
         {
           type: "input",
           label: "宝贝昵称",
-          value: "name",
+          value: "babynickname",
           tip: "请输入宝贝昵称"
         },
         {
           type: "radio",
           label: "性别",
-          value: "sex",
+          value: "babygender",
           tip: "请选择性别",
           option: {
             disabled: false,
@@ -132,13 +132,13 @@ export default {
         {
           type: "input",
           label: "年龄",
-          value: "age",
+          value: "babyage",
           tip: "未满1周岁填0岁"
         },
         {
           type: "radio",
           label: "有无一老一小险",
-          value: "hasOldchild",
+          value: "oldsmallinsure",
           tip: "请选择有无一老一小险",
           option: {
             disabled: false,
@@ -149,7 +149,7 @@ export default {
               },
               {
                 label: "无",
-                value: 2
+                value: 0
               }
             ]
           }
@@ -157,7 +157,7 @@ export default {
         {
           type: "select",
           label: "家庭收入稳定性",
-          value: "inComestable",
+          value: "householdincomestab",
           tip: "请选择家庭收入稳定性",
           hide: false,
           option: {
@@ -183,7 +183,7 @@ export default {
         {
           type: "radio",
           label: "有无买过商业保险",
-          value: "otherInsurance",
+          value: "comminsurance",
           tip: "有无买过商业保险",
           option: {
             disabled: false,
@@ -194,7 +194,7 @@ export default {
               },
               {
                 label: "无",
-                value: 2
+                value: 0
               }
             ]
           }
@@ -211,23 +211,23 @@ export default {
             data: [
               {
                 label: "重疾险",
-                value: 1
+                value: 'seriousillness'
               },
               {
                 label: "消费型医疗险",
-                value: 2
+                value: 'consumermedical'
               },
               {
                 label: "意外险",
-                value: 3
+                value: 'accident'
               },
               {
                 label: "寿险",
-                value: 4
+                value: 'life'
               },
               {
                 label: "养老险",
-                value: 5
+                value: 'endowment'
               }
             ]
           }
@@ -237,31 +237,31 @@ export default {
         {
           type: "input",
           label: "",
-          value: "otherInMoneyList.value1",
+          value: 'seriousillness',
           tip: "保额（万）[保障上限]"
         },
         {
           type: "input",
           label: "",
-          value: "otherInMoneyList.value2",
+          value: "consumermedical",
           tip: "保额（万）[保障上限]"
         },
         {
           type: "input",
           label: "",
-          value: "otherInMoneyList.value3",
+          value: "accident",
           tip: "保额（万）[保障上限]"
         },
         {
           type: "input",
           label: "",
-          value: "otherInMoneyList.value4",
+          value: "life",
           tip: "保额（万）[保障上限]"
         },
         {
           type: "input",
           label: "",
-          value: "otherInMoneyList.value5",
+          value: "endowment",
           tip: "保额（万）[保障上限]"
         }
       ],
@@ -269,7 +269,7 @@ export default {
         {
           type: "radio",
           label: "有无慢性病或家族遗传病史",
-          value: "othermedical",
+          value: "chronicdisease",
           mesg: "（评估未来健康风险值）",
           option: {
             disabled: false,
@@ -280,7 +280,7 @@ export default {
               },
               {
                 label: "无",
-                value: 2
+                value: 0
               }
             ]
           }
@@ -290,7 +290,7 @@ export default {
         {
           type: "radio",
           label: "体检结果是否有异常",
-          value: "healthCheck",
+          value: "physicalexam",
           mesg: "（最近一次）",
           option: {
             disabled: false,
@@ -301,48 +301,76 @@ export default {
               },
               {
                 label: "无",
-                value: 2
+                value: 0
               }
             ]
           }
         }
       ],
       form: {
-        name: "",
-        sex: 1,
-        age: 1,
-        hasOldchild: 1, //有无老小
-        jobs: 1,
-        salary: 1000, //工资
-        medicalSafe: 1, //医保
-        payHouse: 1, //买房支出
-        otherPay: 1, //其他支出
-        otherInsurance: 2, //有无买其他保险
-        othermedical: 2, //有无其他疾病
-        healthCheck: 1, //健康检查
-        insuranceType: [] //商业保险类型
+        babynickname: "",
+        babygender: 1,
+        babyage:null,
+        oldsmallinsure:null,
+        householdincomestab:null,
+        comminsurance:null,
+        chronicdisease:null,
+        physicalexam:null,
+        bsdetail:{
+          seriousillness:'',
+          consumermedical:'',
+          accident:'',
+          life:'',
+          endowment:''
+        },//重疾病险
+        invitenumber:null,
+
+        insuranceType: [], //商业保险类型
+        otherInMoneyList: {
+          seriousillness:'',
+          consumermedical:'',
+          accident:'',
+          life:'',
+          endowment:''
+        } //保险的额度
       },
-      show: false,
-      tel: null //受邀手机号
+      show: false
     };
   },
   watch: {
-    "form.otherInsurance"() {
+    "form.comminsurance"() {
       this.show = !this.show;
     }
   },
   methods: {
-    checkTel() {
-      if (!this.tel) {
-        this.$message("请输入受邀手机号！");
-      } else {
-        console.log("dd");
-      }
+    getTel(tel) {
+      this.form.invitenumber=tel;
     },
     submit() {
-      this.$router.push({
-        path: "/confirmPg"
-      });
+      let sltKey=Object.keys(this.form.otherInMoneyList);
+      let that=this;
+      sltKey.forEach(item=>{
+        if(that.form[item]){
+          that.form.bsdetail[item]=that.form[item];
+          delete that.form[item];
+        }
+      })
+      let newForm=JSON.parse(JSON.stringify(this.form));
+      delete newForm.insuranceType;
+      delete newForm.otherInMoneyList;
+      debugger
+      this.$axios.post('/api', newForm).then(
+        data => {
+          debugger
+          console.log(data);
+          that.$router.push({
+            path: "/confirmPg"
+          });
+        },
+        err => {
+          console.log(err);
+        }
+      );
     }
   }
 };
