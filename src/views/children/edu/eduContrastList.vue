@@ -2,154 +2,181 @@
   <div>
     <div class="bgf">
       <el-divider>
-        <el-link type="info" plain size="mini">少儿教育金规划</el-link>
+        <el-link type="info" plain size="mini">保险产品对比流程</el-link>
       </el-divider>
     </div>
     <div class="bgf p-10">
-      <div class="title"><b class="b">规划前言</b></div>
-      <div class="article-block">
-        <p>
-          保险规划作为一个理财行为，本质上就是解决我们人生中可能面临的各种经济问题。
-        </p>
-        <p>
-          教育金保险，简单来说就是提前为孩子存一笔钱，这笔钱可用于解决孩子在不同阶段的教育费用。通常是根据自己的保费预算和孩子未来受教育的预期来选择险种和金额。
-        </p>
-        <p>
-          也就是说，教育金保险是为孩子教育设立一个专门的账户，最大的特点是强制储蓄，专款专用。一旦为孩子建立了教育保险计划，就必须每年存入约定的金额，从而保证这个储蓄计划一定能够完成。
-        </p>
-        <p>
-          另外，教育金还有一项区别于其他理财产品的功能：保费豁免。保费豁免，指一旦投保的家长遭受不幸，身故或者全残，保险公司将豁免所有未交保费，保单原应享有权益的子女，可以继续得到保障和资助。没有保费豁免的教育金都不能买。
-        </p>
-        <p>
-          作为家庭支柱，大择最担心的不是将来负担不起孩子上学的费用，而是如果有一天，万一不幸发生了点什么，没有办法供孩子上学。所以在给孩子买教育金时，是否有保费豁免也是一个着重关注点。
-        </p>
-        <p><b>教育金保险不是必须品，优先级一定要靠后。</b></p>
-
-        <p>
-          <b>规划结论：</b>
-          根据您的情况，我们的初步建议是：<b class="g-error">暂时不要考虑</b>
-          教育金保险。
-        </p>
+      <div class="title">1、对比流程采用的保险产品来自以下保险公司。</div>
+      <div class="p-10">
+        <img class="w-100-c" src="../../../assets/1.png" />
       </div>
     </div>
 
     <div class="bgf p-10 m-t-10">
-      <div class="title"><b class="b">教育金规划所需险种概述</b></div>
+      <div class="title">2、知识普及：</div>
       <div class="article-block">
-        <p>
-          1、传统教育金：在保险金的返还上，完全是针对教育阶段而定，通常会在孩子进入高中、
-          大学两个重要时间节点开始每年返还保险金，到孩子大学毕业或创业阶段再一次性返还一笔费用，保证孩子在每一个重要的教育阶段，都能获得一笔稳定的资金支持。
-        </p>
-        <p>
-          2、新型教育金：通常具有较强的投资理财功能，属于理财型保险，如万能险、投连险等，不仅可以作为孩子上学期间的教育费用，也可以在结婚时做婚嫁金，年老时转换为养老金。
-        </p>
+        在中国开办的保险公司均由中国银保监会托底，中国政府做信任背书，均有偿付能力，不存在破产无法兑现偿付的问题。真实的差别是产品保障范围、价格及附加服务的差异。本规划工具采用的对比产品均为目前市场上销售的合规产品。
+      </div>
+    </div>
+
+    <div class="bgf p-10 m-t-10">
+      <div class="title">3、市场在售教育金产品对比（收益率倍数排名）:
+      </div>
+      <div class="table-block">
+        <el-button type="primary" round size="mini">下载本表</el-button>
+      </div>
+      <div class="m-t-10">
+        <base-table
+                :tableConfig="tableConfig"
+                :tableData="tableData"
+        ></base-table>
+      </div>
+    </div>
+
+    <div class="bgf p-10 m-t-10">
+      <div class="title">4、市场在售教育金对比（性价比排名）：</div>
+      <div class="table-block row-align-center">
+        <el-link class="title text-center row-align-center" type="warning"
+        >少儿百万医疗险性价比排名
+        </el-link>
+      </div>
+      <div class="table-block">
+        <el-button type="primary" round size="mini">下载本表</el-button>
+      </div>
+      <div class="m-t-10">
+        <base-table
+                :tableConfig="tableConfig1"
+                :tableData="tableData1"
+        ></base-table>
+      </div>
+      <div class="m-t-10 row-align-center">
+        <el-button
+                class="row-align-center"
+                size="mini"
+                type="success"
+                @click="$router.push({path:'/children/edu/case'})"
+        >下一步 规划方案
+        </el-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "contrastList",
-  data() {
-    return {
-      tableConfig: [
-        {
-          label: "公司",
-          value: "name"
-        },
-        {
-          label: "产品",
-          value: "prod"
-        },
-        {
-          label: "0岁男宝宝保障50万(保障期限)",
-          value: "person"
-        },
-        {
-          label: "保费",
-          value: "person"
+  export default {
+    name: "contrastList",
+    data() {
+      return {
+        tableConfig: [
+          {
+            label: "产品名称",
+            value: "prod",
+            width:'60'
+          },
+          {
+            label: "公司",
+            value: "name",
+            width:'60'
+          },
+          {
+            label: "投入保费",
+            value: "price",
+
+          },
+          {
+            label: "领取总额",
+            value: "total",
+            width:'70'
+          },
+          {
+            label: "年化收益",
+            value: "income",
+            width:'60'
+          }
+        ],
+        tableConfig1: [
+          {
+            label: "产品名称",
+            value: "prod"
+          },
+          {
+            label: "承保公司",
+            value: "name"
+          },
+          {
+            label: "领取时间",
+            value: "time"
+          },
+          {
+            label: "等级",
+            value: "level"
+          }
+        ],
+        tableData: [
+          {
+            prod: "天天向上少儿年金保险",
+            name: "信美人寿相互保险社",
+            price: "7600*10年=76000",
+            total: "160000",
+            income: "11.05%",
+          },
+          {
+            prod: "天天向上少儿年金保险",
+            name: "信美人寿相互保险社",
+            price: "7600*10年=76000",
+            total: "160000",
+            income: "11.05%",
+          },
+          {
+            prod: "天天向上少儿年金保险",
+            name: "信美人寿相互保险社",
+            price: "7600*10年=76000",
+            total: "160000",
+            income: "11.05%",
+          },
+          {
+            prod: "天天向上少儿年金保险",
+            name: "信美人寿相互保险社",
+            price: "7600*10年=76000",
+            total: "160000",
+            income: "11.05%",
+          }
+        ],
+        tableData1: [
+          {
+            name: "同方全球",
+            prod: "好医保·长期医疗（新版）",
+            time: "5年后可领取 满期20岁",
+            level: "A"
+          },
+          {
+            name: "同方全球",
+            prod: "好医保·长期医疗（新版）",
+            time: "5年后可领取 满期20岁",
+            level: "A"
+          },
+          {
+            name: "同方全球",
+            prod: "好医保·长期医疗（新版）",
+            time: "5年后可领取 满期20岁",
+            level: "A"
+          },
+          {
+            name: "同方全球",
+            prod: "好医保·长期医疗（新版）",
+            time: "5年后可领取 满期20岁",
+            level: "A"
+          }
+        ]
+      };
+    },
+    methods: {
+      tableRowClassName({ rowIndex }) {
+        if (rowIndex % 2 == 0) {
+          return "event-row";
         }
-      ],
-      tableConfig1: [
-        {
-          label: "公司",
-          value: "name"
-        },
-        {
-          label: "产品",
-          value: "prod"
-        },
-        {
-          label: "产品亮点",
-          value: "special"
-        },
-        {
-          label: "等级",
-          value: "level"
-        }
-      ],
-      tableData: [
-        {
-          name: "中国人保",
-          prod: "好医保·长期医疗（新版）",
-          person: "256"
-        },
-        {
-          name: "复星联合健康",
-          prod: "超越保长期医疗险计划1（专家版）",
-          person: "316"
-        },
-        {
-          name: "微保&泰康人寿",
-          prod: "微医保·长期医疗险",
-          person: "196"
-        },
-        {
-          name: "众慧相互",
-          prod: "慧享e生",
-          person: "256"
-        }
-      ],
-      tableData1: [
-        {
-          name: "中国人保",
-          prod: "好医保·长期医疗（新版）",
-          person: "256",
-          special: "性价比高",
-          level: "A"
-        },
-        {
-          name: "中国人保",
-          prod: "好医保·长期医疗（新版）",
-          person: "256",
-          special: "性价比高",
-          level: "A"
-        },
-        {
-          name: "中国人保",
-          prod: "好医保·长期医疗（新版）",
-          person: "256",
-          special: "性价比高",
-          level: "A"
-        },
-        {
-          name: "中国人保",
-          prod: "好医保·长期医疗（新版）",
-          person: "256",
-          special: "性价比高",
-          level: "A"
-        }
-      ]
-    };
-  },
-  methods: {
-    tableRowClassName({ rowIndex }) {
-      if (rowIndex % 2 == 0) {
-        return "event-row";
+        return "";
       }
-      return "";
     }
-  }
-};
+  };
 </script>

@@ -8,7 +8,10 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: Home
+    component: Home,
+    meta:{
+      title:'保险方案推荐',
+    }
   },
   ...partRouter
 ];
@@ -24,5 +27,13 @@ const router = new VueRouter({
     };
   }
 });
+
+
+// 路由拦截,设置页面显示title
+router.beforeEach((to, from, next) => {
+  document.title = to.matched[ 0 ].meta.title;
+  next();
+})
+
 
 export default router;

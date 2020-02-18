@@ -152,7 +152,7 @@ export default {
     },
     submit() {
       this.$router.push({
-        path: "/children/healty/healtyContrastList"
+        path: "/children/edu/eduContrastList"
       });
     }
   }
