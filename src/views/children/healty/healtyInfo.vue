@@ -398,10 +398,10 @@
 
         let dataParam = {}; //重置新的提交字段名
         for (let i in newForm) {
-          if (i == "bsdetail") {
-            dataParam[`${i}`] = newForm[i];
-            continue;
-          }
+          // if (i == "bsdetail") {
+          //   dataParam[`${i}`] = newForm[i];
+          //   continue;
+          // }
           dataParam[`baby.${i}`] = newForm[i];
         }
         this.$axios.post("/api", dataParam).then(

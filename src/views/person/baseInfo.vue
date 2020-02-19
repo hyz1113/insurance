@@ -278,30 +278,35 @@
           {
             type: "input",
             label: "",
+            disabled:true,
             value: "seriousillness",
             tip: "保额（万）[保障上限]"
           },
           {
             type: "input",
             label: "",
+            disabled:true,
             value: "consumermedical",
             tip: "保额（万）[保障上限]"
           },
           {
             type: "input",
             label: "",
+            disabled:true,
             value: "accident",
             tip: "保额（万）[保障上限]"
           },
           {
             type: "input",
             label: "",
+            disabled:true,
             value: "life",
             tip: "保额（万）[保障上限]"
           },
           {
             type: "input",
             label: "",
+            disabled:true,
             value: "endowment",
             tip: "保额（万）[保障上限]"
           }
@@ -428,10 +433,6 @@
 
         let dataParam = {}; //重置新的提交字段名
         for (let i in newForm) {
-          if (i == "bsdetail") {
-            dataParam[`${i}`] = newForm[i];
-            continue;
-          }
           dataParam[`my.${i}`] = newForm[i];
         }
 
