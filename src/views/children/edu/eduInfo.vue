@@ -148,7 +148,7 @@
           // }
           dataParam[`baby.${i}`] = newForm[i];
         }
-        this.$axios.post("/api", dataParam).then(
+        this.$axios.post("/api", this.$qs.stringify(dataParam)).then(
           data => {
             console.log(data);
             that.$router.push({

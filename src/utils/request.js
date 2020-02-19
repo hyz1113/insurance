@@ -1,4 +1,5 @@
 import axios from "axios";
+import qs from "qs";
 const get = function(url, params = {}) {
   return new Promise((resolve, reject) => {
     axios
@@ -26,4 +27,4 @@ const post = function(url, data = {}) {
     );
   });
 };
-export { get, post };
+export { get, post,qs };

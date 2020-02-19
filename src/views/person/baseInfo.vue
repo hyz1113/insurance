@@ -393,8 +393,22 @@
     },
     watch: {
       "form.comminsurance"() {
-        this.show = !this.show;
+        this.show = this.form.comminsurance?true:false;
         this.resiteBsdetail();
+      },
+      "form.insuranceType"() {
+        let allValue = Object.values(this.form.insuranceType);
+        this.formConfigD2.map(item => {
+          item.disabled = true;
+        });
+
+        this.formConfigD2.map(item => {
+          allValue.forEach(im => {
+            if (item.value == im) {
+              item.disabled = false;
+            }
+          });
+        });
       }
     },
     methods: {
@@ -431,12 +445,12 @@
         delete newForm.insuranceType;
         delete newForm.otherInMoneyList;
 
-        let dataParam = {}; //重置新的提交字段名
+        let dataParam={}; //重置新的提交字段名
         for (let i in newForm) {
           dataParam[`my.${i}`] = newForm[i];
         }
 
-        this.$axios.post("/api", dataParam).then(
+        this.$axios.post("/api", this.$qs.stringify(dataParam)).then(
           data => {
             that.$router.push({
               path: "/confirmPg"

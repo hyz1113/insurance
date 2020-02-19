@@ -1259,7 +1259,7 @@
       submit() {
         let that = this;
         let formData = { ...this.dealFamily(this.formDatafamily, "family"), ...this.dealPerson(this.formData, "my"), ...this.dealPerson(this.formDataff, "spouse"), ...this.dealPerson(this.formDataffChild, "baby"), ...this.dealPerson(this.formDataScChild, "secbaby") };
-        this.$axios.post("/api", formData).then(
+        this.$axios.post("/api", this.$qs.stringify(formData)).then(
           data => {
             that.$router.push({
               path: "/confirmPg"
