@@ -12,7 +12,7 @@ import "element-ui/lib/theme-chalk/index.css";
 import "@/components";
 
 Vue.use(ElementUI);
-Vue.use(axios);
+
 Vue.prototype.$get = get;
 Vue.prototype.$post = post;
 Vue.prototype.$axios = axios;

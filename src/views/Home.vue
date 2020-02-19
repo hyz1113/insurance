@@ -81,7 +81,7 @@
           case 2:{typeSel='child'} break;
           case 3:{typeSel='faimly'} break;
         }
-        this.$store.dispatch('modifyType',typeSel);
+        this.$store.dispatch('resiteType',typeSel);
       },
       "form.type"() {
         const value=Math.max.apply(null,this.form.type);
