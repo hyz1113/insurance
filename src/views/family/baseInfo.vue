@@ -5,41 +5,41 @@
         <el-link type="info" plain size="mini">个人基本信息</el-link>
       </el-divider>
       <base-baseform
-        :formConfig="formConfig"
-        :formData="formData"
-        labelWidth="90px"
+              :formConfig="formConfig"
+              :formData="formData"
+              labelWidth="90px"
       ></base-baseform>
       <base-baseform
-        :formConfig="formConfigA"
-        :formData="formData"
-        labelWidth="145px"
+              :formConfig="formConfigA"
+              :formData="formData"
+              labelWidth="145px"
       ></base-baseform>
       <div class="clear ovh" v-show="show">
         <div class="pull-left list-check-height" style="width: 140px;">
           <base-baseform
-            :formConfig="formConfigA1"
-            :formData="formData"
-            labelWidth="15px"
+                  :formConfig="formConfigA1"
+                  :formData="formData"
+                  labelWidth="15px"
           ></base-baseform>
         </div>
         <div class="pull-left">
           <base-baseform
-            :formConfig="formConfigA2"
-            :formData="formData"
-            labelWidth="15px"
+                  :formConfig="formConfigA2"
+                  :formData="formData"
+                  labelWidth="15px"
           ></base-baseform>
         </div>
       </div>
 
       <base-baseform
-        :formConfig="formConfigB"
-        :formData="formData"
-        labelWidth="180px"
+              :formConfig="formConfigB"
+              :formData="formData"
+              labelWidth="180px"
       ></base-baseform>
       <base-baseform
-        :formConfig="formConfigC"
-        :formData="formData"
-        labelWidth="180px"
+              :formConfig="formConfigC"
+              :formData="formData"
+              labelWidth="180px"
       ></base-baseform>
     </div>
     <div class="bgf p-10 m-t-10">
@@ -47,37 +47,37 @@
         <el-link type="info" plain size="mini">配偶基本信息</el-link>
       </el-divider>
       <base-baseform
-        :formConfig="formConfigff"
-        :formData="formDataff"
-        labelWidth="80px"
+              :formConfig="formConfigff"
+              :formData="formDataff"
+              labelWidth="80px"
       ></base-baseform>
       <base-baseform
-        :formConfig="formConfigffA"
-        :formData="formDataff"
-        labelWidth="145px"
+              :formConfig="formConfigffA"
+              :formData="formDataff"
+              labelWidth="145px"
       ></base-baseform>
 
       <div class="clear ovh" v-show="showff">
         <div class="pull-left list-check-height" style="width: 140px;">
           <base-baseform
-            :formConfig="formConfigffA1"
-            :formData="formDataff"
-            labelWidth="15px"
+                  :formConfig="formConfigffA1"
+                  :formData="formDataff"
+                  labelWidth="15px"
           ></base-baseform>
         </div>
         <div class="pull-left">
           <base-baseform
-            :formConfig="formConfigffA2"
-            :formData="formDataff"
-            labelWidth="15px"
+                  :formConfig="formConfigffA2"
+                  :formData="formDataff"
+                  labelWidth="15px"
           ></base-baseform>
         </div>
       </div>
 
       <base-baseform
-        :formConfig="formConfigffB"
-        :formData="formDataff"
-        labelWidth="180px"
+              :formConfig="formConfigffB"
+              :formData="formDataff"
+              labelWidth="180px"
       ></base-baseform>
     </div>
 
@@ -86,35 +86,35 @@
         <el-link type="info" plain size="mini">大孩基本信息</el-link>
       </el-divider>
       <base-baseform
-        :formConfig="formConfigffChild"
-        :formData="formDataffChild"
-        labelWidth="80px"
+              :formConfig="formConfigffChild"
+              :formData="formDataffChild"
+              labelWidth="80px"
       ></base-baseform>
       <base-baseform
-        :formConfig="formConfigffChildA"
-        :formData="formDataffChild"
-        labelWidth="145px"
+              :formConfig="formConfigffChildA"
+              :formData="formDataffChild"
+              labelWidth="145px"
       ></base-baseform>
       <div class="clear ovh" v-show="showffChild">
         <div class="pull-left list-check-height" style="width: 140px;">
           <base-baseform
-            :formConfig="formConfigffChildA1"
-            :formData="formDataffChild"
-            labelWidth="15px"
+                  :formConfig="formConfigffChildA1"
+                  :formData="formDataffChild"
+                  labelWidth="15px"
           ></base-baseform>
         </div>
         <div class="pull-left">
           <base-baseform
-            :formConfig="formConfigffChildA2"
-            :formData="formDataffChild"
-            labelWidth="15px"
+                  :formConfig="formConfigffChildA2"
+                  :formData="formDataffChild"
+                  labelWidth="15px"
           ></base-baseform>
         </div>
       </div>
       <base-baseform
-        :formConfig="formConfigffChildB"
-        :formData="formDataffChild"
-        labelWidth="180px"
+              :formConfig="formConfigffChildB"
+              :formData="formDataffChild"
+              labelWidth="180px"
       ></base-baseform>
     </div>
 
@@ -123,35 +123,35 @@
         <el-link type="info" plain size="mini">二孩基本信息</el-link>
       </el-divider>
       <base-baseform
-        :formConfig="formConfigScChild"
-        :formData="formDataScChild"
-        labelWidth="80px"
+              :formConfig="formConfigScChild"
+              :formData="formDataScChild"
+              labelWidth="80px"
       ></base-baseform>
       <base-baseform
-        :formConfig="formConfigScChildA"
-        :formData="formDataScChild"
-        labelWidth="145px"
+              :formConfig="formConfigScChildA"
+              :formData="formDataScChild"
+              labelWidth="145px"
       ></base-baseform>
       <div class="clear ovh" v-show="showScChild">
         <div class="pull-left list-check-height" style="width: 140px;">
           <base-baseform
-            :formConfig="formConfigScChildA1"
-            :formData="formDataScChild"
-            labelWidth="15px"
+                  :formConfig="formConfigScChildA1"
+                  :formData="formDataScChild"
+                  labelWidth="15px"
           ></base-baseform>
         </div>
         <div class="pull-left">
           <base-baseform
-            :formConfig="formConfigScChildA2"
-            :formData="formDataScChild"
-            labelWidth="15px"
+                  :formConfig="formConfigScChildA2"
+                  :formData="formDataScChild"
+                  labelWidth="15px"
           ></base-baseform>
         </div>
       </div>
       <base-baseform
-        :formConfig="formConfigScChildB"
-        :formData="formDataScChild"
-        labelWidth="180px"
+              :formConfig="formConfigScChildB"
+              :formData="formDataScChild"
+              labelWidth="180px"
       ></base-baseform>
     </div>
 
@@ -160,29 +160,29 @@
         <el-link type="info" plain size="mini">家庭综合项</el-link>
       </el-divider>
       <base-baseform
-        :formConfig="formConfigfamily"
-        :formData="formDatafamily"
-        labelWidth="200px"
-        :rules="rules1"
+              :formConfig="formConfigfamily"
+              :formData="formDatafamily"
+              labelWidth="200px"
+              :rules="rules1"
       ></base-baseform>
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
-      <base-inputTel></base-inputTel>
+      <base-inputTel @getTel="getTel"></base-inputTel>
       <div class="m-t-10 row-align-center">
         <el-button
-          class="row-align-center"
-          size="mini"
-          type="success"
-          @click="submit"
-          >提交
+                class="row-align-center"
+                size="mini"
+                type="success"
+                @click="submit"
+        >提交
         </el-button>
         <el-button
-          class="row-align-center"
-          size="mini"
-          type="info"
-          @click="$router.back()"
-          >返回
+                class="row-align-center"
+                size="mini"
+                type="info"
+                @click="$router.back()"
+        >返回
         </el-button>
       </div>
       <div class="f-12 m-t-10 g-6">
@@ -196,953 +196,1064 @@
 </template>
 
 <script>
-const CheckInt = (rule, value, callback) => {
-  value = Number(value);
-  let reg = /^\d+(\.\d{1})?$/;
-  if (!reg.test(value)) {
-    callback(new Error("只能有一位小数"));
-    return;
-  }
-  if (!(value > 0 && value < 9999)) {
-    callback(new Error("输入范围0-9999 单位为万元/年"));
-    return;
-  }
-  callback();
-};
-export default {
-  name: "personbaseInfo",
-  data: () => {
-    return {
-      isFirst: false,
-      hasSecond: false,
-      show: false,
-      showff: false,
-      showffChild: false,
-      showScChild: false,
-      ////个人项
-      formConfig: [
-        {
-          type: "input",
-          label: "昵称",
-          value: "name",
-          tip: "请输入昵称"
-        },
-        {
-          type: "radio",
-          label: "性别",
-          value: "sex",
-          tip: "请选择性别",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "男",
-                value: 1
-              },
-              {
-                label: "女",
-                value: 2
-              }
-            ]
-          }
-        },
-        {
-          type: "input",
-          label: "年龄",
-          value: "age",
-          tip: "请输入年龄"
-        }
-      ],
-      formConfigA: [
-        {
-          type: "radio",
-          label: "有无社保/新农村医疗",
-          value: "medicalSafe",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        },
-        {
-          type: "radio",
-          label: "有无买过商业保险",
-          value: "otherInsurance",
-          tip: "有无买过商业保险",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        }
-      ],
-      formConfigA1: [
-        {
-          type: "checkbox",
-          label: "",
-          value: "insuranceType",
-          tip: "",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "重疾险",
-                value: 1
-              },
-              {
-                label: "消费型医疗险",
-                value: 2
-              },
-              {
-                label: "意外险",
-                value: 3
-              },
-              {
-                label: "寿险",
-                value: 4
-              },
-              {
-                label: "养老险",
-                value: 5
-              }
-            ]
-          }
-        }
-      ],
-      formConfigA2: [
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value1",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value2",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value3",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value4",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value5",
-          tip: "保额（万）[保障上限]"
-        }
-      ],
-      formConfigB: [
-        {
-          type: "radio",
-          label: "有无慢性病或家族遗传病史",
-          value: "othermedical",
-          mesg: "（评估未来健康风险值）",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        }
-      ],
-      formConfigC: [
-        {
-          type: "radio",
-          label: "体检结果是否有异常",
-          value: "healthCheck",
-          mesg: "（最近一次）",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        }
-      ],
-      formData: {
-        name: "",
-        sex: 1,
-        age: "",
-        medicalSafe: 1,
-        insuranceType: [],
-        othermedical: 1,
-        healthCheck: 1,
-        otherInsurance: 2,
-        otherInMoneyList: {
-          value1: "",
-          value2: "",
-          value3: "",
-          value4: "",
-          value5: ""
-        } //保险的额度
-      },
-
-      ////配偶项
-      formConfigff: [
-        {
-          type: "input",
-          label: "配偶昵称",
-          value: "name",
-          tip: "请输入配偶昵称"
-        },
-        {
-          type: "input",
-          label: "配偶年龄",
-          value: "age",
-          tip: "请输入配偶年龄"
-        }
-      ],
-      formConfigffA: [
-        {
-          type: "radio",
-          label: "有无社保/新农村医疗",
-          value: "medicalSafe",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        },
-        {
-          type: "radio",
-          label: "有无买过商业保险",
-          value: "otherInsurance",
-          tip: "有无买过商业保险",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        }
-      ],
-      formConfigffA1: [
-        {
-          type: "checkbox",
-          label: "",
-          value: "insuranceType",
-          tip: "",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "重疾险",
-                value: 1
-              },
-              {
-                label: "消费型医疗险",
-                value: 2
-              },
-              {
-                label: "意外险",
-                value: 3
-              },
-              {
-                label: "寿险",
-                value: 4
-              },
-              {
-                label: "养老险",
-                value: 5
-              }
-            ]
-          }
-        }
-      ],
-      formConfigffA2: [
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value1",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value2",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value3",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value4",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value5",
-          tip: "保额（万）[保障上限]"
-        }
-      ],
-      formConfigffB: [
-        {
-          type: "radio",
-          label: "有无慢性病或家族遗传病史",
-          value: "othermedical",
-          mesg: "（评估未来健康风险值）",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        },
-        {
-          type: "radio",
-          label: "体检结果是否有异常",
-          value: "healthCheck",
-          mesg: "（最近一次）",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        }
-      ],
-      formDataff: {
-        name: "",
-        sex: 1,
-        age: "",
-        medicalSafe: 1,
-        insuranceType: [],
-        othermedical: 1,
-        healthCheck: 1,
-        otherInsurance: 2,
-        otherInMoneyList: {
-          value1: "",
-          value2: "",
-          value3: "",
-          value4: "",
-          value5: ""
-        } //保险的额度
-      },
-
-      ////大孩项
-      formConfigffChild: [
-        {
-          type: "input",
-          label: "大孩昵称",
-          value: "name",
-          tip: "请输入大孩昵称"
-        },
-        {
-          type: "radio",
-          label: "性别",
-          value: "sex",
-          tip: "请选择性别",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "男",
-                value: 1
-              },
-              {
-                label: "女",
-                value: 2
-              }
-            ]
-          }
-        },
-        {
-          type: "input",
-          label: "大孩年龄",
-          value: "age",
-          tip: "未满1周岁填0岁"
-        }
-      ],
-      formConfigffChildA: [
-        {
-          type: "radio",
-          label: "有无一老一小险",
-          value: "medicalSafe",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        },
-        {
-          type: "radio",
-          label: "有无买过商业保险",
-          value: "otherInsurance",
-          tip: "有无买过商业保险",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        },
-        {
-          type: "checkbox",
-          label: "",
-          value: "insuranceType",
-          tip: "",
-          hide: true,
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "重疾险",
-                value: 1
-              },
-              {
-                label: "消费型医疗险",
-                value: 2
-              },
-              {
-                label: "意外险",
-                value: 3
-              },
-              {
-                label: "寿险",
-                value: 4
-              },
-              {
-                label: "养老险",
-                value: 5
-              }
-            ]
-          }
-        }
-      ],
-      formConfigffChildA1: [
-        {
-          type: "checkbox",
-          label: "",
-          value: "insuranceType",
-          tip: "",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "重疾险",
-                value: 1
-              },
-              {
-                label: "消费型医疗险",
-                value: 2
-              },
-              {
-                label: "意外险",
-                value: 3
-              },
-              {
-                label: "寿险",
-                value: 4
-              },
-              {
-                label: "养老险",
-                value: 5
-              }
-            ]
-          }
-        }
-      ],
-      formConfigffChildA2: [
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value1",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value2",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value3",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value4",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value5",
-          tip: "保额（万）[保障上限]"
-        }
-      ],
-      formConfigffChildB: [
-        {
-          type: "radio",
-          label: "有无慢性病或家族遗传病史",
-          value: "othermedical",
-          mesg: "（评估未来健康风险值）",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        },
-        {
-          type: "radio",
-          label: "体检结果是否有异常",
-          value: "healthCheck",
-          mesg: "（最近一次）",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        }
-      ],
-      formDataffChild: {
-        name: "",
-        sex: 1,
-        age: "",
-        medicalSafe: 1,
-        insuranceType: [],
-        othermedical: 1,
-        healthCheck: 1,
-        otherInsurance: 2,
-        otherInMoneyList: {
-          value1: "",
-          value2: "",
-          value3: "",
-          value4: "",
-          value5: ""
-        } //保险的额度
-      },
-
-      ////二孩项
-      formConfigScChild: [
-        {
-          type: "input",
-          label: "大孩昵称",
-          value: "name",
-          tip: "请输入大孩昵称"
-        },
-        {
-          type: "radio",
-          label: "性别",
-          value: "sex",
-          tip: "请选择性别",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "男",
-                value: 1
-              },
-              {
-                label: "女",
-                value: 2
-              }
-            ]
-          }
-        },
-        {
-          type: "input",
-          label: "大孩年龄",
-          value: "age",
-          tip: "未满1周岁填0岁"
-        }
-      ],
-      formConfigScChildA: [
-        {
-          type: "radio",
-          label: "有无一老一小险",
-          value: "medicalSafe",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        },
-        {
-          type: "radio",
-          label: "有无买过商业保险",
-          value: "otherInsurance",
-          tip: "有无买过商业保险",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        }
-      ],
-      formConfigScChildA1: [
-        {
-          type: "checkbox",
-          label: "",
-          value: "insuranceType",
-          tip: "",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "重疾险",
-                value: 1
-              },
-              {
-                label: "消费型医疗险",
-                value: 2
-              },
-              {
-                label: "意外险",
-                value: 3
-              },
-              {
-                label: "寿险",
-                value: 4
-              },
-              {
-                label: "养老险",
-                value: 5
-              }
-            ]
-          }
-        }
-      ],
-      formConfigScChildA2: [
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value1",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value2",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value3",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value4",
-          tip: "保额（万）[保障上限]"
-        },
-        {
-          type: "input",
-          label: "",
-          value: "otherInMoneyList.value5",
-          tip: "保额（万）[保障上限]"
-        }
-      ],
-      formConfigScChildB: [
-        {
-          type: "radio",
-          label: "有无慢性病或家族遗传病史",
-          value: "othermedical",
-          mesg: "（评估未来健康风险值）",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        },
-        {
-          type: "radio",
-          label: "体检结果是否有异常",
-          value: "healthCheck",
-          mesg: "（最近一次）",
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "有",
-                value: 1
-              },
-              {
-                label: "无",
-                value: 2
-              }
-            ]
-          }
-        }
-      ],
-      formDataScChild: {
-        name: "",
-        sex: 1,
-        age: "",
-        medicalSafe: 1,
-        insuranceType: [],
-        othermedical: 1,
-        healthCheck: 1,
-        otherInsurance: 2
-      },
-
-      ////家庭综合项
-      formConfigfamily: [
-        {
-          type: "input",
-          label: "家庭税后收入约（万/年）",
-          value: "familyIncome",
-          tip: "请输入家庭税后收入"
-        },
-        {
-          type: "select",
-          label: "家庭收入稳定性",
-          value: "inComestable",
-          tip: "请输入家庭税后收入",
-          hide: false,
-          option: {
-            disabled: false,
-            data: [
-              {
-                label: "非常稳定",
-                value: 1
-              },
-              {
-                label: "比较稳定",
-                value: 2
-              },
-              {
-                label: "不太稳定",
-                value: 3
-              }
-            ]
-          }
-        },
-
-        {
-          type: "input",
-          label: "房贷或房租支出约（万/年）",
-          value: "housePay",
-          tip: "请输入"
-        },
-        {
-          type: "input",
-          label: "其他贷款偿付支出约（万/年）",
-          value: "otherPay",
-          tip: "请输入"
-        },
-        {
-          type: "input",
-          label: "孩子教育投入支出约（万/年）",
-          value: "childEduPay",
-          tip: "请输入"
-        },
-        {
-          type: "input",
-          label: "家庭理财投入支出约（万/年）",
-          value: "familyMm",
-          tip: "请输入"
-        }
-      ],
-
-      formDatafamily: {
-        familyIncome: null,
-        inComestable: [],
-        housePay: null,
-        otherPay: null,
-        childEduPay: null,
-        othermedical: null,
-        familyMm: null,
-        otherInMoneyList: {
-          value1: "",
-          value2: "",
-          value3: "",
-          value4: "",
-          value5: ""
-        } //保险的额度
-      },
-      rules1: {
-        familyIncome: {
-          validator: CheckInt,
-          trigger: "blur"
-        },
-        housePay: {
-          validator: CheckInt,
-          trigger: "blur"
-        },
-        otherPay: {
-          validator: CheckInt,
-          trigger: "blur"
-        },
-        childEduPay: {
-          validator: CheckInt,
-          trigger: "blur"
-        },
-        familyMm: {
-          validator: CheckInt,
-          trigger: "blur"
-        }
-      },
-
-      tel: null //受邀手机号
-    };
-  },
-  mounted() {
-    //debugger
-    const value = this.$store.state.hasChildNum;
-    if (value == 1) {
-      this.isFirst = true;
+  const CheckInt = (rule, value, callback) => {
+    value = Number(value);
+    let reg = /^\d+(\.\d{1})?$/;
+    if (!reg.test(value)) {
+      callback(new Error("只能有一位小数"));
+      return;
     }
-    if (value == 2) {
-      this.hasSecond = true;
-      this.isFirst = true;
+    if (!(value > 0 && value < 9999)) {
+      callback(new Error("输入范围0-9999 单位为万元/年"));
+      return;
     }
-  },
-  watch: {
-    "formData.otherInsurance"() {
-      this.show = !this.show;
+    callback();
+  };
+  export default {
+    name: "personbaseInfo",
+    data: () => {
+      return {
+        isFirst: false,
+        hasSecond: false,
+        show: false,
+        showff: false,
+        showffChild: false,
+        showScChild: false,
+        ////个人项
+        formConfig: [
+          {
+            type: "input",
+            label: "昵称",
+            value: "nickname",
+            tip: "请输入昵称"
+          },
+          {
+            type: "radio",
+            label: "性别",
+            value: "gender",
+            tip: "请选择性别",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "男",
+                  value: 1
+                },
+                {
+                  label: "女",
+                  value: 2
+                }
+              ]
+            }
+          },
+          {
+            type: "input",
+            label: "年龄",
+            value: "age",
+            tip: "请输入年龄"
+          }
+        ],
+        formConfigA: [
+          {
+            type: "radio",
+            label: "有无社保/新农村医疗",
+            value: "socialsecurity",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          },
+          {
+            type: "radio",
+            label: "有无买过商业保险",
+            value: "comminsurance",
+            tip: "有无买过商业保险",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          }
+        ],
+        formConfigA1: [
+          {
+            type: "checkbox",
+            label: "",
+            value: "insuranceType",
+            tip: "",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "重疾险",
+                  value: "seriousillness"
+                },
+                {
+                  label: "消费型医疗险",
+                  value: "consumermedical"
+                },
+                {
+                  label: "意外险",
+                  value: "accident"
+                },
+                {
+                  label: "寿险",
+                  value: "life"
+                },
+                {
+                  label: "养老险",
+                  value: "endowment"
+                }
+              ]
+            }
+          }
+        ],
+        formConfigA2: [
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "seriousillness",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "consumermedical",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "accident",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "life",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "endowment",
+            tip: "保额（万）[保障上限]"
+          }
+        ],
+        formConfigB: [
+          {
+            type: "radio",
+            label: "有无慢性病或家族遗传病史",
+            value: "chronicdisease",
+            mesg: "（评估未来健康风险值）",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          }
+        ],
+        formConfigC: [
+          {
+            type: "radio",
+            label: "体检结果是否有异常",
+            value: "physicalexam",
+            mesg: "（最近一次）",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          }
+        ],
+        formData: {
+          nickname: "",
+          gender: null,
+          age: null,
+          socialsecurity: null,
+          comminsurance: null,
+          invitenumber: null,
+          physicalexam: null,
+          chronicdisease: null,
+          bsdetail: {
+            seriousillness: "",
+            consumermedical: "",
+            accident: "",
+            life: "",
+            endowment: ""
+          },//重疾病险
+          insuranceType: [],
+          otherInMoneyList: {
+            seriousillness: "",
+            consumermedical: "",
+            accident: "",
+            life: "",
+            endowment: ""
+          } //保险的额度
+
+        },
+
+        ////配偶项
+        formConfigff: [
+          {
+            type: "input",
+            label: "配偶昵称",
+            value: "nickname",
+            tip: "请输入配偶昵称"
+          },
+          {
+            type: "radio",
+            label: "性别",
+            value: "gender",
+            tip: "请选择性别",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "男",
+                  value: 1
+                },
+                {
+                  label: "女",
+                  value: 2
+                }
+              ]
+            }
+          },
+          {
+            type: "input",
+            label: "配偶年龄",
+            value: "age",
+            tip: "请输入配偶年龄"
+          }
+        ],
+        formConfigffA: [
+          {
+            type: "radio",
+            label: "有无社保/新农村医疗",
+            value: "socialsecurity",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          },
+          {
+            type: "radio",
+            label: "有无买过商业保险",
+            value: "comminsurance",
+            tip: "有无买过商业保险",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          }
+        ],
+        formConfigffA1: [
+          {
+            type: "checkbox",
+            label: "",
+            value: "insuranceType",
+            tip: "",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "重疾险",
+                  value: "seriousillness"
+                },
+                {
+                  label: "消费型医疗险",
+                  value: "consumermedical"
+                },
+                {
+                  label: "意外险",
+                  value: "accident"
+                },
+                {
+                  label: "寿险",
+                  value: "life"
+                },
+                {
+                  label: "养老险",
+                  value: "endowment"
+                }
+              ]
+            }
+          }
+        ],
+        formConfigffA2: [
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "seriousillness",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "consumermedical",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "accident",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "life",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "endowment",
+            tip: "保额（万）[保障上限]"
+          }
+        ],
+        formConfigffB: [
+          {
+            type: "radio",
+            label: "有无慢性病或家族遗传病史",
+            value: "chronicdisease",
+            mesg: "（评估未来健康风险值）",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          },
+          {
+            type: "radio",
+            label: "体检结果是否有异常",
+            value: "physicalexam",
+            mesg: "（最近一次）",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          }
+        ],
+        formDataff: {
+          nickname: "",
+          gender: null,
+          age: null,
+          socialsecurity: null,
+          comminsurance: null,
+          physicalexam: null,
+          chronicdisease: null,
+          bsdetail: {
+            seriousillness: "",
+            consumermedical: "",
+            accident: "",
+            life: "",
+            endowment: ""
+          },//重疾病险
+          insuranceType: [],
+          otherInMoneyList: {
+            seriousillness: "",
+            consumermedical: "",
+            accident: "",
+            life: "",
+            endowment: ""
+          } //保险的额度
+        },
+
+        ////大孩项
+        formConfigffChild: [
+          {
+            type: "input",
+            label: "大孩昵称",
+            value: "nickname",
+            tip: "请输入大孩昵称"
+          },
+          {
+            type: "radio",
+            label: "性别",
+            value: "gender",
+            tip: "请选择性别",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "男",
+                  value: 1
+                },
+                {
+                  label: "女",
+                  value: 2
+                }
+              ]
+            }
+          },
+          {
+            type: "input",
+            label: "大孩年龄",
+            value: "age",
+            tip: "未满1周岁填0岁"
+          }
+        ],
+        formConfigffChildA: [
+          {
+            type: "radio",
+            label: "有无一老一小险",
+            value: "oldsmallinsure",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          },
+          {
+            type: "radio",
+            label: "有无买过商业保险",
+            value: "comminsurance",
+            tip: "有无买过商业保险",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          }
+
+        ],
+        formConfigffChildA1: [
+          {
+            type: "checkbox",
+            label: "",
+            value: "insuranceType",
+            tip: "",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "重疾险",
+                  value: "seriousillness"
+                },
+                {
+                  label: "消费型医疗险",
+                  value: "consumermedical"
+                },
+                {
+                  label: "意外险",
+                  value: "accident"
+                },
+                {
+                  label: "寿险",
+                  value: "life"
+                },
+                {
+                  label: "养老险",
+                  value: "endowment"
+                }
+              ]
+            }
+          }
+        ],
+        formConfigffChildA2: [
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "seriousillness",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "consumermedical",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "accident",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "life",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "endowment",
+            tip: "保额（万）[保障上限]"
+          }
+        ],
+        formConfigffChildB: [
+          {
+            type: "radio",
+            label: "有无慢性病或家族遗传病史",
+            value: "chronicdisease",
+            mesg: "（评估未来健康风险值）",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          },
+          {
+            type: "radio",
+            label: "体检结果是否有异常",
+            value: "physicalexam",
+            mesg: "（最近一次）",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          }
+        ],
+        formDataffChild: {
+          nickname: "",
+          gender: null,
+          age: null,
+          socialsecurity: null,
+          comminsurance: null,
+          oldsmallinsure: null,
+          physicalexam: null,
+          chronicdisease: null,
+          bsdetail: {
+            seriousillness: "",
+            consumermedical: "",
+            accident: "",
+            life: "",
+            endowment: ""
+          },//重疾病险
+          insuranceType: [],
+          otherInMoneyList: {
+            seriousillness: "",
+            consumermedical: "",
+            accident: "",
+            life: "",
+            endowment: ""
+          } //保险的额度
+        },
+
+        ////二孩项
+        formConfigScChild: [
+          {
+            type: "input",
+            label: "二孩昵称",
+            value: "nickname",
+            tip: "请输入大孩昵称"
+          },
+          {
+            type: "radio",
+            label: "性别",
+            value: "gender",
+            tip: "请选择性别",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "男",
+                  value: 1
+                },
+                {
+                  label: "女",
+                  value: 2
+                }
+              ]
+            }
+          },
+          {
+            type: "input",
+            label: "二孩年龄",
+            value: "age",
+            tip: "未满1周岁填0岁"
+          }
+        ],
+        formConfigScChildA: [
+          {
+            type: "radio",
+            label: "有无一老一小险",
+            value: "oldsmallinsure",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          },
+          {
+            type: "radio",
+            label: "有无买过商业保险",
+            value: "comminsurance",
+            tip: "有无买过商业保险",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          }
+        ],
+        formConfigScChildA1: [
+          {
+            type: "checkbox",
+            label: "",
+            value: "insuranceType",
+            tip: "",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "重疾险",
+                  value: "seriousillness"
+                },
+                {
+                  label: "消费型医疗险",
+                  value: "consumermedical"
+                },
+                {
+                  label: "意外险",
+                  value: "accident"
+                },
+                {
+                  label: "寿险",
+                  value: "life"
+                },
+                {
+                  label: "养老险",
+                  value: "endowment"
+                }
+              ]
+            }
+          }
+        ],
+        formConfigScChildA2: [
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "seriousillness",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "consumermedical",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "accident",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "life",
+            tip: "保额（万）[保障上限]"
+          },
+          {
+            type: "input",
+            label: "",
+            disabled: true,
+            value: "endowment",
+            tip: "保额（万）[保障上限]"
+          }
+        ],
+        formConfigScChildB: [
+          {
+            type: "radio",
+            label: "有无慢性病或家族遗传病史",
+            value: "chronicdisease",
+            mesg: "（评估未来健康风险值）",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          },
+          {
+            type: "radio",
+            label: "体检结果是否有异常",
+            value: "physicalexam",
+            mesg: "（最近一次）",
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "有",
+                  value: 1
+                },
+                {
+                  label: "无",
+                  value: 0
+                }
+              ]
+            }
+          }
+        ],
+        formDataScChild: {
+          nickname: "",
+          gender: null,
+          age: null,
+          socialsecurity: null,
+          comminsurance: null,
+          oldsmallinsure: null,
+          physicalexam: null,
+          chronicdisease: null,
+          bsdetail: {
+            seriousillness: "",
+            consumermedical: "",
+            accident: "",
+            life: "",
+            endowment: ""
+          },//重疾病险
+          insuranceType: [],
+          otherInMoneyList: {
+            seriousillness: "",
+            consumermedical: "",
+            accident: "",
+            life: "",
+            endowment: ""
+          } //保险的额度
+        },
+
+        ////家庭综合项
+        formConfigfamily: [
+          {
+            type: "input",
+            label: "家庭税后收入约（万/年）",
+            value: "familyincome",
+            tip: "请输入家庭税后收入"
+          },
+          {
+            type: "select",
+            label: "家庭收入稳定性",
+            value: "householdincomestab",
+            tip: "请输入家庭税后收入",
+            hide: false,
+            option: {
+              disabled: false,
+              data: [
+                {
+                  label: "非常稳定",
+                  value: 1
+                },
+                {
+                  label: "比较稳定",
+                  value: 2
+                },
+                {
+                  label: "不太稳定",
+                  value: 3
+                }
+              ]
+            }
+          },
+
+          {
+            type: "input",
+            label: "房贷或房租支出约（万/年）",
+            value: "housingex",
+            tip: "请输入"
+          },
+          {
+            type: "input",
+            label: "其他贷款偿付支出约（万/年）",
+            value: "otherloan",
+            tip: "请输入"
+          },
+          {
+            type: "input",
+            label: "孩子教育投入支出约（万/年）",
+            value: "childreneducation",
+            tip: "请输入"
+          },
+          {
+            type: "input",
+            label: "家庭理财投入支出约（万/年）",
+            value: "householdfinancial",
+            tip: "请输入"
+          }
+        ],
+
+        formDatafamily: {
+          householdfinancial: null,
+          childreneducation: null,
+          otherloan: null,
+          housingex: null,
+          householdincomestab: null,
+          familyincome: null
+        },
+        rules1: {
+          householdfinancial: {
+            validator: CheckInt,
+            trigger: "blur"
+          },
+          childreneducation: {
+            validator: CheckInt,
+            trigger: "blur"
+          },
+          otherloan: {
+            validator: CheckInt,
+            trigger: "blur"
+          },
+          housingex: {
+            validator: CheckInt,
+            trigger: "blur"
+          },
+          familyincome: {
+            validator: CheckInt,
+            trigger: "blur"
+          }
+        }
+      };
     },
-    "formDataff.otherInsurance"() {
-      this.showff = !this.showff;
+    mounted() {
+      //debugger
+      const value = this.$store.state.hasChildNum;
+      if (value == 1) {
+        this.isFirst = true;
+      }
+      if (value == 2) {
+        this.hasSecond = true;
+        this.isFirst = true;
+      }
     },
-    "formDataffChild.otherInsurance"() {
-      this.showffChild = !this.showffChild;
+    watch: {
+      "formData.comminsurance"() {
+        this.show = this.formData.comminsurance ? true : false;
+        this.resiteBsdetail(this.formData);
+      },
+      "formData.insuranceType"() {
+        this.changeSelCheck(this.formData, this.formConfigA2);
+      },
+      "formDataff.comminsurance"() {
+        this.showff = this.formDataff.comminsurance ? true : false;
+        this.resiteBsdetail(this.formDataff);
+      },
+      "formDataff.insuranceType"() {
+        this.changeSelCheck(this.formDataff, this.formConfigffA2);
+      },
+      "formDataffChild.comminsurance"() {
+        this.showffChild = this.formDataffChild.comminsurance ? true : false;
+        this.resiteBsdetail(this.formDataffChild);
+      },
+      "formDataffChild.insuranceType"() {
+        this.changeSelCheck(this.formDataffChild, this.formConfigffChildA2);
+      },
+      "formDataScChild.comminsurance"() {
+        this.showScChild = this.formDataScChild.comminsurance ? true : false;
+        ;
+        this.resiteBsdetail(this.formDataScChild);
+      },
+      "formDataScChild.insuranceType"() {
+        this.changeSelCheck(this.formDataScChild, this.formConfigScChildA2);
+      }
     },
-    "formDataScChild.otherInsurance"() {
-      this.showScChild = !this.showScChild;
+    methods: {
+      changeSelCheck(formName, objDis) {
+        let allValue = Object.values(formName.insuranceType);
+        objDis.map(item => {
+          item.disabled = true;
+        });
+
+        objDis.map(item => {
+          allValue.forEach(im => {
+            if (item.value == im) {
+              item.disabled = false;
+            }
+          });
+        });
+      },
+      getTel(tel) {
+        this.formData.invitenumber = tel;
+      },
+
+      dealPerson(formData, str) {
+        let sltKey = Object.keys(formData.otherInMoneyList);
+        sltKey.forEach(item => {
+          if (formData[item]) {
+            formData.bsdetail[item] = formData[item];
+            delete formData[item];
+          }
+        });
+        let newForm = JSON.parse(JSON.stringify(formData));
+        delete newForm.insuranceType;
+        delete newForm.otherInMoneyList;
+
+        let dataParam = {}; //重置新的提交字段名
+        for (let i in newForm) {
+          // if (i == "bsdetail") {
+          //   dataParam[`${i}`] = newForm[i];
+          //   continue;
+          // }
+          dataParam[`${str}.${i}`] = newForm[i];
+        }
+        return dataParam;
+      },
+      dealFamily(formData, str) {
+        let dataParam = {}; //重置新的提交字段名
+        let newForm = JSON.parse(JSON.stringify(formData));
+        for (let i in newForm) {
+          dataParam[`${str}.${i}`] = newForm[i];
+        }
+        return dataParam;
+      },
+      submit() {
+        let that = this;
+        let formData = { ...this.dealFamily(this.formDatafamily, "family"), ...this.dealPerson(this.formData, "my"), ...this.dealPerson(this.formDataff, "spouse"), ...this.dealPerson(this.formDataffChild, "baby"), ...this.dealPerson(this.formDataScChild, "secbaby") };
+        this.$axios.post("/api", this.$qs.stringify(formData)).then(
+          data => {
+            that.$router.push({
+              path: "/confirmPg"
+            });
+          },
+          err => {
+            console.log(err);
+          }
+        );
+      }
     }
-  },
-  methods: {
-    submit() {
-      this.$router.push({
-        path: "/family/contrastList"
-      });
-    }
-  }
-};
+  };
 </script>

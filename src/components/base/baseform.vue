@@ -13,6 +13,7 @@
         :label="item.label"
         :key="index"
         :prop="item.value"
+
       >
         <div v-if="item.mesg" class="f-12 g-c">{{ item.mesg }}</div>
 
@@ -20,8 +21,10 @@
           v-model="formData[item.value]"
           :placeholder="item.tip"
           :is="components[index].tag"
+          :disabled="item.disabled?item.disabled:false"
         >
           <template v-if="item.option && !item.hide">
+
             <component
               v-for="option in item.option.data"
               :key="option.value"
