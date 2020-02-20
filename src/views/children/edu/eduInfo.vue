@@ -58,8 +58,8 @@
   const CheckInt = (rule, value, callback) => {
     //debugger;
     value = Number(value);
-    if (!(value > 18 && value < 60)) {
-      callback(new Error("年龄需大于18岁小于60岁!"));
+    if (!(value >=0 && value < 18)) {
+      callback(new Error("年龄需大于等于0岁小于18岁!"));
     } else {
       callback();
     }
@@ -148,7 +148,7 @@
           // }
           dataParam[`baby.${i}`] = newForm[i];
         }
-        this.$axios.post("/api", this.$qs.stringify(dataParam)).then(
+        this.$axios.post("/childedu", this.$qs.stringify(dataParam)).then(
           data => {
             console.log(data);
             that.$router.push({

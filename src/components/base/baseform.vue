@@ -15,6 +15,7 @@
         :prop="item.value"
 
       >
+
         <div v-if="item.mesg" class="f-12 g-c">{{ item.mesg }}</div>
 
         <component
@@ -23,17 +24,16 @@
           :is="components[index].tag"
           :disabled="item.disabled?item.disabled:false"
         >
+
           <template v-if="item.option && !item.hide">
 
             <component
               v-for="option in item.option.data"
               :key="option.value"
-              :is="
-                `el-${
-                  item.type === 'select' ? 'option' : components[index].type
-                }`
-              "
-              :label="item.type === 'select' ? option.label : option.value"
+            :is="
+              `el-${item.type === 'select' ? 'option' : components[index].type}`
+            "
+             :label="item.type === 'select' ? option.label : option.value"
               :value="option.value"
               :disabled="option.disabled"
               >{{ option.label }}
@@ -83,18 +83,16 @@ export default {
       const componentName = config.map(item => item.type);
       //debugger
       const hasComponent = componentName.map(item => {
+        console.log(item);
         return {
           type: item,
           tag: component[item]
         };
       });
 
-      console.log(this.rules);
+      //console.log(this.rules);
       return hasComponent;
     }
-  },
-  data() {
-    return {};
   }
 };
 </script>

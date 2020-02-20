@@ -87,8 +87,8 @@
   const CheckInt = (rule, value, callback) => {
     //debugger;
     value = Number(value);
-    if (!(value > 18 && value < 60)) {
-      callback(new Error("年龄需大于18岁小于60岁!"));
+    if (!(value >= 0 && value < 18)) {
+      callback(new Error("年龄需大于等于0岁小于18岁!"));
     } else {
       callback();
     }
@@ -183,7 +183,7 @@
           {
             type: "radio",
             label: "有无买过商业保险",
-            value: "comminsurance",
+            value: "businessinsurance",
             tip: "有无买过商业保险",
             option: {
               disabled: false,
@@ -318,7 +318,7 @@
           age: null,
           oldsmallinsure: null,
           householdincomestab: null,
-          comminsurance: null,
+          businessinsurance: null,
           chronicdisease: null,
           physicalexam: null,
           bsdetail: {
@@ -343,8 +343,8 @@
       };
     },
     watch: {
-      "form.comminsurance"() {
-        this.show = this.form.comminsurance?true:false;
+      "form.businessinsurance"() {
+        this.show = this.form.businessinsurance?true:false;
         this.resiteBsdetail(this.form);
 
       },
@@ -385,7 +385,7 @@
           dataParam[`baby.${i}`] = newForm[i];
         }
 
-        this.$axios.post("/api", this.$qs.stringify(dataParam)).then(
+        this.$axios.post("/childh", this.$qs.stringify(dataParam)).then(
           data => {
             console.log(data);
             that.$router.push({

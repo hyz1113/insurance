@@ -4,14 +4,38 @@ const Timestamp = new Date().getTime();
 module.exports = {
   devServer: {
     proxy: {
-      "/api": {
-        target: "http://ins.erdoscs.com:9999/childreninfo",
+      "/childh": {
+        target: "http://ins.erdoscs.com:9999/childrenhealth",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {
-          "^/api": ""
+          "^/childh": ""
         }
-      }
+      },
+      "/childedu": {
+        target: "http://ins.erdoscs.com:9999/childrenedu",
+        changeOrigin: true,
+        ws: true, // proxy websockets
+        pathRewrite: {
+          "^/childedu": ""
+        }
+      },
+      "/familyinfo": {
+        target: "http://ins.erdoscs.com:9999/familyinfo",
+        changeOrigin: true,
+        ws: true, // proxy websockets
+        pathRewrite: {
+          "^/familyinfo": ""
+        }
+      },
+      "/personalinfo": {
+        target: "http://ins.erdoscs.com:9999/personalinfo",
+        changeOrigin: true,
+        ws: true, // proxy websockets
+        pathRewrite: {
+          "^/personalinfo": ""
+        }
+      },
     }
   },
   productionSourceMap: false,//不生成map 文件

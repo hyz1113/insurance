@@ -125,6 +125,7 @@
           {
             type: "input",
             label: "昵称",
+            hide:false,
             value: "nickname",
             tip: "请输入昵称"
           },
@@ -133,6 +134,7 @@
             label: "性别",
             value: "gender",
             tip: "请选择性别",
+            hide:false,
             option: {
               disabled: false,
               data: [
@@ -150,6 +152,7 @@
           {
             type: "input",
             label: "年龄",
+            hide:false,
             value: "age",
             tip: "请输入年龄"
           },
@@ -181,6 +184,7 @@
             type: "input",
             label: "税后收入（万/年）",
             value: "atincome",
+            hide:false,
             tip: "请输入税后收入"
           }
         ],
@@ -224,7 +228,7 @@
           {
             type: "radio",
             label: "有无买过商业保险",
-            value: "comminsurance",
+            value: "businessinsurance",
             tip: "有无买过商业保险",
             option: {
               disabled: false,
@@ -362,7 +366,7 @@
           socialsecurity: null,
           housingex: null,
           otherloan: null,
-          comminsurance: null,
+          businessinsurance: null,
           chronicdisease: null,
           physicalexam: null,
           bsdetail: {
@@ -392,8 +396,8 @@
       };
     },
     watch: {
-      "form.comminsurance"() {
-        this.show = this.form.comminsurance?true:false;
+      "form.businessinsurance"() {
+        this.show = this.form.businessinsurance?true:false;
         this.resiteBsdetail(this.form);
       },
       "form.insuranceType"() {
@@ -434,7 +438,7 @@
           dataParam[`my.${i}`] = newForm[i];
         }
 
-        this.$axios.post("/api", this.$qs.stringify(dataParam)).then(
+        this.$axios.post("/personalinfo", this.$qs.stringify(dataParam)).then(
           data => {
             that.$router.push({
               path: "/confirmPg"
