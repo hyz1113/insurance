@@ -275,7 +275,7 @@
           {
             type: "radio",
             label: "有无买过商业保险",
-            value: "businessinsurance",
+            value: "comminsurance",
             tip: "有无买过商业保险",
             option: {
               disabled: false,
@@ -409,7 +409,7 @@
           gender: null,
           age: null,
           socialsecurity: null,
-          businessinsurance: null,
+          comminsurance: null,
           invitenumber: null,
           physicalexam: null,
           chronicdisease: null,
@@ -487,7 +487,7 @@
           {
             type: "radio",
             label: "有无买过商业保险",
-            value: "businessinsurance",
+            value: "comminsurance",
             tip: "有无买过商业保险",
             option: {
               disabled: false,
@@ -619,7 +619,7 @@
           gender: null,
           age: null,
           socialsecurity: null,
-          businessinsurance: null,
+          comminsurance: null,
           physicalexam: null,
           chronicdisease: null,
           bsdetail: {
@@ -695,7 +695,7 @@
           {
             type: "radio",
             label: "有无买过商业保险",
-            value: "businessinsurance",
+            value: "comminsurance",
             tip: "有无买过商业保险",
             option: {
               disabled: false,
@@ -828,7 +828,7 @@
           gender: null,
           age: null,
           socialsecurity: null,
-          businessinsurance: null,
+          comminsurance: null,
           oldsmallinsure: null,
           physicalexam: null,
           chronicdisease: null,
@@ -905,7 +905,7 @@
           {
             type: "radio",
             label: "有无买过商业保险",
-            value: "businessinsurance",
+            value: "comminsurance",
             tip: "有无买过商业保险",
             option: {
               disabled: false,
@@ -1037,7 +1037,7 @@
           gender: null,
           age: null,
           socialsecurity: null,
-          businessinsurance: null,
+          comminsurance: null,
           oldsmallinsure: null,
           physicalexam: null,
           chronicdisease: null,
@@ -1161,29 +1161,29 @@
       }
     },
     watch: {
-      "formData.businessinsurance"() {
-        this.show = this.formData.businessinsurance ? true : false;
+      "formData.comminsurance"() {
+        this.show = this.formData.comminsurance ? true : false;
         this.resiteBsdetail(this.formData);
       },
       "formData.insuranceType"() {
         this.changeSelCheck(this.formData, this.formConfigA2);
       },
-      "formDataff.businessinsurance"() {
-        this.showff = this.formDataff.businessinsurance ? true : false;
+      "formDataff.comminsurance"() {
+        this.showff = this.formDataff.comminsurance ? true : false;
         this.resiteBsdetail(this.formDataff);
       },
       "formDataff.insuranceType"() {
         this.changeSelCheck(this.formDataff, this.formConfigffA2);
       },
-      "formDataffChild.businessinsurance"() {
-        this.showffChild = this.formDataffChild.businessinsurance ? true : false;
+      "formDataffChild.comminsurance"() {
+        this.showffChild = this.formDataffChild.comminsurance ? true : false;
         this.resiteBsdetail(this.formDataffChild);
       },
       "formDataffChild.insuranceType"() {
         this.changeSelCheck(this.formDataffChild, this.formConfigffChildA2);
       },
-      "formDataScChild.businessinsurance"() {
-        this.showScChild = this.formDataScChild.businessinsurance ? true : false;
+      "formDataScChild.comminsurance"() {
+        this.showScChild = this.formDataScChild.comminsurance ? true : false;
         ;
         this.resiteBsdetail(this.formDataScChild);
       },

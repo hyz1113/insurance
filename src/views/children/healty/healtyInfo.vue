@@ -183,7 +183,7 @@
           {
             type: "radio",
             label: "有无买过商业保险",
-            value: "businessinsurance",
+            value: "comminsurance",
             tip: "有无买过商业保险",
             option: {
               disabled: false,
@@ -318,7 +318,7 @@
           age: null,
           oldsmallinsure: null,
           householdincomestab: null,
-          businessinsurance: null,
+          comminsurance: null,
           chronicdisease: null,
           physicalexam: null,
           bsdetail: {
@@ -343,8 +343,8 @@
       };
     },
     watch: {
-      "form.businessinsurance"() {
-        this.show = this.form.businessinsurance?true:false;
+      "form.comminsurance"() {
+        this.show = this.form.comminsurance?true:false;
         this.resiteBsdetail(this.form);
 
       },
