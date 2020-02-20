@@ -22,7 +22,7 @@
           :placeholder="item.tip"
           :is="components[index].tag"
           :disabled="item.disabled?item.disabled:false"
-        >dd
+        >
           <template v-if="item.option && !item.hide">
 
             <component

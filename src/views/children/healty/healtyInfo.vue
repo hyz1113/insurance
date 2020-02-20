@@ -345,7 +345,8 @@
     watch: {
       "form.comminsurance"() {
         this.show = this.form.comminsurance?true:false;
-        this.resiteBsdetail();
+        this.resiteBsdetail(this.form);
+
       },
       "form.insuranceType"() {
         let allValue = Object.values(this.form.insuranceType);
@@ -366,23 +367,6 @@
       getTel(tel) {
         this.form.invitenumber = tel;
       },
-
-      resiteBsdetail() {
-        let keySel = Object.keys(this.form.otherInMoneyList);
-        let that = this;
-        keySel.forEach(item => {
-          if (that.form[item]) {
-            that.form[item] = "";
-            //delete that.form[item];
-          }
-        });
-        this.form.bsdetail.seriousillness = "";
-        this.form.bsdetail.consumermedical = "";
-        this.form.bsdetail.accident = "";
-        this.form.bsdetail.life = "";
-        this.form.bsdetail.endowment = "";
-        this.form.insuranceType = [];
-      },
       submit() {
         let sltKey = Object.keys(this.form.otherInMoneyList);
         let that = this;
@@ -398,12 +382,9 @@
 
         let dataParam = {}; //重置新的提交字段名
         for (let i in newForm) {
-          // if (i == "bsdetail") {
-          //   dataParam[`${i}`] = newForm[i];
-          //   continue;
-          // }
           dataParam[`baby.${i}`] = newForm[i];
         }
+
         this.$axios.post("/api", this.$qs.stringify(dataParam)).then(
           data => {
             console.log(data);

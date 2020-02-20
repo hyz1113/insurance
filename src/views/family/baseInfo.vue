@@ -1209,23 +1209,7 @@
       getTel(tel) {
         this.formData.invitenumber = tel;
       },
-      resiteBsdetail(formName) {
 
-        let keySel = Object.keys(formName.otherInMoneyList);
-
-        keySel.forEach(item => {
-          if (formName[item]) {
-            formName[item] = "";
-            //delete that.form[item];
-          }
-        });
-        formName.bsdetail.seriousillness = "";
-        formName.bsdetail.consumermedical = "";
-        formName.bsdetail.accident = "";
-        formName.bsdetail.life = "";
-        formName.bsdetail.endowment = "";
-        formName.insuranceType = [];
-      },
       dealPerson(formData, str) {
         let sltKey = Object.keys(formData.otherInMoneyList);
         sltKey.forEach(item => {

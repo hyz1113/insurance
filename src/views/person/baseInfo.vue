@@ -394,7 +394,7 @@
     watch: {
       "form.comminsurance"() {
         this.show = this.form.comminsurance?true:false;
-        this.resiteBsdetail();
+        this.resiteBsdetail(this.form);
       },
       "form.insuranceType"() {
         let allValue = Object.values(this.form.insuranceType);
@@ -414,22 +414,6 @@
     methods: {
       getTel(tel) {
         this.form.invitenumber = tel;
-      },
-      resiteBsdetail() {
-        let keySel = Object.keys(this.form.otherInMoneyList);
-        let that = this;
-        keySel.forEach(item => {
-          if (that.form[item]) {
-            that.form[item] = "";
-            //delete that.form[item];
-          }
-        });
-        this.form.bsdetail.seriousillness = "";
-        this.form.bsdetail.consumermedical = "";
-        this.form.bsdetail.accident = "";
-        this.form.bsdetail.life = "";
-        this.form.bsdetail.endowment = "";
-        this.form.insuranceType = [];
       },
 
       submit() {
