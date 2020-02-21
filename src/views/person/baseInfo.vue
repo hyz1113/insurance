@@ -5,6 +5,7 @@
         <el-link type="info" plain size="mini">个人基本信息</el-link>
       </el-divider>
       <base-baseform
+              ref="form1"
               :formConfig="formConfig"
               :formData="form"
               :rules="rules"
@@ -13,32 +14,40 @@
     </div>
     <div class="bgf p-10 m-t-10 no-bottom">
       <base-baseform
+              ref="form2"
               :formConfig="formConfigA"
               :formData="form"
+              :rules="rules"
               labelWidth="190px"
       ></base-baseform>
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
       <base-baseform
+              ref="form3"
               :formConfig="formConfigB"
               :formData="form"
+              :rules="rules"
               labelWidth="190px"
       ></base-baseform>
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
       <base-baseform
+              ref="form4"
               :formConfig="formConfigC"
               :formData="form"
+              :rules="rules"
               labelWidth="190px"
       ></base-baseform>
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
       <base-baseform
+              ref="form5"
               :formConfig="formConfigD"
               :formData="form"
+              :rules="rules"
               labelWidth="180px"
       ></base-baseform>
     </div>
@@ -46,15 +55,19 @@
     <div class="clear ovh bgf" v-show="show">
       <div class="pull-left list-check-height" style="width: 140px;">
         <base-baseform
+                ref="form6"
                 :formConfig="formConfigD1"
                 :formData="form"
+                :rules="rules"
                 labelWidth="15px"
         ></base-baseform>
       </div>
       <div class="pull-left">
         <base-baseform
+                ref="form7"
                 :formConfig="formConfigD2"
                 :formData="form"
+                :rules="rules"
                 labelWidth="15px"
         ></base-baseform>
       </div>
@@ -62,16 +75,20 @@
 
     <div class="bgf p-10 m-t-10 no-bottom">
       <base-baseform
+              ref="form8"
               :formConfig="formConfigE"
               :formData="form"
+              :rules="rules"
               labelWidth="180px"
       ></base-baseform>
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
       <base-baseform
+              ref="form9"
               :formConfig="formConfigF"
               :formData="form"
+              :rules="rules"
               labelWidth="180px"
       ></base-baseform>
     </div>
@@ -389,13 +406,61 @@
         },
         rules: {
           age: {
+            required: true,
             validator: CheckInt,
             trigger: "blur"
           },
           nickname: [
-            { trigger: "blur" },
+            { trigger: "blur",message: '请选择填写昵称',required: true },
             { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
-          ]
+          ],
+          gender:{
+            required: true,
+            trigger: "blur",
+            message: '请选择性别',
+          },
+          jobfeature:{
+            required: true,
+            trigger: "blur",
+            message: '请选择职业发展规划',
+          },
+          atincome:{
+            required: true,
+            trigger: "blur",
+            message: '请选择税后收入',
+          },
+          socialsecurity:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无社保/新农村医疗',
+          },
+          housingex:{
+            required: true,
+            trigger: "blur",
+            message: '请选择房贷或房租支出约（万/年）',
+          },
+          otherloan:{
+            required: true,
+            trigger: "blur",
+            message: '请选择其他贷款偿付支出（万/年）',
+          },
+          comminsurance:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无买过商业保险',
+          },
+          chronicdisease:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无慢性病或家族遗传病史',
+          },
+          physicalexam:{
+            required: true,
+            trigger: "blur",
+            message: '请选择体检结果是否有异常',
+          },
+
+
         },
         show: false,
         isSubmit:true
@@ -428,14 +493,28 @@
       },
 
       submit() {
-        let sltKey = Object.keys(this.form.otherInMoneyList);
         let that = this;
+        let formObj=[];
+        for(let i=1;i<=9;i++){
+          formObj.push(this.$refs[`form${i}`]);
+        }
+        let isSuccess=this.validateForm(formObj);
+        if(!isSuccess){
+          this.$message('请正确填写表单');
+          return;
+        }
+        let sltKey = Object.keys(this.form.otherInMoneyList);
         sltKey.forEach(item => {
           if (that.form[item]) {
             that.form.bsdetail[item] = that.form[item];
             delete that.form[item];
           }
         });
+        this.form.insuranceType.forEach(item=>{
+          that.form.bsdetail[item]=that.form.bsdetail[item]!=''?that.form.bsdetail[item]:0;
+        })
+
+
         let newForm = JSON.parse(JSON.stringify(this.form));
         delete newForm.insuranceType;
         delete newForm.otherInMoneyList;
