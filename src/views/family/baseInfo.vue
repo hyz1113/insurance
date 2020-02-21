@@ -5,11 +5,15 @@
         <el-link type="info" plain size="mini">个人基本信息</el-link>
       </el-divider>
       <base-baseform
+              ref="form1"
+              :rules="rules1"
               :formConfig="formConfig"
               :formData="formData"
               labelWidth="90px"
       ></base-baseform>
       <base-baseform
+              ref="form2"
+              :rules="rules1"
               :formConfig="formConfigA"
               :formData="formData"
               labelWidth="145px"
@@ -17,6 +21,8 @@
       <div class="clear ovh" v-show="show">
         <div class="pull-left list-check-height" style="width: 140px;">
           <base-baseform
+                  ref="form3"
+                  :rules="rules1"
                   :formConfig="formConfigA1"
                   :formData="formData"
                   labelWidth="15px"
@@ -24,6 +30,8 @@
         </div>
         <div class="pull-left">
           <base-baseform
+                  ref="form4"
+                  :rules="rules1"
                   :formConfig="formConfigA2"
                   :formData="formData"
                   labelWidth="15px"
@@ -32,11 +40,15 @@
       </div>
 
       <base-baseform
+              ref="form5"
+              :rules="rules1"
               :formConfig="formConfigB"
               :formData="formData"
               labelWidth="180px"
       ></base-baseform>
       <base-baseform
+              ref="form6"
+              :rules="rules1"
               :formConfig="formConfigC"
               :formData="formData"
               labelWidth="180px"
@@ -47,11 +59,15 @@
         <el-link type="info" plain size="mini">配偶基本信息</el-link>
       </el-divider>
       <base-baseform
+              ref="form7"
+              :rules="rules1"
               :formConfig="formConfigff"
               :formData="formDataff"
               labelWidth="80px"
       ></base-baseform>
       <base-baseform
+              ref="form8"
+              :rules="rules1"
               :formConfig="formConfigffA"
               :formData="formDataff"
               labelWidth="145px"
@@ -60,6 +76,8 @@
       <div class="clear ovh" v-show="showff">
         <div class="pull-left list-check-height" style="width: 140px;">
           <base-baseform
+                  ref="form9"
+                  :rules="rules1"
                   :formConfig="formConfigffA1"
                   :formData="formDataff"
                   labelWidth="15px"
@@ -67,6 +85,8 @@
         </div>
         <div class="pull-left">
           <base-baseform
+                  ref="form10"
+                  :rules="rules1"
                   :formConfig="formConfigffA2"
                   :formData="formDataff"
                   labelWidth="15px"
@@ -75,6 +95,8 @@
       </div>
 
       <base-baseform
+              ref="form11"
+              :rules="rules1"
               :formConfig="formConfigffB"
               :formData="formDataff"
               labelWidth="180px"
@@ -86,11 +108,15 @@
         <el-link type="info" plain size="mini">大孩基本信息</el-link>
       </el-divider>
       <base-baseform
+              ref="form12"
+              :rules="rules1"
               :formConfig="formConfigffChild"
               :formData="formDataffChild"
               labelWidth="80px"
       ></base-baseform>
       <base-baseform
+              ref="form13"
+              :rules="rules1"
               :formConfig="formConfigffChildA"
               :formData="formDataffChild"
               labelWidth="145px"
@@ -98,6 +124,8 @@
       <div class="clear ovh" v-show="showffChild">
         <div class="pull-left list-check-height" style="width: 140px;">
           <base-baseform
+                  ref="form14"
+                  :rules="rules1"
                   :formConfig="formConfigffChildA1"
                   :formData="formDataffChild"
                   labelWidth="15px"
@@ -105,6 +133,8 @@
         </div>
         <div class="pull-left">
           <base-baseform
+                  ref="form15"
+                  :rules="rules1"
                   :formConfig="formConfigffChildA2"
                   :formData="formDataffChild"
                   labelWidth="15px"
@@ -112,6 +142,8 @@
         </div>
       </div>
       <base-baseform
+              ref="form16"
+              :rules="rules1"
               :formConfig="formConfigffChildB"
               :formData="formDataffChild"
               labelWidth="180px"
@@ -123,11 +155,15 @@
         <el-link type="info" plain size="mini">二孩基本信息</el-link>
       </el-divider>
       <base-baseform
+              ref="form17"
+              :rules="rules1"
               :formConfig="formConfigScChild"
               :formData="formDataScChild"
               labelWidth="80px"
       ></base-baseform>
       <base-baseform
+              ref="form18"
+              :rules="rules1"
               :formConfig="formConfigScChildA"
               :formData="formDataScChild"
               labelWidth="145px"
@@ -135,6 +171,8 @@
       <div class="clear ovh" v-show="showScChild">
         <div class="pull-left list-check-height" style="width: 140px;">
           <base-baseform
+                  ref="form19"
+                  :rules="rules1"
                   :formConfig="formConfigScChildA1"
                   :formData="formDataScChild"
                   labelWidth="15px"
@@ -142,6 +180,8 @@
         </div>
         <div class="pull-left">
           <base-baseform
+                  ref="form20"
+                  :rules="rules1"
                   :formConfig="formConfigScChildA2"
                   :formData="formDataScChild"
                   labelWidth="15px"
@@ -149,6 +189,8 @@
         </div>
       </div>
       <base-baseform
+              ref="form21"
+              :rules="rules1"
               :formConfig="formConfigScChildB"
               :formData="formDataScChild"
               labelWidth="180px"
@@ -160,10 +202,11 @@
         <el-link type="info" plain size="mini">家庭综合项</el-link>
       </el-divider>
       <base-baseform
+              ref="form22"
+              :rules="rules1"
               :formConfig="formConfigfamily"
               :formData="formDatafamily"
               labelWidth="200px"
-              :rules="rules1"
       ></base-baseform>
     </div>
 
@@ -1128,30 +1171,89 @@
         },
         isSubmit: true,
         rules1: {
+          age: {
+            required: true,
+            trigger: "blur",
+            message: '请输入年龄',
+          },
+          socialsecurity: {
+            required: true,
+            trigger: "blur",
+            message:'请选择有无社保/新农村医疗'
+          },
           householdfinancial: {
             validator: CheckInt,
-            trigger: "blur"
+            trigger: "blur",
+            required: true,
+            message: '请输入家庭理财投入支出约',
           },
           childreneducation: {
             validator: CheckInt,
-            trigger: "blur"
+            required: true,
+            trigger: "blur",
+            message: '请输入孩子教育投入支出',
           },
           otherloan: {
             validator: CheckInt,
-            trigger: "blur"
+            trigger: "blur",
+            required: true,
+            message: '请输入其他贷款偿付支出',
           },
           housingex: {
             validator: CheckInt,
-            trigger: "blur"
+            required: true,
+            trigger: "blur",
+            message: '请输入房贷或房租支出约'
           },
           familyincome: {
             validator: CheckInt,
-            trigger: "blur"
+            trigger: "blur",
+            required: true,
           },
           nickname: [
-            { trigger: "blur" },
+            { trigger: "blur",message: '请选择填写昵称',required: true },
             { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
-          ]
+          ],
+          gender:{
+            required: true,
+            trigger: "blur",
+            message: '请选择性别',
+          },
+          jobfeature:{
+            required: true,
+            trigger: "blur",
+            message: '请选择职业发展规划',
+          },
+          atincome:{
+            required: true,
+            trigger: "blur",
+            message: '请选择税后收入',
+          },
+          oldsmallinsure:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无一老一小险',
+          },
+          householdincomestab:{
+            required: true,
+            trigger: "blur",
+            message: '请选择家庭收入稳定性',
+          },
+          comminsurance:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无买过商业保险',
+          },
+          chronicdisease:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无慢性病或家族遗传病史',
+          },
+          physicalexam:{
+            required: true,
+            trigger: "blur",
+            message: '请选择体检结果是否有异常',
+          }
         }
       };
     },
@@ -1248,8 +1350,22 @@
         return dataParam;
       },
       submit() {
+
         let that = this;
+        let formObj = [];
+        for (let i = 1; i <= 22; i++) {
+          formObj.push(this.$refs[`form${i}`]);
+        }
+        let isSuccess = this.validateForm(formObj);
+        if (!isSuccess) {
+          this.$message("请正确填写表单");
+          return;
+        }
         let formData = { ...this.dealFamily(this.formDatafamily, "family"), ...this.dealPerson(this.formData, "my"), ...this.dealPerson(this.formDataff, "spouse"), ...this.dealPerson(this.formDataffChild, "baby"), ...this.dealPerson(this.formDataScChild, "secbaby") };
+
+        this.form.insuranceType.forEach(item=>{
+          that.form.bsdetail[item]=that.form.bsdetail[item]!=''?that.form.bsdetail[item]:0;
+        })
         this.$axios.post("/familyinfo", this.$qs.stringify(formData)).then(
           data => {
             that.$router.push({
