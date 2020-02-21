@@ -1456,27 +1456,26 @@
         })
       },
       submit() {
-
         let that = this;
         let formObj = [];
         for (let i = 1; i <= 22; i++) {
           formObj.push(this.$refs[`form${i}`]);
         }
         let isSuccess = this.validateForm(formObj);
-        debugger
+
         if (!isSuccess) {
           this.$message("请正确填写表单");
           return;
         }
-        let formData = { ...this.dealFamily(this.formDatafamily, "family"), ...this.dealPerson(this.formData, "my"), ...this.dealPerson(this.formDataff, "spouse"), ...this.dealPerson(this.formDataffChild, "baby"), ...this.dealPerson(this.formDataScChild, "secbaby") };
-
         this.resiteFormBsdetail(this.formData);
         this.resiteFormBsdetail(this.formDataff);
         this.resiteFormBsdetail(this.formDataffChild);
         this.resiteFormBsdetail(this.formDataScChild);
-        // this.formData.insuranceType.forEach(item=>{
-        //   that.formData.bsdetail[item]=that.formData.bsdetail[item]!=''?that.form.bsdetail[item]:0;
-        // })
+
+        let formData = { ...this.dealFamily(this.formDatafamily, "family"), ...this.dealPerson(this.formData, "my"), ...this.dealPerson(this.formDataff, "spouse"), ...this.dealPerson(this.formDataffChild, "baby"), ...this.dealPerson(this.formDataScChild, "secbaby") };
+
+
+
         this.$axios.post("/familyinfo", this.$qs.stringify(formData)).then(
           data => {
             that.$router.push({
