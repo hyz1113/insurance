@@ -437,12 +437,12 @@
           housingex:{
             required: true,
             trigger: "blur",
-            message: '请选择房贷或房租支出约（万/年）',
+            message: '请选择房贷或房租支出',
           },
           otherloan:{
             required: true,
             trigger: "blur",
-            message: '请选择其他贷款偿付支出（万/年）',
+            message: '请选择其他贷款偿付支出',
           },
           comminsurance:{
             required: true,

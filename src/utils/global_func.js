@@ -17,11 +17,17 @@ function resiteBt(formName) {
 function validatef(formArr) {
   let fg=false;
   let arr='';
-  formArr.forEach(item=>{
-    item.$refs['form'].validate((valid) => {
+  if(formArr.length>1){
+    formArr.forEach(item=>{
+      item.$refs['form'].validate((valid) => {
+        arr+=`${valid}`;
+      })
+    })
+  }else{
+    formArr.$refs['form'].validate((valid) => {
       arr+=`${valid}`;
     })
-  })
+  }
   if(!arr.includes('false')){
     fg=true;
   }
