@@ -3,7 +3,6 @@
     <el-link type="success">身份验证【本次内测仅针对受邀用户开放】</el-link>
     <div class="m-t-10 row-align-left">
       <el-input
-        @blur="checkTel"
         size="mini"
         v-model="tel"
         placeholder="请输入受邀手机号"
@@ -25,12 +24,16 @@ export default {
   },
   methods: {
     checkTel() {
+
       if (!this.tel) {
         this.$message("请输入受邀手机号！");
+        return;
       } else if (!isValidPhone(this.tel)) {
         this.$message("手机号输入错误");
         this.tel='';
+        return;
       }
+      this.$message("可以提交您的信息了！");
       this.$emit('getTel',this.tel);
     }
   }

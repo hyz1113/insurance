@@ -171,6 +171,7 @@
       <base-inputTel @getTel="getTel"></base-inputTel>
       <div class="m-t-10 row-align-center">
         <el-button
+                :disabled="isSubmit"
                 class="row-align-center"
                 size="mini"
                 type="success"
@@ -1125,6 +1126,7 @@
           householdincomestab: null,
           familyincome: null
         },
+        isSubmit: true,
         rules1: {
           householdfinancial: {
             validator: CheckInt,
@@ -1145,7 +1147,11 @@
           familyincome: {
             validator: CheckInt,
             trigger: "blur"
-          }
+          },
+          nickname: [
+            { trigger: "blur" },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ]
         }
       };
     },
@@ -1208,6 +1214,7 @@
       },
       getTel(tel) {
         this.formData.invitenumber = tel;
+        this.isSubmit = false;
       },
 
       dealPerson(formData, str) {

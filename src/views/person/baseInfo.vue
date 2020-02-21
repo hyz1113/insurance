@@ -81,6 +81,7 @@
 
       <div class="m-t-10 row-align-center">
         <el-button
+                :disabled="isSubmit"
                 class="row-align-center"
                 size="mini"
                 type="success"
@@ -390,9 +391,14 @@
           age: {
             validator: CheckInt,
             trigger: "blur"
-          }
+          },
+          nickname: [
+            { trigger: "blur" },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ]
         },
-        show: false
+        show: false,
+        isSubmit:true
       };
     },
     watch: {
@@ -418,6 +424,7 @@
     methods: {
       getTel(tel) {
         this.form.invitenumber = tel;
+        this.isSubmit = false;
       },
 
       submit() {

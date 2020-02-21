@@ -59,6 +59,7 @@
 
       <div class="m-t-10 row-align-center">
         <el-button
+                :disabled="isSubmit"
                 class="row-align-center"
                 size="mini"
                 type="success"
@@ -101,7 +102,11 @@
           age: {
             validator: CheckInt,
             trigger: "blur"
-          }
+          },
+          nickname: [
+            { trigger: "blur" },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ]
         },
         formConfig: [
           {
@@ -339,12 +344,13 @@
             endowment: ""
           } //保险的额度
         },
-        show: false
+        show: false,
+        isSubmit: true
       };
     },
     watch: {
       "form.comminsurance"() {
-        this.show = this.form.comminsurance?true:false;
+        this.show = this.form.comminsurance ? true : false;
         this.resiteBsdetail(this.form);
 
       },
@@ -366,6 +372,7 @@
     methods: {
       getTel(tel) {
         this.form.invitenumber = tel;
+        this.isSubmit = false;
       },
       submit() {
         let sltKey = Object.keys(this.form.otherInMoneyList);
@@ -396,6 +403,7 @@
             console.log(err);
           }
         );
+
       }
     }
   };
