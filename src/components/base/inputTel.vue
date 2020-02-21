@@ -33,7 +33,7 @@ export default {
         this.tel='';
         return;
       }
-      this.$message("可以提交您的信息了！");
+      this.$message("手机号验证通过！");
       this.$emit('getTel',this.tel);
     }
   }

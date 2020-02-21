@@ -17,6 +17,7 @@ function resiteBt(formName) {
 function validatef(formArr) {
   let fg=false;
   let arr='';
+
   if(formArr.length>1){
     formArr.forEach(item=>{
       item.$refs['form'].validate((valid) => {
@@ -28,6 +29,7 @@ function validatef(formArr) {
       arr+=`${valid}`;
     })
   }
+
   if(!arr.includes('false')){
     fg=true;
   }

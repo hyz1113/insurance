@@ -60,14 +60,14 @@
       </el-divider>
       <base-baseform
               ref="form7"
-              :rules="rules1"
+              :rules="rules2"
               :formConfig="formConfigff"
               :formData="formDataff"
               labelWidth="80px"
       ></base-baseform>
       <base-baseform
               ref="form8"
-              :rules="rules1"
+              :rules="rules2"
               :formConfig="formConfigffA"
               :formData="formDataff"
               labelWidth="145px"
@@ -77,7 +77,7 @@
         <div class="pull-left list-check-height" style="width: 140px;">
           <base-baseform
                   ref="form9"
-                  :rules="rules1"
+                  :rules="rules2"
                   :formConfig="formConfigffA1"
                   :formData="formDataff"
                   labelWidth="15px"
@@ -86,7 +86,7 @@
         <div class="pull-left">
           <base-baseform
                   ref="form10"
-                  :rules="rules1"
+                  :rules="rules2"
                   :formConfig="formConfigffA2"
                   :formData="formDataff"
                   labelWidth="15px"
@@ -96,7 +96,7 @@
 
       <base-baseform
               ref="form11"
-              :rules="rules1"
+              :rules="rules2"
               :formConfig="formConfigffB"
               :formData="formDataff"
               labelWidth="180px"
@@ -109,14 +109,14 @@
       </el-divider>
       <base-baseform
               ref="form12"
-              :rules="rules1"
+              :rules="rules3"
               :formConfig="formConfigffChild"
               :formData="formDataffChild"
               labelWidth="80px"
       ></base-baseform>
       <base-baseform
               ref="form13"
-              :rules="rules1"
+              :rules="rules3"
               :formConfig="formConfigffChildA"
               :formData="formDataffChild"
               labelWidth="145px"
@@ -125,7 +125,7 @@
         <div class="pull-left list-check-height" style="width: 140px;">
           <base-baseform
                   ref="form14"
-                  :rules="rules1"
+                  :rules="rules3"
                   :formConfig="formConfigffChildA1"
                   :formData="formDataffChild"
                   labelWidth="15px"
@@ -134,7 +134,7 @@
         <div class="pull-left">
           <base-baseform
                   ref="form15"
-                  :rules="rules1"
+                  :rules="rules3"
                   :formConfig="formConfigffChildA2"
                   :formData="formDataffChild"
                   labelWidth="15px"
@@ -143,7 +143,7 @@
       </div>
       <base-baseform
               ref="form16"
-              :rules="rules1"
+              :rules="rules3"
               :formConfig="formConfigffChildB"
               :formData="formDataffChild"
               labelWidth="180px"
@@ -156,14 +156,14 @@
       </el-divider>
       <base-baseform
               ref="form17"
-              :rules="rules1"
+              :rules="rules4"
               :formConfig="formConfigScChild"
               :formData="formDataScChild"
               labelWidth="80px"
       ></base-baseform>
       <base-baseform
               ref="form18"
-              :rules="rules1"
+              :rules="rules4"
               :formConfig="formConfigScChildA"
               :formData="formDataScChild"
               labelWidth="145px"
@@ -172,7 +172,7 @@
         <div class="pull-left list-check-height" style="width: 140px;">
           <base-baseform
                   ref="form19"
-                  :rules="rules1"
+                  :rules="rules4"
                   :formConfig="formConfigScChildA1"
                   :formData="formDataScChild"
                   labelWidth="15px"
@@ -181,7 +181,7 @@
         <div class="pull-left">
           <base-baseform
                   ref="form20"
-                  :rules="rules1"
+                  :rules="rules4"
                   :formConfig="formConfigScChildA2"
                   :formData="formDataScChild"
                   labelWidth="15px"
@@ -190,7 +190,7 @@
       </div>
       <base-baseform
               ref="form21"
-              :rules="rules1"
+              :rules="rules4"
               :formConfig="formConfigScChildB"
               :formData="formDataScChild"
               labelWidth="180px"
@@ -203,7 +203,7 @@
       </el-divider>
       <base-baseform
               ref="form22"
-              :rules="rules1"
+              :rules="rules5"
               :formConfig="formConfigfamily"
               :formData="formDatafamily"
               labelWidth="200px"
@@ -1181,6 +1181,145 @@
             trigger: "blur",
             message:'请选择有无社保/新农村医疗'
           },
+          nickname: [
+            { trigger: "blur",message: '请选择填写昵称',required: true },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ],
+          gender:{
+            required: true,
+            trigger: "blur",
+            message: '请选择性别',
+          },
+          comminsurance:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无买过商业保险',
+          },
+          chronicdisease:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无慢性病或家族遗传病史',
+          },
+          physicalexam:{
+            required: true,
+            trigger: "blur",
+            message: '请选择体检结果是否有异常',
+          }
+        },
+        rules2: {
+          age: {
+            required: true,
+            trigger: "blur",
+            message: '请输入年龄',
+          },
+          socialsecurity: {
+            required: true,
+            trigger: "blur",
+            message:'请选择有无社保/新农村医疗'
+          },
+          nickname: [
+            { trigger: "blur",message: '请选择填写昵称',required: true },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ],
+          gender:{
+            required: true,
+            trigger: "blur",
+            message: '请选择性别',
+          },
+          comminsurance:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无买过商业保险',
+          },
+          chronicdisease:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无慢性病或家族遗传病史',
+          },
+          physicalexam:{
+            required: true,
+            trigger: "blur",
+            message: '请选择体检结果是否有异常',
+          }
+        },
+        rules3: {
+          age: {
+            required: true,
+            trigger: "blur",
+            message: '请输入年龄',
+          },
+          nickname: [
+            { trigger: "blur",message: '请选择填写昵称',required: true },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ],
+          gender:{
+            required: true,
+            trigger: "blur",
+            message: '请选择性别',
+          },
+
+          oldsmallinsure:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无一老一小险',
+          },
+
+          comminsurance:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无买过商业保险',
+          },
+          chronicdisease:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无慢性病或家族遗传病史',
+          },
+          physicalexam:{
+            required: true,
+            trigger: "blur",
+            message: '请选择体检结果是否有异常',
+          }
+        },
+        rules4: {
+          age: {
+            required: true,
+            trigger: "blur",
+            message: '请输入年龄',
+          },
+          nickname: [
+            { trigger: "blur",message: '请选择填写昵称',required: true },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ],
+          gender:{
+            required: true,
+            trigger: "blur",
+            message: '请选择性别',
+          },
+
+          oldsmallinsure:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无一老一小险',
+          },
+
+          comminsurance:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无买过商业保险',
+          },
+          chronicdisease:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无慢性病或家族遗传病史',
+          },
+          physicalexam:{
+            required: true,
+            trigger: "blur",
+            message: '请选择体检结果是否有异常',
+          }
+        },
+        rules5: {
+
           householdfinancial: {
             validator: CheckInt,
             trigger: "blur",
@@ -1209,50 +1348,12 @@
             validator: CheckInt,
             trigger: "blur",
             required: true,
-          },
-          nickname: [
-            { trigger: "blur",message: '请选择填写昵称',required: true },
-            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
-          ],
-          gender:{
-            required: true,
-            trigger: "blur",
-            message: '请选择性别',
-          },
-          jobfeature:{
-            required: true,
-            trigger: "blur",
-            message: '请选择职业发展规划',
-          },
-          atincome:{
-            required: true,
-            trigger: "blur",
-            message: '请选择税后收入',
-          },
-          oldsmallinsure:{
-            required: true,
-            trigger: "blur",
-            message: '请选择有无一老一小险',
+            message:"家庭税后收入"
           },
           householdincomestab:{
             required: true,
             trigger: "blur",
             message: '请选择家庭收入稳定性',
-          },
-          comminsurance:{
-            required: true,
-            trigger: "blur",
-            message: '请选择有无买过商业保险',
-          },
-          chronicdisease:{
-            required: true,
-            trigger: "blur",
-            message: '请选择有无慢性病或家族遗传病史',
-          },
-          physicalexam:{
-            required: true,
-            trigger: "blur",
-            message: '请选择体检结果是否有异常',
           }
         }
       };
@@ -1349,6 +1450,11 @@
         }
         return dataParam;
       },
+      resiteFormBsdetail(formName){
+        formName.insuranceType.forEach(item=>{
+          formName.bsdetail[item]=formName.bsdetail[item]!=''?formName.bsdetail[item]:0;
+        })
+      },
       submit() {
 
         let that = this;
@@ -1357,15 +1463,20 @@
           formObj.push(this.$refs[`form${i}`]);
         }
         let isSuccess = this.validateForm(formObj);
+        debugger
         if (!isSuccess) {
           this.$message("请正确填写表单");
           return;
         }
         let formData = { ...this.dealFamily(this.formDatafamily, "family"), ...this.dealPerson(this.formData, "my"), ...this.dealPerson(this.formDataff, "spouse"), ...this.dealPerson(this.formDataffChild, "baby"), ...this.dealPerson(this.formDataScChild, "secbaby") };
 
-        this.form.insuranceType.forEach(item=>{
-          that.form.bsdetail[item]=that.form.bsdetail[item]!=''?that.form.bsdetail[item]:0;
-        })
+        this.resiteFormBsdetail(this.formData);
+        this.resiteFormBsdetail(this.formDataff);
+        this.resiteFormBsdetail(this.formDataffChild);
+        this.resiteFormBsdetail(this.formDataScChild);
+        // this.formData.insuranceType.forEach(item=>{
+        //   that.formData.bsdetail[item]=that.formData.bsdetail[item]!=''?that.form.bsdetail[item]:0;
+        // })
         this.$axios.post("/familyinfo", this.$qs.stringify(formData)).then(
           data => {
             that.$router.push({
