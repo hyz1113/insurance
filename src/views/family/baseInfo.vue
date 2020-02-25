@@ -19,7 +19,7 @@
               labelWidth="145px"
       ></base-baseform>
       <div class="clear ovh" v-show="show">
-        <div class="pull-left list-check-height" style="width: 140px;">
+        <div class="pull-left list-check-height" style="width: 120px;">
           <base-baseform
                   ref="form3"
                   :rules="rules1"
@@ -74,7 +74,7 @@
       ></base-baseform>
 
       <div class="clear ovh" v-show="showff">
-        <div class="pull-left list-check-height" style="width: 140px;">
+        <div class="pull-left list-check-height" style="width: 120px;">
           <base-baseform
                   ref="form9"
                   :rules="rules2"
@@ -103,28 +103,30 @@
       ></base-baseform>
     </div>
 
+
+
     <div class="bgf p-10 m-t-10" v-show="isFirst">
       <el-divider>
         <el-link type="info" plain size="mini">大孩基本信息</el-link>
       </el-divider>
       <base-baseform
-              ref="form12"
+              ref="form13"
               :rules="rules3"
               :formConfig="formConfigffChild"
               :formData="formDataffChild"
               labelWidth="80px"
       ></base-baseform>
       <base-baseform
-              ref="form13"
+              ref="form14"
               :rules="rules3"
               :formConfig="formConfigffChildA"
               :formData="formDataffChild"
               labelWidth="145px"
       ></base-baseform>
       <div class="clear ovh" v-show="showffChild">
-        <div class="pull-left list-check-height" style="width: 140px;">
+        <div class="pull-left list-check-height" style="width: 120px;">
           <base-baseform
-                  ref="form14"
+                  ref="form15"
                   :rules="rules3"
                   :formConfig="formConfigffChildA1"
                   :formData="formDataffChild"
@@ -133,7 +135,7 @@
         </div>
         <div class="pull-left">
           <base-baseform
-                  ref="form15"
+                  ref="form16"
                   :rules="rules3"
                   :formConfig="formConfigffChildA2"
                   :formData="formDataffChild"
@@ -142,7 +144,7 @@
         </div>
       </div>
       <base-baseform
-              ref="form16"
+              ref="form17"
               :rules="rules3"
               :formConfig="formConfigffChildB"
               :formData="formDataffChild"
@@ -155,23 +157,23 @@
         <el-link type="info" plain size="mini">二孩基本信息</el-link>
       </el-divider>
       <base-baseform
-              ref="form17"
+              ref="form18"
               :rules="rules4"
               :formConfig="formConfigScChild"
               :formData="formDataScChild"
               labelWidth="80px"
       ></base-baseform>
       <base-baseform
-              ref="form18"
+              ref="form19"
               :rules="rules4"
               :formConfig="formConfigScChildA"
               :formData="formDataScChild"
               labelWidth="145px"
       ></base-baseform>
       <div class="clear ovh" v-show="showScChild">
-        <div class="pull-left list-check-height" style="width: 140px;">
+        <div class="pull-left list-check-height" style="width: 120px;">
           <base-baseform
-                  ref="form19"
+                  ref="form20"
                   :rules="rules4"
                   :formConfig="formConfigScChildA1"
                   :formData="formDataScChild"
@@ -180,7 +182,7 @@
         </div>
         <div class="pull-left">
           <base-baseform
-                  ref="form20"
+                  ref="form21"
                   :rules="rules4"
                   :formConfig="formConfigScChildA2"
                   :formData="formDataScChild"
@@ -189,7 +191,7 @@
         </div>
       </div>
       <base-baseform
-              ref="form21"
+              ref="form22"
               :rules="rules4"
               :formConfig="formConfigScChildB"
               :formData="formDataScChild"
@@ -202,13 +204,15 @@
         <el-link type="info" plain size="mini">家庭综合项</el-link>
       </el-divider>
       <base-baseform
-              ref="form22"
+              ref="form12"
               :rules="rules5"
               :formConfig="formConfigfamily"
               :formData="formDatafamily"
               labelWidth="200px"
       ></base-baseform>
     </div>
+
+
 
     <div class="bgf p-10 m-t-10 no-bottom">
       <base-inputTel @getTel="getTel"></base-inputTel>
@@ -1458,18 +1462,33 @@
       submit() {
         let that = this;
         let formObj = [];
-        for (let i = 1; i <= 22; i++) {
+        for (let i = 1; i < 12; i++) {
           formObj.push(this.$refs[`form${i}`]);
         }
+        if(this.isFirst){
+          for (let i = 13; i <= 17; i++) {
+            formObj.push(this.$refs[`form${i}`]);
+          }
+        }
+        if(this.hasSecond){
+          for (let i = 18; i <= 22; i++) {
+            formObj.push(this.$refs[`form${i}`]);
+          }
+        }
+        formObj.push(this.$refs[`form12`]); //家庭综合项
         let isSuccess = this.validateForm(formObj);
+
         if (!isSuccess) {
-          this.$message("请正确填写表单");
+          this.$message("11 请正确填写表单");
           return;
         }
+
         this.resiteFormBsdetail(this.formData);
         this.resiteFormBsdetail(this.formDataff);
         this.resiteFormBsdetail(this.formDataffChild);
         this.resiteFormBsdetail(this.formDataScChild);
+
+
 
         let formData = { ...this.dealFamily(this.formDatafamily, "family"), ...this.dealPerson(this.formData, "my"), ...this.dealPerson(this.formDataff, "spouse"), ...this.dealPerson(this.formDataffChild, "baby"), ...this.dealPerson(this.formDataScChild, "secbaby") };
 
