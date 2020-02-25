@@ -25,7 +25,7 @@ function validatef(formArr) {
       })
     })
   }else{
-    formArr.$refs['form'].validate((valid) => {
+    formArr[0].$refs['form'].validate((valid) => {
       arr+=`${valid}`;
     })
   }

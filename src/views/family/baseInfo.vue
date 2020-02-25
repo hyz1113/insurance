@@ -1169,7 +1169,7 @@
           householdincomestab: null,
           familyincome: null
         },
-        isSubmit: true,
+        isSubmit: false,
         rules1: {
           age: {
             required: true,
@@ -1462,7 +1462,6 @@
           formObj.push(this.$refs[`form${i}`]);
         }
         let isSuccess = this.validateForm(formObj);
-
         if (!isSuccess) {
           this.$message("请正确填写表单");
           return;
