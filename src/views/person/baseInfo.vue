@@ -463,7 +463,7 @@
 
         },
         show: false,
-        isSubmit:false
+        isSubmit:true
       };
     },
     watch: {
