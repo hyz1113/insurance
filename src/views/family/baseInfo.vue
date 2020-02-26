@@ -1173,7 +1173,7 @@
           householdincomestab: null,
           familyincome: null
         },
-        isSubmit: false,
+        isSubmit: true,
         rules1: {
           age: {
             required: true,
@@ -1459,27 +1459,51 @@
           formName.bsdetail[item]=formName.bsdetail[item]!=''?formName.bsdetail[item]:0;
         })
       },
+      validateCommins(formName,str){// check 是否有险种
+        if(formName.comminsurance && !formName.insuranceType.length){
+          this.$message(`请选择${str}商业保险中对应险种！`);
+          return false;
+        }
+        return true;
+      },
       submit() {
         let that = this;
         let formObj = [];
         for (let i = 1; i < 12; i++) {
           formObj.push(this.$refs[`form${i}`]);
         }
+        if(!this.validateCommins(this.formData,'个人')){// 校验个人商业险
+          return;
+        }
+        if(!this.validateCommins(this.formDataff,'配偶')){// 校验配偶商业险
+          return;
+        }
+
         if(this.isFirst){
           for (let i = 13; i <= 17; i++) {
             formObj.push(this.$refs[`form${i}`]);
+          }
+          if(!this.validateCommins(this.formDataffChild,'大孩')){// 校验大孩商业险
+            return;
           }
         }
         if(this.hasSecond){
           for (let i = 18; i <= 22; i++) {
             formObj.push(this.$refs[`form${i}`]);
           }
+          if(!this.validateCommins(this.formDataScChild,'二孩')){// 校验二孩商业险
+            return;
+          }
         }
         formObj.push(this.$refs[`form12`]); //家庭综合项
         let isSuccess = this.validateForm(formObj);
 
+
+
+
+
         if (!isSuccess) {
-          this.$message("11 请正确填写表单");
+          this.$message("请正确填写表单");
           return;
         }
 
