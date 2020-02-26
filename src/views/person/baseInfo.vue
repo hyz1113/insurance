@@ -463,7 +463,7 @@
 
         },
         show: false,
-        isSubmit:true
+        isSubmit:false
       };
     },
     watch: {
@@ -498,6 +498,10 @@
         for(let i=1;i<=9;i++){
           formObj.push(this.$refs[`form${i}`]);
         }
+        if(this.form.comminsurance && !this.form.insuranceType.length){
+          this.$message('请选择商业保险中对应险种！');
+          return;
+        }
         let isSuccess=this.validateForm(formObj);
         if(!isSuccess){
           this.$message('请正确填写表单');
@@ -510,10 +514,10 @@
             delete that.form[item];
           }
         });
+
         this.form.insuranceType.forEach(item=>{
           that.form.bsdetail[item]=that.form.bsdetail[item]!=''?that.form.bsdetail[item]:0;
         })
-
 
         let newForm = JSON.parse(JSON.stringify(this.form));
         delete newForm.insuranceType;
