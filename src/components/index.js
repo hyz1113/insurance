@@ -14,7 +14,7 @@ console.log(requireComponent.keys());
 requireComponent.keys().forEach(fileName => {
   // 获取组件配置
   const componentConfig = requireComponent(fileName);
-  const componentName = 'base-'+fileName.replace("./", "").replace(".vue", "");
+  const componentName = 'base-'+fileName.replace("./", "").replace(/.vue$/, "");
 
   Vue.component(componentName, componentConfig.default || componentConfig);
 });

@@ -5,6 +5,7 @@
         <el-link type="info" plain size="mini">孩子基本信息</el-link>
       </el-divider>
       <base-baseform
+              ref="form1"
               :formConfig="formConfig"
               :formData="form"
               :rules="rules"
@@ -14,6 +15,7 @@
 
     <div class="bgf p-10 m-t-10 no-bottom">
       <base-baseform
+              ref="form2"
               :formConfig="formConfigD"
               :formData="form"
               :rules="rules"
@@ -24,6 +26,8 @@
     <div class="clear ovh bgf" v-show="show">
       <div class="pull-left list-check-height" style="width: 140px;">
         <base-baseform
+                ref="form3"
+                :rules="rules"
                 :formConfig="formConfigD1"
                 :formData="form"
                 labelWidth="15px"
@@ -31,6 +35,8 @@
       </div>
       <div class="pull-left">
         <base-baseform
+                ref="form4"
+                :rules="rules"
                 :formConfig="formConfigD2"
                 :formData="form"
                 labelWidth="15px"
@@ -40,6 +46,8 @@
 
     <div class="bgf p-10 m-t-10 no-bottom">
       <base-baseform
+              ref="form5"
+              :rules="rules"
               :formConfig="formConfigE"
               :formData="form"
               labelWidth="180px"
@@ -48,6 +56,8 @@
 
     <div class="bgf p-10 m-t-10 no-bottom">
       <base-baseform
+              ref="form6"
+              :rules="rules"
               :formConfig="formConfigF"
               :formData="form"
               labelWidth="180px"
@@ -59,6 +69,7 @@
 
       <div class="m-t-10 row-align-center">
         <el-button
+                :disabled="isSubmit"
                 class="row-align-center"
                 size="mini"
                 type="success"
@@ -87,8 +98,8 @@
   const CheckInt = (rule, value, callback) => {
     //debugger;
     value = Number(value);
-    if (!(value > 18 && value < 60)) {
-      callback(new Error("年龄需大于18岁小于60岁!"));
+    if (!(value >= 0 && value < 18)) {
+      callback(new Error("年龄需大于等于0岁小于18岁!"));
     } else {
       callback();
     }
@@ -99,9 +110,54 @@
       return {
         rules: {
           age: {
+            required: true,
             validator: CheckInt,
             trigger: "blur"
-          }
+          },
+          nickname: [
+            { trigger: "blur",message: '请选择填写昵称',required: true },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ],
+          gender:{
+            required: true,
+            trigger: "blur",
+            message: '请选择性别',
+          },
+          jobfeature:{
+            required: true,
+            trigger: "blur",
+            message: '请选择职业发展规划',
+          },
+          atincome:{
+            required: true,
+            trigger: "blur",
+            message: '请选择税后收入',
+          },
+          oldsmallinsure:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无一老一小险',
+          },
+          householdincomestab:{
+            required: true,
+            trigger: "blur",
+            message: '请选择家庭收入稳定性',
+          },
+          comminsurance:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无买过商业保险',
+          },
+          chronicdisease:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无慢性病或家族遗传病史',
+          },
+          physicalexam:{
+            required: true,
+            trigger: "blur",
+            message: '请选择体检结果是否有异常',
+          },
         },
         formConfig: [
           {
@@ -339,12 +395,13 @@
             endowment: ""
           } //保险的额度
         },
-        show: false
+        show: false,
+        isSubmit: true
       };
     },
     watch: {
       "form.comminsurance"() {
-        this.show = this.form.comminsurance?true:false;
+        this.show = this.form.comminsurance ? true : false;
         this.resiteBsdetail(this.form);
 
       },
@@ -366,8 +423,23 @@
     methods: {
       getTel(tel) {
         this.form.invitenumber = tel;
+        this.isSubmit = false;
       },
       submit() {
+        let formObj = [];
+        for (let i = 1; i <= 6; i++) {
+          formObj.push(this.$refs[`form${i}`]);
+        }
+        if(this.form.comminsurance && !this.form.insuranceType.length){
+          this.$message('请选择商业保险中对应险种！');
+          return;
+        }
+        let isSuccess = this.validateForm(formObj);
+        if (!isSuccess) {
+          this.$message("请正确填写表单");
+          return;
+        }
+
         let sltKey = Object.keys(this.form.otherInMoneyList);
         let that = this;
         sltKey.forEach(item => {
@@ -376,6 +448,11 @@
             delete that.form[item];
           }
         });
+        this.form.insuranceType.forEach(item=>{
+          that.form.bsdetail[item]=that.form.bsdetail[item]!=''?that.form.bsdetail[item]:0;
+        })
+
+
         let newForm = JSON.parse(JSON.stringify(this.form));
         delete newForm.insuranceType;
         delete newForm.otherInMoneyList;
@@ -385,7 +462,7 @@
           dataParam[`baby.${i}`] = newForm[i];
         }
 
-        this.$axios.post("/api", this.$qs.stringify(dataParam)).then(
+        this.$axios.post("/childrenhealth", this.$qs.stringify(dataParam)).then(
           data => {
             console.log(data);
             that.$router.push({
@@ -396,6 +473,7 @@
             console.log(err);
           }
         );
+
       }
     }
   };

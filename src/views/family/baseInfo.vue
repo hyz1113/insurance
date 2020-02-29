@@ -5,18 +5,24 @@
         <el-link type="info" plain size="mini">个人基本信息</el-link>
       </el-divider>
       <base-baseform
+              ref="form1"
+              :rules="rules1"
               :formConfig="formConfig"
               :formData="formData"
               labelWidth="90px"
       ></base-baseform>
       <base-baseform
+              ref="form2"
+              :rules="rules1"
               :formConfig="formConfigA"
               :formData="formData"
               labelWidth="145px"
       ></base-baseform>
       <div class="clear ovh" v-show="show">
-        <div class="pull-left list-check-height" style="width: 140px;">
+        <div class="pull-left list-check-height" style="width: 120px;">
           <base-baseform
+                  ref="form3"
+                  :rules="rules1"
                   :formConfig="formConfigA1"
                   :formData="formData"
                   labelWidth="15px"
@@ -24,6 +30,8 @@
         </div>
         <div class="pull-left">
           <base-baseform
+                  ref="form4"
+                  :rules="rules1"
                   :formConfig="formConfigA2"
                   :formData="formData"
                   labelWidth="15px"
@@ -32,11 +40,15 @@
       </div>
 
       <base-baseform
+              ref="form5"
+              :rules="rules1"
               :formConfig="formConfigB"
               :formData="formData"
               labelWidth="180px"
       ></base-baseform>
       <base-baseform
+              ref="form6"
+              :rules="rules1"
               :formConfig="formConfigC"
               :formData="formData"
               labelWidth="180px"
@@ -47,19 +59,25 @@
         <el-link type="info" plain size="mini">配偶基本信息</el-link>
       </el-divider>
       <base-baseform
+              ref="form7"
+              :rules="rules2"
               :formConfig="formConfigff"
               :formData="formDataff"
               labelWidth="80px"
       ></base-baseform>
       <base-baseform
+              ref="form8"
+              :rules="rules2"
               :formConfig="formConfigffA"
               :formData="formDataff"
               labelWidth="145px"
       ></base-baseform>
 
       <div class="clear ovh" v-show="showff">
-        <div class="pull-left list-check-height" style="width: 140px;">
+        <div class="pull-left list-check-height" style="width: 120px;">
           <base-baseform
+                  ref="form9"
+                  :rules="rules2"
                   :formConfig="formConfigffA1"
                   :formData="formDataff"
                   labelWidth="15px"
@@ -67,6 +85,8 @@
         </div>
         <div class="pull-left">
           <base-baseform
+                  ref="form10"
+                  :rules="rules2"
                   :formConfig="formConfigffA2"
                   :formData="formDataff"
                   labelWidth="15px"
@@ -75,29 +95,39 @@
       </div>
 
       <base-baseform
+              ref="form11"
+              :rules="rules2"
               :formConfig="formConfigffB"
               :formData="formDataff"
               labelWidth="180px"
       ></base-baseform>
     </div>
 
+
+
     <div class="bgf p-10 m-t-10" v-show="isFirst">
       <el-divider>
         <el-link type="info" plain size="mini">大孩基本信息</el-link>
       </el-divider>
       <base-baseform
+              ref="form13"
+              :rules="rules3"
               :formConfig="formConfigffChild"
               :formData="formDataffChild"
               labelWidth="80px"
       ></base-baseform>
       <base-baseform
+              ref="form14"
+              :rules="rules3"
               :formConfig="formConfigffChildA"
               :formData="formDataffChild"
               labelWidth="145px"
       ></base-baseform>
       <div class="clear ovh" v-show="showffChild">
-        <div class="pull-left list-check-height" style="width: 140px;">
+        <div class="pull-left list-check-height" style="width: 120px;">
           <base-baseform
+                  ref="form15"
+                  :rules="rules3"
                   :formConfig="formConfigffChildA1"
                   :formData="formDataffChild"
                   labelWidth="15px"
@@ -105,6 +135,8 @@
         </div>
         <div class="pull-left">
           <base-baseform
+                  ref="form16"
+                  :rules="rules3"
                   :formConfig="formConfigffChildA2"
                   :formData="formDataffChild"
                   labelWidth="15px"
@@ -112,6 +144,8 @@
         </div>
       </div>
       <base-baseform
+              ref="form17"
+              :rules="rules3"
               :formConfig="formConfigffChildB"
               :formData="formDataffChild"
               labelWidth="180px"
@@ -123,18 +157,24 @@
         <el-link type="info" plain size="mini">二孩基本信息</el-link>
       </el-divider>
       <base-baseform
+              ref="form18"
+              :rules="rules4"
               :formConfig="formConfigScChild"
               :formData="formDataScChild"
               labelWidth="80px"
       ></base-baseform>
       <base-baseform
+              ref="form19"
+              :rules="rules4"
               :formConfig="formConfigScChildA"
               :formData="formDataScChild"
               labelWidth="145px"
       ></base-baseform>
       <div class="clear ovh" v-show="showScChild">
-        <div class="pull-left list-check-height" style="width: 140px;">
+        <div class="pull-left list-check-height" style="width: 120px;">
           <base-baseform
+                  ref="form20"
+                  :rules="rules4"
                   :formConfig="formConfigScChildA1"
                   :formData="formDataScChild"
                   labelWidth="15px"
@@ -142,6 +182,8 @@
         </div>
         <div class="pull-left">
           <base-baseform
+                  ref="form21"
+                  :rules="rules4"
                   :formConfig="formConfigScChildA2"
                   :formData="formDataScChild"
                   labelWidth="15px"
@@ -149,6 +191,8 @@
         </div>
       </div>
       <base-baseform
+              ref="form22"
+              :rules="rules4"
               :formConfig="formConfigScChildB"
               :formData="formDataScChild"
               labelWidth="180px"
@@ -160,17 +204,21 @@
         <el-link type="info" plain size="mini">家庭综合项</el-link>
       </el-divider>
       <base-baseform
+              ref="form12"
+              :rules="rules5"
               :formConfig="formConfigfamily"
               :formData="formDatafamily"
               labelWidth="200px"
-              :rules="rules1"
       ></base-baseform>
     </div>
+
+
 
     <div class="bgf p-10 m-t-10 no-bottom">
       <base-inputTel @getTel="getTel"></base-inputTel>
       <div class="m-t-10 row-align-center">
         <el-button
+                :disabled="isSubmit"
                 class="row-align-center"
                 size="mini"
                 type="success"
@@ -1125,26 +1173,191 @@
           householdincomestab: null,
           familyincome: null
         },
+        isSubmit: true,
         rules1: {
+          age: {
+            required: true,
+            trigger: "blur",
+            message: '请输入年龄',
+          },
+          socialsecurity: {
+            required: true,
+            trigger: "blur",
+            message:'请选择有无社保/新农村医疗'
+          },
+          nickname: [
+            { trigger: "blur",message: '请选择填写昵称',required: true },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ],
+          gender:{
+            required: true,
+            trigger: "blur",
+            message: '请选择性别',
+          },
+          comminsurance:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无买过商业保险',
+          },
+          chronicdisease:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无慢性病或家族遗传病史',
+          },
+          physicalexam:{
+            required: true,
+            trigger: "blur",
+            message: '请选择体检结果是否有异常',
+          }
+        },
+        rules2: {
+          age: {
+            required: true,
+            trigger: "blur",
+            message: '请输入年龄',
+          },
+          socialsecurity: {
+            required: true,
+            trigger: "blur",
+            message:'请选择有无社保/新农村医疗'
+          },
+          nickname: [
+            { trigger: "blur",message: '请选择填写昵称',required: true },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ],
+          gender:{
+            required: true,
+            trigger: "blur",
+            message: '请选择性别',
+          },
+          comminsurance:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无买过商业保险',
+          },
+          chronicdisease:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无慢性病或家族遗传病史',
+          },
+          physicalexam:{
+            required: true,
+            trigger: "blur",
+            message: '请选择体检结果是否有异常',
+          }
+        },
+        rules3: {
+          age: {
+            required: true,
+            trigger: "blur",
+            message: '请输入年龄',
+          },
+          nickname: [
+            { trigger: "blur",message: '请选择填写昵称',required: true },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ],
+          gender:{
+            required: true,
+            trigger: "blur",
+            message: '请选择性别',
+          },
+
+          oldsmallinsure:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无一老一小险',
+          },
+
+          comminsurance:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无买过商业保险',
+          },
+          chronicdisease:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无慢性病或家族遗传病史',
+          },
+          physicalexam:{
+            required: true,
+            trigger: "blur",
+            message: '请选择体检结果是否有异常',
+          }
+        },
+        rules4: {
+          age: {
+            required: true,
+            trigger: "blur",
+            message: '请输入年龄',
+          },
+          nickname: [
+            { trigger: "blur",message: '请选择填写昵称',required: true },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ],
+          gender:{
+            required: true,
+            trigger: "blur",
+            message: '请选择性别',
+          },
+
+          oldsmallinsure:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无一老一小险',
+          },
+
+          comminsurance:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无买过商业保险',
+          },
+          chronicdisease:{
+            required: true,
+            trigger: "blur",
+            message: '请选择有无慢性病或家族遗传病史',
+          },
+          physicalexam:{
+            required: true,
+            trigger: "blur",
+            message: '请选择体检结果是否有异常',
+          }
+        },
+        rules5: {
+
           householdfinancial: {
             validator: CheckInt,
-            trigger: "blur"
+            trigger: "blur",
+            required: true,
+            message: '请输入家庭理财投入支出约',
           },
           childreneducation: {
             validator: CheckInt,
-            trigger: "blur"
+            required: true,
+            trigger: "blur",
+            message: '请输入孩子教育投入支出',
           },
           otherloan: {
             validator: CheckInt,
-            trigger: "blur"
+            trigger: "blur",
+            required: true,
+            message: '请输入其他贷款偿付支出',
           },
           housingex: {
             validator: CheckInt,
-            trigger: "blur"
+            required: true,
+            trigger: "blur",
+            message: '请输入房贷或房租支出约'
           },
           familyincome: {
             validator: CheckInt,
-            trigger: "blur"
+            trigger: "blur",
+            required: true,
+            message:"家庭税后收入"
+          },
+          householdincomestab:{
+            required: true,
+            trigger: "blur",
+            message: '请选择家庭收入稳定性',
           }
         }
       };
@@ -1208,6 +1421,7 @@
       },
       getTel(tel) {
         this.formData.invitenumber = tel;
+        this.isSubmit = false;
       },
 
       dealPerson(formData, str) {
@@ -1240,10 +1454,71 @@
         }
         return dataParam;
       },
+      resiteFormBsdetail(formName){
+        formName.insuranceType.forEach(item=>{
+          formName.bsdetail[item]=formName.bsdetail[item]!=''?formName.bsdetail[item]:0;
+        })
+      },
+      validateCommins(formName,str){// check 是否有险种
+        if(formName.comminsurance && !formName.insuranceType.length){
+          this.$message(`请选择${str}商业保险中对应险种！`);
+          return false;
+        }
+        return true;
+      },
       submit() {
         let that = this;
+        let formObj = [];
+        for (let i = 1; i < 12; i++) {
+          formObj.push(this.$refs[`form${i}`]);
+        }
+        if(!this.validateCommins(this.formData,'个人')){// 校验个人商业险
+          return;
+        }
+        if(!this.validateCommins(this.formDataff,'配偶')){// 校验配偶商业险
+          return;
+        }
+
+        if(this.isFirst){
+          for (let i = 13; i <= 17; i++) {
+            formObj.push(this.$refs[`form${i}`]);
+          }
+          if(!this.validateCommins(this.formDataffChild,'大孩')){// 校验大孩商业险
+            return;
+          }
+        }
+        if(this.hasSecond){
+          for (let i = 18; i <= 22; i++) {
+            formObj.push(this.$refs[`form${i}`]);
+          }
+          if(!this.validateCommins(this.formDataScChild,'二孩')){// 校验二孩商业险
+            return;
+          }
+        }
+        formObj.push(this.$refs[`form12`]); //家庭综合项
+        let isSuccess = this.validateForm(formObj);
+
+
+
+
+
+        if (!isSuccess) {
+          this.$message("请正确填写表单");
+          return;
+        }
+
+        this.resiteFormBsdetail(this.formData);
+        this.resiteFormBsdetail(this.formDataff);
+        this.resiteFormBsdetail(this.formDataffChild);
+        this.resiteFormBsdetail(this.formDataScChild);
+
+
+
         let formData = { ...this.dealFamily(this.formDatafamily, "family"), ...this.dealPerson(this.formData, "my"), ...this.dealPerson(this.formDataff, "spouse"), ...this.dealPerson(this.formDataffChild, "baby"), ...this.dealPerson(this.formDataScChild, "secbaby") };
-        this.$axios.post("/api", this.$qs.stringify(formData)).then(
+
+
+
+        this.$axios.post("/familyinfo", this.$qs.stringify(formData)).then(
           data => {
             that.$router.push({
               path: "/confirmPg"

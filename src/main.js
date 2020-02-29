@@ -13,6 +13,8 @@ import baseFunc from '@/utils/global_func.js'
 // 引用基础组件
 import "@/components";
 
+document.domain === "localhost" ? "localhost" : process.env.VUE_APP_DOMAIN;
+
 Vue.use(ElementUI);
 
 

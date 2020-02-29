@@ -5,6 +5,7 @@
         <el-link type="info" plain size="mini">孩子基本信息</el-link>
       </el-divider>
       <base-baseform
+              ref="form1"
               :formConfig="formConfig"
               :formData="form"
               :rules="rules"
@@ -17,6 +18,7 @@
 
       <div class="m-t-10 row-align-center">
         <el-button
+                :disabled="isSubmit"
                 class="row-align-center"
                 size="mini"
                 type="success"
@@ -58,8 +60,8 @@
   const CheckInt = (rule, value, callback) => {
     //debugger;
     value = Number(value);
-    if (!(value > 18 && value < 60)) {
-      callback(new Error("年龄需大于18岁小于60岁!"));
+    if (!(value >=0 && value < 18)) {
+      callback(new Error("年龄需大于等于0岁小于18岁!"));
     } else {
       callback();
     }
@@ -68,15 +70,29 @@
     name: "personbaseInfo",
     data: () => {
       return {
+        isSubmit:true,
         rules: {
           age: {
+            required: true,
             validator: CheckInt,
-            trigger: "blur"
+            trigger: "blur",
+            message: '请输入年龄',
           },
-          familyIncome: {
+          nickname: [
+            { trigger: "blur",message: '请选择填写昵称',required: true },
+            { min: 1, max: 10, message: "长度在 1 到 10 个字符", trigger: "blur" }
+          ],
+          gender:{
+            required: true,
+            trigger: "blur",
+            message: '请选择性别',
+          },
+          familyincome:{
             validator: CheckMoney,
-            trigger: "blur"
-          }
+            required: true,
+            trigger: "blur",
+            message: '请输入家庭税后收入',
+          },
         },
         formConfig: [
           {
@@ -135,20 +151,28 @@
     methods: {
       getTel(tel) {
         this.form.invitenumber = tel;
+        this.isSubmit=false;
       },
       submit() {
+        let formObj = this.$refs[`form1`];
+        let isSuccess = this.validateForm(formObj);
+        if(this.form.age==null || this.form.age==''){
+          this.$message("请填写年龄");
+          return;
+        }
+        if (!isSuccess || this.form.age==null) {
+          this.$message("请正确填写表单");
+          return;
+        }
+
         let that = this;
         let newForm = JSON.parse(JSON.stringify(this.form));
 
         let dataParam = {}; //重置新的提交字段名
         for (let i in newForm) {
-          // if (i == "bsdetail") {
-          //   dataParam[`${i}`] = newForm[i];
-          //   continue;
-          // }
           dataParam[`baby.${i}`] = newForm[i];
         }
-        this.$axios.post("/api", this.$qs.stringify(dataParam)).then(
+        this.$axios.post("/childrenedu", this.$qs.stringify(dataParam)).then(
           data => {
             console.log(data);
             that.$router.push({

@@ -3,15 +3,41 @@ const Timestamp = new Date().getTime();
 //const Compressionlugin = require("compression-webpack-plugin");
 module.exports = {
   devServer: {
+    //host: '192.168.0.1', // 代理会映射到本地的一个ip地址。这里我们可以通过改成根基的ip地址或者0.0.0.0然后通过手机就可以看到项目
+    //port: 8080, // 这里是我们本地设置的一个端口号
     proxy: {
-      "/api": {
-        target: "http://ins.erdoscs.com:9999/childreninfo",
+      "/childrenhealth": {
+        target: "http://ins.erdoscs.com:9999/childrenhealth",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {
-          "^/api": ""
+          "^/childrenhealth": ""
         }
-      }
+      },
+      "/childrenedu": {
+        target: "http://ins.erdoscs.com:9999/childrenedu",
+        changeOrigin: true,
+        ws: true, // proxy websockets
+        pathRewrite: {
+          "^/childrenedu": ""
+        }
+      },
+      "/familyinfo": {
+        target: "http://ins.erdoscs.com:9999/familyinfo",
+        changeOrigin: true,
+        ws: true, // proxy websockets
+        pathRewrite: {
+          "^/familyinfo": ""
+        }
+      },
+      "/personalinfo": {
+        target: "http://ins.erdoscs.com:9999/personalinfo",
+        changeOrigin: true,
+        ws: true, // proxy websockets
+        pathRewrite: {
+          "^/personalinfo": ""
+        }
+      },
     }
   },
   productionSourceMap: false,//不生成map 文件
