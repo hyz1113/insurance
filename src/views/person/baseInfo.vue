@@ -461,7 +461,7 @@ export default {
         }
       },
       show: false,
-      isSubmit: false
+      isSubmit: true
     };
   },
   watch: {
@@ -486,8 +486,7 @@ export default {
   },
   methods: {
     getTel(tel) {
-      // this.form.invitenumber = tel;
-      this.form.invitenumber = "18788787878";
+      this.form.invitenumber = tel;
       this.isSubmit = false;
     },
 

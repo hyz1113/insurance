@@ -88,12 +88,12 @@ export default {
         {
           label: "产品",
           value: "prod",
-          width:'88px'
+          width: "88px"
         },
         {
           label: "30岁男性 50万",
           value: "money",
-          width:'100px'
+          width: "100px"
         }
       ],
       tableConfig1: [
@@ -113,8 +113,7 @@ export default {
         },
         {
           label: "产品亮点",
-          value: "desc",
-
+          value: "desc"
         },
         {
           label: "等级",
@@ -196,7 +195,7 @@ export default {
           money: "17"
         }
       ],
-      tableData1:[
+      tableData1: [
         {
           name: "中国人保",
           prod: "好医保·长期医疗（新版）",
@@ -394,7 +393,7 @@ export default {
           level: "D"
         }
       ],
-      tableData2:[
+      tableData2: [
         {
           name: "三峡人寿",
           prod: "达尔文2号",
@@ -404,13 +403,15 @@ export default {
         {
           name: "和泰人寿",
           prod: "超级玛丽2020",
-          desc: "0-40岁投保前15年额外50%保额，可选特定良性肿瘤赔付，癌症二次赔付，保费豁免功能",
+          desc:
+            "0-40岁投保前15年额外50%保额，可选特定良性肿瘤赔付，癌症二次赔付，保费豁免功能",
           level: "A"
         },
         {
           name: "百年人寿",
           prod: "康惠保2020",
-          desc: "前10年额外赔50%，11-15年额外赔35%，癌症二次赔付，特定疾病额外赔",
+          desc:
+            "前10年额外赔50%，11-15年额外赔35%，癌症二次赔付，特定疾病额外赔",
           level: "A"
         },
         {
