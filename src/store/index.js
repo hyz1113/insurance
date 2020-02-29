@@ -6,7 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     hasChildNum: 0,
-    failyType:''
+    failyType:'',
+    formResponseData:null,
   },
   mutations: {
     modifyNum(state, num) {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     modifyType(state, num) {
       state.failyType = num;
     },
+    modifyFormRespData(state, data){
+     state.formResponseData=data;
+    }
   },
   actions: {
     resiteChildNum({ commit }, num) {
@@ -22,6 +26,9 @@ export default new Vuex.Store({
     },
     resiteType({ commit }, num) {
       commit("modifyType", num);
+    },
+    resiteFormData({commit},data) {
+      commit('modifyFormRespData',data);
     }
   },
   modules: {}

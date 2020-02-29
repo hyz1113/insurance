@@ -7,7 +7,7 @@ module.exports = {
     //port: 8080, // 这里是我们本地设置的一个端口号
     proxy: {
       "/childrenhealth": {
-        target: "http://ins.erdoscs.com:9999/childrenhealth",
+        target: "http://119.18.207.134:8080/childrenhealth",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {
@@ -15,7 +15,7 @@ module.exports = {
         }
       },
       "/childrenedu": {
-        target: "http://ins.erdoscs.com:9999/childrenedu",
+        target: "http://119.18.207.134:8080/childrenedu",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {
@@ -23,7 +23,7 @@ module.exports = {
         }
       },
       "/familyinfo": {
-        target: "http://ins.erdoscs.com:9999/familyinfo",
+        target: "http://119.18.207.134:8080/familyinfo",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {
@@ -31,7 +31,7 @@ module.exports = {
         }
       },
       "/personalinfo": {
-        target: "http://ins.erdoscs.com:9999/personalinfo",
+        target: "http://119.18.207.134:8080/api/personalinfo",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {

@@ -1,5 +1,6 @@
 import axios from "axios";
 import qs from "qs";
+
 const get = function(url, params = {}) {
   return new Promise((resolve, reject) => {
     axios
@@ -17,7 +18,12 @@ const get = function(url, params = {}) {
 
 const post = function(url, data = {}) {
   return new Promise((resolve, reject) => {
-    axios.post(url, data).then(
+    axios.post(url, data,
+      {
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8"
+        }
+      }).then(
       response => {
         resolve(response.data);
       },
@@ -27,4 +33,4 @@ const post = function(url, data = {}) {
     );
   });
 };
-export { get, post,qs };
+export { get, post, qs };

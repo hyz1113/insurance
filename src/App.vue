@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view/>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
+
     <base-pageFooter></base-pageFooter>
   </div>
 </template>
