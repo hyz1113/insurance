@@ -66,11 +66,11 @@
         :showSummary="true"
         :countCulumn="countCulumn"
         :tableConfig="tableConfig"
-        :tableData="tableData"
+        :tableData="tableData1"
       ></base-table>
       <base-tableFooter
-        :tableData="tableData"
-        :resource="tableData"
+        :tableData="tableData1"
+        :resource="tableData1"
         label="payment"
       ></base-tableFooter>
     </div>
@@ -86,11 +86,11 @@
         :showSummary="true"
         :countCulumn="countCulumn"
         :tableConfig="tableConfig"
-        :tableData="tableData"
+        :tableData="tableData2"
       ></base-table>
       <base-tableFooter
-        :tableData="tableData"
-        :resource="tableData"
+        :tableData="tableData2"
+        :resource="tableData2"
         label="payment"
       ></base-tableFooter>
     </div>
@@ -113,86 +113,98 @@ export default {
   name: "case",
   data() {
     return {
-      countCulumn: ["age0"],
+      countCulumn: ["year_payment"],
       tableConfig: [
         {
-          label: "产品",
-          value: "name",
+          label: "保险类型",
+          value: "insure_version",
           width: "50px"
         },
         {
           label: "产品名称",
-          value: "prod"
+          value: "insure_name"
         },
         {
           label: "保额",
-          value: "person",
+          value: "insure_quota",
           width: "50px"
         },
         {
           label: "保额期限",
-          value: "insuranceDate",
+          value: "insure_endyear",
           width: "40px"
         },
         {
           label: "缴费年限",
-          value: "payment",
+          value: "paytotal_year",
           width: "40px"
         },
         {
           label: "年缴保费(元)",
-          value: "yearPayment",
+          value: "year_payment",
           width: "86px",
           secondTh: [
             {
-              label: "男性30岁",
-              value: "age0",
+              label: "",
+              value: "year_payment",
               width: "30px"
             }
           ]
         }
       ],
-      tableData: [
-        {
-          name: "中国人保",
-          prod: "好医保·长期医疗（新版）",
-          person: "256",
-          insuranceDate: "1年",
-          payment: "20",
-          age0: "23元",
-          yearPayment: "15岁"
-        },
-        {
-          name: "复星联合健康",
-          prod: "超越保长期医疗险计划1（专家版）",
-          person: "316",
-          insuranceDate: "1年",
-          payment: "20",
-          age0: "23元",
-          yearPayment: "15岁"
-        },
-        {
-          name: "微保&泰康人寿",
-          prod: "微医保·长期医疗险",
-          person: "196",
-          insuranceDate: "1年",
-          payment: "20",
-          age0: "23元",
-          yearPayment: "15岁"
-        },
-        {
-          name: "众慧相互",
-          prod: "慧享e生",
-          person: "256",
-          insuranceDate: "1年",
-          payment: "20",
-          age0: "23元",
-          yearPayment: "15岁"
-        }
-      ]
+      tableData: [],
+      tableData1: [],
+      tableData2: [],
     };
   },
+  mounted(){
+    this.reSiteTableData();
+  },
   methods: {
+    reSiteTableData(){
+      let val=this.$route.query;
+      let sex=val.sex==1?'男':'女';
+      this.tableConfig[5].secondTh[0].label=`${sex} 性 ${val.age}岁`;
+      let tableData=this.$store.state.formResponseData.data;
+      this.tableData=this.dealTableData(tableData.cheapInsure); //经济型
+      this.tableData1=this.dealTableData(tableData.mediumInsure);//进阶型
+      this.tableData2=this.dealTableData(tableData.highInsure);//豪华型
+
+    },
+
+    dealType(row){
+      let obj={
+        type:'',
+        time:'',
+      };
+      switch (row.insure_version) {
+        case 0:{ obj.type='意外险'; obj.time=row.pay_year;}break;
+        case 1:{obj.type='重疾险'; obj.time=row.pay_year;}break;
+        case 2:{obj.type='百万医疗险'; obj.time=row.ensure_pay;}break;
+        case 3:{obj.type='寿险'; obj.time=row.pay_year;}break;
+        case 4:{obj.type='少儿小额医疗'; obj.time=row.ensure_pay;}break;
+      }
+
+      return obj;
+    },
+    dealTableData(data){
+      let tableData=[];
+      let that=this;
+      if(data.length){
+        for(let i in  data){
+          let item=data[i];
+          let rowData=that.dealType(item);
+          item.insure_version=rowData.type;
+          item.year_payment=rowData.time;
+          let insuranceTime=item.insure_desc.includes('/')?item.insure_desc.split('/'):'';
+          item.insure_endyear=insuranceTime?insuranceTime[0].replace('保障',''):"";
+          item.paytotal_year=insuranceTime?insuranceTime[1].replace('缴费',''):"";
+          tableData.push(item);
+        }
+      }
+
+      return tableData;
+    },
     tableRowClassName({ rowIndex }) {
       if (rowIndex % 2 == 0) {
         return "event-row";

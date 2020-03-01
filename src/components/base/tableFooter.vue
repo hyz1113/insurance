@@ -32,8 +32,6 @@ export default {
       let that = this;
       this.tableData.forEach(item => {
         Object.keys(item).forEach(itm => {
-          console.log(itm, that.label);
-          //console.log(item[itm]);
           if (itm == that.label) {
             that.count += Number(item[itm]);
           }

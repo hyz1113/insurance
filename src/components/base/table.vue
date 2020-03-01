@@ -71,7 +71,6 @@ export default {
       return "";
     },
     getSummaries(param) {
-
       const { columns, data } = param;
       const sums = [];
       const countArr = this.countCulumn.join(",");
@@ -81,10 +80,11 @@ export default {
           return;
         }
         const values = data.map(item => {
-
           return parseInt(item[column.property])
         });
+
         if (countArr.includes(column.property)) {
+
           sums[index] = values.reduce((prev, curr) => {
             return prev + curr;
           }, 0);
