@@ -1497,11 +1497,6 @@
         }
         formObj.push(this.$refs[`form12`]); //家庭综合项
         let isSuccess = this.validateForm(formObj);
-
-
-
-
-
         if (!isSuccess) {
           this.$message("请正确填写表单");
           return;
@@ -1511,17 +1506,11 @@
         this.resiteFormBsdetail(this.formDataff);
         this.resiteFormBsdetail(this.formDataffChild);
         this.resiteFormBsdetail(this.formDataScChild);
-
-
-
         let formData = { ...this.dealFamily(this.formDatafamily, "family"), ...this.dealPerson(this.formData, "my"), ...this.dealPerson(this.formDataff, "spouse"), ...this.dealPerson(this.formDataffChild, "baby"), ...this.dealPerson(this.formDataScChild, "secbaby") };
-
-
-
         this.$axios.post("/familyinfo", this.$qs.stringify(formData)).then(
           data => {
             that.$router.push({
-              path: "/confirmPg"
+              path: "/person/contrastList"
             });
           },
           err => {
