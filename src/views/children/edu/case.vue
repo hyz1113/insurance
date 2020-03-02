@@ -119,7 +119,6 @@
     name: "case",
     data() {
       return {
-        countCulumn: ["age0"],
         tableConfig: [
           {
             label: "时间",
