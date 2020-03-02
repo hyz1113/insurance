@@ -162,9 +162,18 @@ export default {
   },
   methods: {
     reSiteTableData(){
-      let val=this.$route.query;
-      let sex=val.sex==1?'男':'女';
-      this.tableConfig[5].secondTh[0].label=`${sex} 性 ${val.age}岁`;
+      let stateVal=this.$store.state.baseinfo;
+      let val;
+      let sex;
+      if(this.$store.state.formType=='family'){
+        val=stateVal.people_age;
+        sex=stateVal.people_sex;
+      }else{
+        val=this.$route.query;
+        sex=val.sex;
+      }
+      sex=sex.sex==1?'男':'女';
+      this.tableConfig[5].secondTh[0].label=`${sex}性 ${val}岁`;
       let tableData=this.$store.state.formResponseData.data;
       this.tableData=this.dealTableData(tableData.cheapInsure); //经济型
       this.tableData1=this.dealTableData(tableData.mediumInsure);//进阶型

@@ -6,6 +6,14 @@ module.exports = {
     //host: '192.168.0.1', // 代理会映射到本地的一个ip地址。这里我们可以通过改成根基的ip地址或者0.0.0.0然后通过手机就可以看到项目
     //port: 8080, // 这里是我们本地设置的一个端口号
     proxy: {
+      "/familyinfo": {
+        target: "http://119.18.207.134:8080/api/familyinfo ",
+        changeOrigin: true,
+        ws: true, // proxy websockets
+        pathRewrite: {
+          "^/familyinfo": ""
+        }
+      },
       "/childrenhealth": {
         target: "http://119.18.207.134:8080/api/childrenhealth",
         changeOrigin: true,
@@ -20,14 +28,6 @@ module.exports = {
         ws: true, // proxy websockets
         pathRewrite: {
           "^/childrenedu": ""
-        }
-      },
-      "/familyinfo": {
-        target: "http://119.18.207.134:8080/familyinfo",
-        changeOrigin: true,
-        ws: true, // proxy websockets
-        pathRewrite: {
-          "^/familyinfo": ""
         }
       },
       "/personalinfo": {

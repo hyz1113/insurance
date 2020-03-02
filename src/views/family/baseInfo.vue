@@ -257,6 +257,7 @@
     }
     callback();
   };
+  import axios from "axios";
   export default {
     name: "personbaseInfo",
     data: () => {
@@ -1173,7 +1174,7 @@
           householdincomestab: null,
           familyincome: null
         },
-        isSubmit: true,
+
         rules1: {
           age: {
             required: true,
@@ -1359,7 +1360,8 @@
             trigger: "blur",
             message: '请选择家庭收入稳定性',
           }
-        }
+        },
+        isSubmit: false,
       };
     },
     mounted() {
@@ -1442,7 +1444,7 @@
           //   dataParam[`${i}`] = newForm[i];
           //   continue;
           // }
-          dataParam[`${str}.${i}`] = newForm[i];
+          dataParam[`${i}`] = newForm[i];
         }
         return dataParam;
       },
@@ -1450,7 +1452,7 @@
         let dataParam = {}; //重置新的提交字段名
         let newForm = JSON.parse(JSON.stringify(formData));
         for (let i in newForm) {
-          dataParam[`${str}.${i}`] = newForm[i];
+          dataParam[`${i}`] = newForm[i];
         }
         return dataParam;
       },
@@ -1486,6 +1488,8 @@
           if(!this.validateCommins(this.formDataffChild,'大孩')){// 校验大孩商业险
             return;
           }
+          this.$store.dispatch('resiteBaseInfoPeople',[this.formDataffChild.age,this.formDataffChild.gender,3]);
+
         }
         if(this.hasSecond){
           for (let i = 18; i <= 22; i++) {
@@ -1494,29 +1498,50 @@
           if(!this.validateCommins(this.formDataScChild,'二孩')){// 校验二孩商业险
             return;
           }
+           this.$store.dispatch('resiteBaseInfoPeople',[this.formDataScChild.age,this.formDataScChild.gender,4]);
+
         }
         formObj.push(this.$refs[`form12`]); //家庭综合项
         let isSuccess = this.validateForm(formObj);
         if (!isSuccess) {
-          this.$message("请正确填写表单");
-          return;
+          //this.$message("请正确填写表单");
+          //return;
         }
+
+        this.$store.dispatch('resiteBaseInfoPeople',[this.formData.age,this.formData.gender,1]);
+        this.$store.dispatch('resiteBaseInfoPeople',[this.formDataff.age,this.formDataff.gender,2]);
 
         this.resiteFormBsdetail(this.formData);
         this.resiteFormBsdetail(this.formDataff);
         this.resiteFormBsdetail(this.formDataffChild);
         this.resiteFormBsdetail(this.formDataScChild);
-        let formData = { ...this.dealFamily(this.formDatafamily, "family"), ...this.dealPerson(this.formData, "my"), ...this.dealPerson(this.formDataff, "spouse"), ...this.dealPerson(this.formDataffChild, "baby"), ...this.dealPerson(this.formDataScChild, "secbaby") };
-        this.$axios.post("/familyinfo", this.$qs.stringify(formData)).then(
-          data => {
-            that.$router.push({
-              path: "/person/contrastList"
-            });
-          },
-          err => {
-            console.log(err);
-          }
-        );
+
+        let finalData={
+          my:this.dealPerson(this.formData, "my"),
+          spouse:this.dealPerson(this.formDataff, "spouse"),
+          baby:this.dealPerson(this.formDataffChild, "baby"),
+          secbaby:this.dealPerson(this.formDataScChild, "secbaby"),
+          family:this.formDatafamily,
+        };
+
+        let formData = {...finalData};
+
+        that.$router.push({
+                path: "/person/contrastList"
+               });
+
+
+        // this.$axios.post("/childrenhealth", formData).then(
+        //   data => {
+        //     that.$store.dispatch("resiteFormData", data);
+        //     that.$router.push({
+        //       path: "/person/contrastList"
+        //     });
+        //   },
+        //   err => {
+        //     console.log(err);
+        //   }
+        // );
       }
     }
   };
