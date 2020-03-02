@@ -56,8 +56,6 @@
         </el-link>
       </div>
       <base-table
-              :countCulumn="countCulumn"
-              :showSummary="true"
               :tableConfig="tableConfig"
               :tableData="tableData"
       ></base-table>
@@ -82,8 +80,8 @@
         </el-link>
       </div>
       <base-table
-              :tableConfig="tableConfig"
-              :tableData="tableData"
+              :tableConfig="tableConfig1"
+              :tableData="tableData1"
       ></base-table>
 
       <div class="table-block m-t-10 row-align-center">
@@ -125,13 +123,33 @@
         tableConfig: [
           {
             label: "时间",
-            value: "time",
+            value: "time"
+          },
+          {
+            label: "一次性存10万",
+            value: "onceIncome",
+            width: "60px"
+          },
+          {
+            label: "分5年每年存2万",
+            value: "year5",
             width: "80px"
+          },
+          {
+            label: "分10年每年存1万",
+            value: "year10",
+            width: "90px"
+          }
+        ],
+        tableConfig1: [
+          {
+            label: "时间",
+            value: "time"
           },
           {
             label: "一次性存100万",
             value: "onceIncome",
-            width: "80px"
+            width: "60px"
           },
           {
             label: "分5年每年存20万",
@@ -140,7 +158,8 @@
           },
           {
             label: "分10年每年存10万",
-            value: "year10"
+            value: "year10",
+            width:"90px"
           }
         ],
         tableData: [
@@ -167,6 +186,32 @@
             onceIncome: "253200元",
             year5: "217560元",
             year10: "192490元"
+          }
+        ],
+        tableData1: [
+          {
+            time: "大学18-21岁领取部分",
+            onceIncome: "20万*4年",
+            year5: "20万*4年",
+            year10: "20万*4年"
+          },
+          {
+            time: "深造22-24岁",
+            onceIncome: "20万*3年",
+            year5: "20万*3年",
+            year10: "20万*3年"
+          },
+          {
+            time: "满期领取剩余部分",
+            onceIncome: "1132000元",
+            year5: "775600元",
+            year10: "524900元"
+          },
+          {
+            time: "累计可领取",
+            onceIncome: "2532000元",
+            year5: "2175600元",
+            year10: "1924900元"
           }
         ]
       };

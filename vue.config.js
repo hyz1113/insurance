@@ -15,7 +15,7 @@ module.exports = {
         }
       },
       "/childrenedu": {
-        target: "http://119.18.207.134:8080/childrenedu",
+        target: "http://119.18.207.134:8080/api/childrenedu",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {

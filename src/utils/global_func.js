@@ -15,7 +15,7 @@ function resiteBt(formName) {
 }
 
 function validatef(formArr) {
-  debugger
+
   let fg=false;
   let arr='';
   if(formArr.length>1){
@@ -29,7 +29,7 @@ function validatef(formArr) {
       console.log("第  "+(index+1)+'   '+a);
     })
   }else{
-    formArr.$refs['form'].validate((valid) => {
+    formArr[0].$refs['form'].validate((valid) => {
       arr+=`${valid},`;
     })
   }

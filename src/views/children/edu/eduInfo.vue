@@ -154,8 +154,9 @@
         this.isSubmit=false;
       },
       submit() {
-        debugger
-        let formObj = this.$refs[`form1`];
+
+        let formObj=[];
+        formObj.push(this.$refs[`form1`]);
         let isSuccess = this.validateForm(formObj);
         if(this.form.age==null || this.form.age==''){
           this.$message("请填写年龄");
@@ -173,7 +174,7 @@
         for (let i in newForm) {
           dataParam[`${i}`] = newForm[i];
         }
-        this.$axios.post("/childrenhealth", dataParam).then(
+        this.$axios.post("/childrenedu", dataParam).then(
           data => {
             console.log(data);
             that.$router.push({

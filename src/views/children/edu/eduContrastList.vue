@@ -8,7 +8,7 @@
     <div class="bgf p-10">
       <div class="title">1、对比流程采用的保险产品来自以下保险公司。</div>
       <div class="p-10">
-        <img class="w-100-c" src="../../../assets/1.png" />
+        <img class="w-100-c" src="../../../assets/1.png"/>
       </div>
     </div>
 
@@ -54,10 +54,7 @@
                 class="row-align-center"
                 size="mini"
                 type="success"
-                @click="$router.push({path:'/children/edu/case',query: {
-              age: this.$route.query.age,
-              sex: this.$route.query.sex
-            }})"
+                @click="$router.push({path:'/children/edu/case',query: {age: $route.query.age,sex: $route.query.sex}})"
         >下一步 规划方案
         </el-button>
       </div>
@@ -74,27 +71,27 @@
           {
             label: "产品名称",
             value: "prod",
-            width:'60'
+            width: "60"
           },
           {
             label: "公司",
             value: "name",
-            width:'60'
+            width: "60"
           },
           {
             label: "投入保费",
-            value: "price",
+            value: "price"
 
           },
           {
             label: "领取总额",
             value: "total",
-            width:'70'
+            width: "70"
           },
           {
             label: "年化收益",
             value: "income",
-            width:'60'
+            width: "60"
           }
         ],
         tableConfig1: [
