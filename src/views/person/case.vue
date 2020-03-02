@@ -171,40 +171,6 @@ export default {
       this.tableData2=this.dealTableData(tableData.highInsure);//豪华型
 
     },
-
-    dealType(row){
-      let obj={
-        type:'',
-        time:'',
-      };
-      switch (row.insure_version) {
-        case 0:{ obj.type='意外险'; obj.time=row.pay_year;}break;
-        case 1:{obj.type='重疾险'; obj.time=row.pay_year;}break;
-        case 2:{obj.type='百万医疗险'; obj.time=row.ensure_pay;}break;
-        case 3:{obj.type='寿险'; obj.time=row.pay_year;}break;
-        case 4:{obj.type='少儿小额医疗'; obj.time=row.ensure_pay;}break;
-      }
-
-      return obj;
-    },
-    dealTableData(data){
-      let tableData=[];
-      let that=this;
-      if(data.length){
-        for(let i in  data){
-          let item=data[i];
-          let rowData=that.dealType(item);
-          item.insure_version=rowData.type;
-          item.year_payment=rowData.time;
-          let insuranceTime=item.insure_desc.includes('/')?item.insure_desc.split('/'):'';
-          item.insure_endyear=insuranceTime?insuranceTime[0].replace('保障',''):"";
-          item.paytotal_year=insuranceTime?insuranceTime[1].replace('缴费',''):"";
-          tableData.push(item);
-        }
-      }
-
-      return tableData;
-    },
     tableRowClassName({ rowIndex }) {
       if (rowIndex % 2 == 0) {
         return "event-row";

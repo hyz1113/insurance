@@ -977,14 +977,24 @@
         return "";
       },
       goCase() {
-        let type = this.$route.query.type;
-        if (type == "family") {
-          this.$router.push({ path: "/family/case" });
+        if (this.$store.formType == "family") {
+          this.$router.push({
+            path: "/family/case",
+            query: {
+              age: this.$route.query.age,
+              sex: this.$route.query.sex
+            }
+          });
         } else {
-          this.$router.push({ path: "/children/healty/case" });
+          this.$router.push({
+            path: "/children/healty/case",
+            query: {
+              age: this.$route.query.age,
+              sex: this.$route.query.sex
+            }
+          })
         }
       }
     }
-  }
-  ;
+  };
 </script>

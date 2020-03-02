@@ -111,11 +111,11 @@
         :countCulumn="countCulumn"
         :showSummary="true"
         :tableConfig="tableConfig"
-        :tableData="tableData"
+        :tableData="tableData1"
       ></base-table>
       <base-tableFooter
-        :tableData="tableData"
-        :resource="tableData"
+        :tableData="tableData1"
+        :resource="tableData1"
         label="payment"
       ></base-tableFooter>
       <div class="table-block m-t-10 row-align-center">
@@ -141,11 +141,11 @@
         :countCulumn="countCulumn"
         :showSummary="true"
         :tableConfig="tableConfig"
-        :tableData="tableData"
+        :tableData="tableData2"
       ></base-table>
       <base-tableFooter
-        :tableData="tableData"
-        :resource="tableData"
+        :tableData="tableData2"
+        :resource="tableData2"
         label="payment"
       ></base-tableFooter>
       <div class="table-block m-t-10 row-align-center">
@@ -181,74 +181,62 @@ export default {
   name: "case",
   data() {
     return {
-      countCulumn: ["age0"],
+      countCulumn: ["year_payment"],
       tableConfig: [
         {
           label: "保险类型",
-          value: "type",
+          value: "insure_version",
           width: "40px"
         },
         {
           label: "产品名称",
-          value: "name"
+          value: "insure_name"
         },
         {
           label: "保额",
-          value: "money",
+          value: "insure_quota",
           width: "50px"
         },
         {
           label: "保障期限",
-          value: "year",
+          value: "insure_endyear",
           width: "40px"
         },
         {
           label: "缴费年限",
-          value: "yearValue",
+          value: "paytotal_year",
           width: "40px"
         },
         {
           label: "年交保费",
           width: "60px",
+          value: "year_payment",
           secondTh: [
             {
               label: "男宝0岁",
-              value: "age0",
+              value: "year_payment",
               width: "30px"
             }
           ]
         }
       ],
-      tableData: [
-        {
-          type: "中国人保",
-          name: "好医保·长期医疗（新版）",
-          money: 21,
-          year: 12,
-          yearValue: 12,
-          age0: "23元",
-          age5: "24元"
-        },
-        {
-          type: "中国人保",
-          name: "好医保·长期医疗（新版）",
-          money: 21,
-          year: 12,
-          yearValue: 12,
-          age0: "23元",
-          age5: "24元"
-        }
-      ]
+      tableData: [],
+      tableData1: [],
+      tableData2: [],
     };
   },
   mounted() {
+    let val=this.$route.query;
+    let sex=val.sex==1?'男':'女';
+    //this.tableConfig[5].secondTh[0].label=`${sex} 性 ${val.age}岁`;
+
     let record1 = {
-      label: "大孩男宝10岁",
+      label:`大孩${sex}宝${val.age}岁`,
       value: "age0",
       width: "30px"
     };
     let record2 = {
-      label: "二孩男宝15岁",
+      label: `二孩${sex}宝${val.age}岁`,
       value: "age5",
       width: "30px"
     };
@@ -256,13 +244,13 @@ export default {
       case 0:
         {
           this.countCulumn.push("age5");
-          this.tableConfig[5].secondTh[0].label = "男宝10岁";
+          this.tableConfig[5].secondTh[0].label =`${sex}宝${val.age}岁`;
         }
         break;
       case 1:
         {
           this.tableConfig[5].secondTh[0] = {
-            label: "男宝10岁",
+            label: `${sex}宝${val.age}岁`,
             value: "age0",
             width: "30px"
           };
@@ -276,8 +264,18 @@ export default {
         }
         break;
     }
+
+    this.reSiteTableData();
   },
   methods: {
+    reSiteTableData(){
+      debugger
+      let tableData=this.$store.state.formResponseData.data;
+      debugger
+      this.tableData=this.dealTableData(tableData.cheapInsure); //经济型
+      this.tableData1=this.dealTableData(tableData.mediumInsure);//进阶型
+      this.tableData2=this.dealTableData(tableData.highInsure);//豪华型
+    },
     tableRowClassName({ rowIndex }) {
       if (rowIndex % 2 == 0) {
         return "event-row";

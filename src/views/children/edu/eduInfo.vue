@@ -154,6 +154,7 @@
         this.isSubmit=false;
       },
       submit() {
+        debugger
         let formObj = this.$refs[`form1`];
         let isSuccess = this.validateForm(formObj);
         if(this.form.age==null || this.form.age==''){
@@ -170,13 +171,17 @@
 
         let dataParam = {}; //重置新的提交字段名
         for (let i in newForm) {
-          dataParam[`baby.${i}`] = newForm[i];
+          dataParam[`${i}`] = newForm[i];
         }
-        this.$axios.post("/childrenedu", this.$qs.stringify(dataParam)).then(
+        this.$axios.post("/childrenhealth", dataParam).then(
           data => {
             console.log(data);
             that.$router.push({
-              path: "/confirmPg"
+              path: "/children/edu/eduContrastList",
+              query: {
+                age: that.form.age,
+                sex: that.form.gender
+              }
             });
           },
           err => {

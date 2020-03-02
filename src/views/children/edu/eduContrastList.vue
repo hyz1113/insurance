@@ -54,7 +54,10 @@
                 class="row-align-center"
                 size="mini"
                 type="success"
-                @click="$router.push({path:'/children/edu/case'})"
+                @click="$router.push({path:'/children/edu/case',query: {
+              age: this.$route.query.age,
+              sex: this.$route.query.sex
+            }})"
         >下一步 规划方案
         </el-button>
       </div>
@@ -308,7 +311,7 @@
           {
             name: "珍爱未来B",
             prod: "招商信诺",
-            name: "18-21岁 满期25岁",
+            time: "18-21岁 满期25岁",
             level: "B"
           },
           {
@@ -332,13 +335,13 @@
           {
             name: "平安蔚来星少儿年金保险",
             prod: "平安人寿",
-            name: "18-21岁 满期22岁",
+            time: "18-21岁 满期22岁",
             level: "B"
           },
           {
             name: "华泰状元宝少儿教育金（万能型）",
             prod: "华泰保险",
-            name: "18-21岁 满期25岁",
+            time: "18-21岁 满期25岁",
             level: "B"
           },
           {

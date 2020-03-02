@@ -108,14 +108,17 @@
           switch (this.form.resource) {
             case 1: {
               pathL = `/person${pathL}`;
+              this.$store.dispatch('resiteFormType','person')
             }
               break;
             case 2: {
               pathL = `/children/index`;
+              this.$store.dispatch('resiteFormType','children')
             }
               break;
             case 3: {
               pathL = `/family${pathL}`;
+              this.$store.dispatch('resiteFormType','family')
             }
               break;
           }

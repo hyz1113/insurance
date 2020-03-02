@@ -7,7 +7,7 @@ module.exports = {
     //port: 8080, // 这里是我们本地设置的一个端口号
     proxy: {
       "/childrenhealth": {
-        target: "http://119.18.207.134:8080/childrenhealth",
+        target: "http://119.18.207.134:8080/api/childrenhealth",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {
