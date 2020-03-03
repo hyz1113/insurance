@@ -1541,7 +1541,10 @@
           data => {
             that.$store.dispatch("resiteFormData", data);
             that.$router.push({
-              path: "/person/contrastList"
+              path: "/person/contrastList",
+              query:{
+                peopleNum:2
+              }
             });
           },
           err => {

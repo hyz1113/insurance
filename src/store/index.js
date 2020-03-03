@@ -61,19 +61,43 @@ export default new Vuex.Store({
   },
   actions: {
     resiteChildNum({ commit }, num) {
+      window.sessionStorage.hasChildNum=num;
       commit("modifyNum", num);
     },
     resiteType({ commit }, num) {
+      window.sessionStorage.failyType=num;
       commit("modifyType", num);
     },
     resiteFormData({ commit }, data) {
+      window.sessionStorage.formResponseData=data;
       commit("modifyFormRespData", data);
     },
     resiteFormType({ commit }, data) {
+      window.sessionStorage.formType=data;
       commit("modifyFormType", data);
     },
     resiteBaseInfoPeople({ commit }, data) {
+      window.sessionStorage.baseinfo=data;
       commit("modifyBaseinfo", data);
+    }
+  },
+  getters:{
+    getChildNum(state){
+      return state.hasChildNum;
+      // if(state.hasChildNum!=0){
+      //   return state.hasChildNum;
+      // }else{
+      //   return window.sessionStorage.hasChildNum;
+      // }
+    },
+    getFomData(state){
+      return state.formResponseData;
+    },
+    getBaseInfo(state){
+      return state.baseinfo;
+    },
+    getFormType(state){
+      return state.formType;
     }
   },
   modules: {}

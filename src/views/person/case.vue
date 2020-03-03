@@ -36,62 +36,65 @@
     </div>
 
     <div class="bgf p-10 m-t-10">
-      <div class="title"><b class="b">个人保护伞经济型方案：</b></div>
+      <div class="title"><b class="b">{{title}}经济型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-          >预算千元左右 保障不差白菜价</el-link
+        >预算千元左右 保障不差白菜价
+        </el-link
         >
       </div>
       <base-table
-        :countCulumn="countCulumn"
-        :showSummary="true"
-        :tableConfig="tableConfig"
-        :tableData="tableData"
+              :countCulumn="countCulumn"
+              :showSummary="true"
+              :tableConfig="tableConfig"
+              :tableData="tableData"
       ></base-table>
       <base-tableFooter
-        :tableData="tableData"
-        :resource="tableData"
-        label="payment"
+              :tableData="tableData"
+              :resource="tableData"
+              label="payment"
       ></base-tableFooter>
     </div>
 
     <div class="bgf p-10 m-t-10">
-      <div class="title"><b class="b">个人保护伞进阶型方案：</b></div>
+      <div class="title"><b class="b">{{title}}进阶型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-          >预算三千元左右 给娃一辈子的重疾保障</el-link
+        >预算三千元左右 给娃一辈子的重疾保障
+        </el-link
         >
       </div>
       <base-table
-        :showSummary="true"
-        :countCulumn="countCulumn"
-        :tableConfig="tableConfig"
-        :tableData="tableData1"
+              :showSummary="true"
+              :countCulumn="countCulumn"
+              :tableConfig="tableConfig"
+              :tableData="tableData1"
       ></base-table>
       <base-tableFooter
-        :tableData="tableData1"
-        :resource="tableData1"
-        label="payment"
+              :tableData="tableData1"
+              :resource="tableData1"
+              label="payment"
       ></base-tableFooter>
     </div>
 
     <div class="bgf p-10 m-t-10">
-      <div class="title"><b class="b">个人保护伞充分保障型方案：</b></div>
+      <div class="title"><b class="b">{{title}}充分保障型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-          >每年5000元左右 坐拥400万+顶配保障</el-link
+        >每年5000元左右 坐拥400万+顶配保障
+        </el-link
         >
       </div>
       <base-table
-        :showSummary="true"
-        :countCulumn="countCulumn"
-        :tableConfig="tableConfig"
-        :tableData="tableData2"
+              :showSummary="true"
+              :countCulumn="countCulumn"
+              :tableConfig="tableConfig"
+              :tableData="tableData2"
       ></base-table>
       <base-tableFooter
-        :tableData="tableData2"
-        :resource="tableData2"
-        label="payment"
+              :tableData="tableData2"
+              :resource="tableData2"
+              label="payment"
       ></base-tableFooter>
     </div>
 
@@ -109,85 +112,158 @@
 </template>
 
 <script>
-export default {
-  name: "case",
-  data() {
-    return {
-      countCulumn: ["year_payment"],
-      tableConfig: [
-        {
-          label: "保险类型",
-          value: "insure_version",
-          width: "50px"
-        },
-        {
-          label: "产品名称",
-          value: "insure_name"
-        },
-        {
-          label: "保额",
-          value: "insure_quota",
-          width: "50px"
-        },
-        {
-          label: "保额期限",
-          value: "insure_endyear",
-          width: "40px"
-        },
-        {
-          label: "缴费年限",
-          value: "paytotal_year",
-          width: "40px"
-        },
-        {
-          label: "年缴保费(元)",
-          value: "year_payment",
-          width: "86px",
-          secondTh: [
-            {
-              label: "",
-              value: "year_payment",
-              width: "30px"
-            }
-          ]
-        }
-      ],
-      tableData: [],
-      tableData1: [],
-      tableData2: [],
-    };
-  },
-  mounted(){
-    this.reSiteTableData();
-  },
-  methods: {
-    reSiteTableData(){
-      let stateVal=this.$store.state.baseinfo;
-      let val;
-      let sex;
-      let tableData;
-      if(this.$store.state.formType=='family'){
-        val=stateVal.people_age;
-        sex=stateVal.people_sex;
-        tableData=this.$store.state.formResponseData.data.my;
-      }else{
-        val=this.$route.query;
-        sex=val.sex;
-        tableData=this.$store.state.formResponseData.data;
-      }
-      sex=sex.sex==1?'男':'女';
-      this.tableConfig[5].secondTh[0].label=`${sex}性 ${val}岁`;
-      this.tableData=this.dealTableData(tableData.cheapInsure); //经济型
-      this.tableData1=this.dealTableData(tableData.mediumInsure);//进阶型
-      this.tableData2=this.dealTableData(tableData.highInsure);//豪华型
-
+  export default {
+    name: "case",
+    data() {
+      return {
+        countCulumn: ["year_payment"],
+        tableConfig: [
+          {
+            label: "保险类型",
+            value: "insure_version",
+            width: "50px"
+          },
+          {
+            label: "产品名称",
+            value: "insure_name"
+          },
+          {
+            label: "保额",
+            value: "insure_quota",
+            width: "50px"
+          },
+          {
+            label: "保额期限",
+            value: "insure_endyear",
+            width: "40px"
+          },
+          {
+            label: "缴费年限",
+            value: "paytotal_year",
+            width: "40px"
+          },
+          {
+            label: "年缴保费(元)",
+            value: "year_payment",
+            width: "86px",
+            secondTh: [
+              {
+                label: "",
+                value: "year_payment",
+                width: "30px"
+              }
+            ]
+          }
+        ],
+        tableData: [],
+        tableData1: [],
+        tableData2: [],
+        title: "个人保护伞"//设置不同的标头
+      };
     },
-    tableRowClassName({ rowIndex }) {
-      if (rowIndex % 2 == 0) {
-        return "event-row";
+    mounted() {
+      this.$store.state.formType = "family";
+      if (this.$store.state.formType == "family") {
+        this.title = "家庭保护伞（成人）";
       }
-      return "";
+      this.reSiteTableData();
+    },
+    methods: {
+      setFamilyHeader() {
+        let stateVal = this.$store.state.baseinfo;
+        let sex1 = stateVal.people_sex == 1 ? "男" : "女";
+        let sex2 = stateVal.spouse_sex == 1 ? "男" : "女";
+        let record1 = {
+          label: `${sex1}性${stateVal.people_age}岁`,
+          value: "year_payment",
+          width: "30px"
+        };
+        let record2 = {
+          label: `${sex2}性${stateVal.spouse_age}岁`,
+          value: "year_payment01",
+          width: "30px"
+        };
+        this.countCulumn.push("year_payment01");
+        this.tableConfig[5].secondTh[0] = record1;
+        this.tableConfig[5].secondTh.push(record2);
+      },
+      setPersonHeader() {
+        let val;
+        let sex;
+        val = this.$route.query;
+        sex = val.sex;
+        val = val.age;
+        sex = sex.sex == 1 ? "男" : "女";
+        this.tableConfig[5].secondTh[0].label = `${sex}性 ${val}岁`;
+      },
+      reSiteTableData() {
+        let remSession = this.$store.state.formResponseData || window.sessionStorage.formResponseData;
+        let tableData;
+        if (this.$store.state.formType == "family") {
+          this.setFamilyHeader();
+          let newData = {};
+          tableData = remSession.data.my;
+          //debugger
+          let tableDataSpouse = remSession.data.spouse;
+          for (let i in tableData) {
+            //debugger
+            if (Math.max(tableData[i].length, tableDataSpouse[i].length)) {
+              let num = tableData[i].length;
+              tableData[i].forEach((item, index) => {
+                //debugger
+                if (tableDataSpouse[i][index]) {
+                  if (tableDataSpouse[i][index].insure_version != 2) {
+                    item["year_payment01"] = tableDataSpouse[i][index]["pay_year"];
+
+                  } else {
+                    item["year_payment01"] = tableDataSpouse[i][index]["ensure_pay"];
+
+                  }
+                } else {
+                  item["year_payment01"] = "";
+                }
+                return item;
+              });
+              newData[i] = tableData[i];
+            } else {
+              let num = tableDataSpouse[i].length;
+              tableDataSpouse[i].forEach((item, index) => {
+                //debugger
+                if (tableData[i][index]) {
+                  if (tableData[i][index].insure_version != 2) {
+                    item["year_payment01"] = tableData[i][index]["pay_year"];
+                  } else {
+                    item["year_payment01"] = tableData[i][index]["ensure_pay"];
+                  }
+
+                } else {
+                  item["year_payment01"] = "";
+                }
+
+                return item;
+              });
+              newData[i] = tableDataSpouse[i];
+            }
+          }
+          //debugger
+          tableData = newData;
+        } else {
+          this.setPersonHeader();
+          tableData = this.$store.state.formResponseData.data;
+        }
+
+
+        this.tableData = this.dealTableData(tableData.cheapInsure); //经济型
+        this.tableData1 = this.dealTableData(tableData.mediumInsure);//进阶型
+        this.tableData2 = this.dealTableData(tableData.highInsure);//豪华型
+
+      },
+      tableRowClassName({ rowIndex }) {
+        if (rowIndex % 2 == 0) {
+          return "event-row";
+        }
+        return "";
+      }
     }
-  }
-};
+  };
 </script>

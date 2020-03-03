@@ -80,13 +80,16 @@ export default {
           return;
         }
         const values = data.map(item => {
-          return parseInt(item[column.property])
+          return parseFloat(item[column.property])
         });
 
         if (countArr.includes(column.property)) {
-
           sums[index] = values.reduce((prev, curr) => {
-            return prev + curr;
+            if(typeof curr=='number' && !isNaN(curr)){
+              return prev + curr;
+            }else{
+              return prev;
+            }
           }, 0);
           sums[index] += " 元";
         } else {
