@@ -62,16 +62,35 @@
           :tableData="tableData2"
         ></base-table>
       </div>
-      <div class="m-t-10 row-align-center">
+      <div class="m-t-10 row-align-center" v-if="$store.state.hasChildNum">
         <el-button
           class="row-align-center"
           size="mini"
           type="success"
-          @click="$router.push({ path: '/person/case',query: {
-              age: $route.query.age,
-              income: $route.query.income,
-              sex: $route.query.sex
-            }})"
+          @click="
+            $router.push({
+              path: '/children/healty/healtyContrastList',
+              query: { type: 'family' }
+            })
+          "
+          >少儿险产品对比
+        </el-button>
+      </div>
+      <div class="m-t-10 row-align-center" v-else>
+        <el-button
+          class="row-align-center"
+          size="mini"
+          type="success"
+          @click="
+            $router.push({
+              path: '/person/case',
+              query: {
+                age: $route.query.age,
+                income: $route.query.income,
+                sex: $route.query.sex
+              }
+            })
+          "
           >下一步 规划方案
         </el-button>
       </div>

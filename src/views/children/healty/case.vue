@@ -190,7 +190,8 @@ export default {
         },
         {
           label: "产品名称",
-          value: "insure_name"
+          value: "insure_name",
+          width: "50px"
         },
         {
           label: "保额",
@@ -222,59 +223,103 @@ export default {
       ],
       tableData: [],
       tableData1: [],
-      tableData2: [],
+      tableData2: []
     };
   },
   mounted() {
-    let val=this.$route.query;
-    let sex=val.sex==1?'男':'女';
-    //this.tableConfig[5].secondTh[0].label=`${sex} 性 ${val.age}岁`;
-
-    let record1 = {
-      label:`大孩${sex}宝${val.age}岁`,
-      value: "age0",
-      width: "30px"
-    };
-    let record2 = {
-      label: `二孩${sex}宝${val.age}岁`,
-      value: "age5",
-      width: "30px"
-    };
-    switch (this.$store.state.hasChildNum) {
-      case 0:
-        {
-          this.countCulumn.push("age5");
-          this.tableConfig[5].secondTh[0].label =`${sex}宝${val.age}岁`;
-        }
-        break;
-      case 1:
-        {
-          this.tableConfig[5].secondTh[0] = {
-            label: `${sex}宝${val.age}岁`,
-            value: "age0",
-            width: "30px"
-          };
-        }
-        break;
-      case 2:
-        {
-          this.countCulumn.push("age5");
-          this.tableConfig[5].secondTh[0] = record1;
-          this.tableConfig[5].secondTh.push(record2);
-        }
-        break;
+    if (this.$store.state.formType == "family") {
+      this.dealTableHeader(this.$store.state.baseinfo);
+    } else {
+      this.dealTableParam();
     }
-
     this.reSiteTableData();
   },
   methods: {
-    reSiteTableData(){
-      debugger
-      let tableData=this.$store.state.formResponseData.data;
-      debugger
-      this.tableData=this.dealTableData(tableData.cheapInsure); //经济型
-      this.tableData1=this.dealTableData(tableData.mediumInsure);//进阶型
-      this.tableData2=this.dealTableData(tableData.highInsure);//豪华型
+    dealTableParam() {
+      let val = this.$route.query;
+      let sex;
+      sex = val.sex == 1 ? "男" : "女";
+      this.tableConfig[5].secondTh[0] = {
+        label: `${val.sex}宝${val.age}岁`,
+        value: "year_payment",
+        width: "30px"
+      };
+    },
+    dealTableHeader(data) {
+      let val;
+      val = data;
+      switch (this.$store.state.hasChildNum) {
+        // case 0: {
+        //   let sex = data.sex == 1 ? "男" : "女";
+        //   this.countCulumn.push("age5");
+        //   this.tableConfig[5].secondTh[0].label = `${sex}宝${val.age}岁`;
+        // }
+        //   break;
+        case 1:
+          {
+            let sex1 = val.childFirst_sex == 1 ? "男" : "女";
+            this.tableConfig[5].secondTh[0] = {
+              label: `${sex1}宝${val.childFirst_age}岁`,
+              value: "year_payment",
+              width: "30px"
+            };
+          }
+          break;
+        case 2:
+          {
+            let sex1 = val.childFirst_sex == 1 ? "男" : "女";
+            let sex2 = val.childSecond_sex == 1 ? "男" : "女";
+            let record1 = {
+              label: `大孩${sex1}宝${val.childFirst_age}岁`,
+              value: "year_payment",
+              width: "30px"
+            };
+            let record2 = {
+              label: `二孩${sex2}宝${val.childSecond_age}岁`,
+              value: "year_payment01",
+              width: "30px"
+            };
+            this.countCulumn.push("year_payment01");
+            this.tableConfig[5].secondTh[0] = record1;
+            this.tableConfig[5].secondTh.push(record2);
+          }
+          break;
+      }
+    },
+    reSiteTableData() {
+      let tableData;
+      debugger;
+      if (this.$store.state.formType == "family") {
+        switch (this.$store.state.hasChildNum) {
+          case 1:
+            {
+              tableData = this.$store.state.formResponseData.data.baby;
+            }
+            break;
+          case 2:
+            {
+              tableData = this.$store.state.formResponseData.data.baby;
+              let tableDataScBaby = this.$store.state.formResponseData.data
+                .secbaby;
+              for (let i in tableData) {
+                tableData[i].forEach(item => {
+                  tableDataScBaby[i].forEach(itm => {
+                    item["year_payment01"] = itm.pay_year;
+                  });
+                });
+              }
+
+              debugger;
+            }
+            break;
+        }
+      } else {
+        tableData = this.$store.state.formResponseData.data;
+      }
+      debugger;
+      this.tableData = this.dealTableData(tableData.cheapInsure); //经济型
+      this.tableData1 = this.dealTableData(tableData.mediumInsure); //进阶型
+      this.tableData2 = this.dealTableData(tableData.highInsure); //豪华型
     },
     tableRowClassName({ rowIndex }) {
       if (rowIndex % 2 == 0) {

@@ -165,16 +165,18 @@ export default {
       let stateVal=this.$store.state.baseinfo;
       let val;
       let sex;
+      let tableData;
       if(this.$store.state.formType=='family'){
         val=stateVal.people_age;
         sex=stateVal.people_sex;
+        tableData=this.$store.state.formResponseData.data.my;
       }else{
         val=this.$route.query;
         sex=val.sex;
+        tableData=this.$store.state.formResponseData.data;
       }
       sex=sex.sex==1?'男':'女';
       this.tableConfig[5].secondTh[0].label=`${sex}性 ${val}岁`;
-      let tableData=this.$store.state.formResponseData.data;
       this.tableData=this.dealTableData(tableData.cheapInsure); //经济型
       this.tableData1=this.dealTableData(tableData.mediumInsure);//进阶型
       this.tableData2=this.dealTableData(tableData.highInsure);//豪华型

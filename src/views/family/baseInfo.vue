@@ -257,6 +257,15 @@
     }
     callback();
   };
+  const CheckAge = (rule, value, callback) => {
+    //debugger;
+    value = Number(value);
+    if (!(value >= 0 && value < 18)) {
+      callback(new Error("年龄需大于等于0岁小于18岁!"));
+    } else {
+      callback();
+    }
+  };
   import axios from "axios";
   export default {
     name: "personbaseInfo",
@@ -1249,9 +1258,10 @@
         },
         rules3: {
           age: {
+            validator: CheckAge,
             required: true,
             trigger: "blur",
-            message: '请输入年龄',
+            message: '年龄需大于等于0岁小于18岁!',
           },
           nickname: [
             { trigger: "blur",message: '请选择填写昵称',required: true },
@@ -1287,6 +1297,7 @@
         },
         rules4: {
           age: {
+            validator: CheckAge,
             required: true,
             trigger: "blur",
             message: '请输入年龄',
@@ -1504,8 +1515,8 @@
         formObj.push(this.$refs[`form12`]); //家庭综合项
         let isSuccess = this.validateForm(formObj);
         if (!isSuccess) {
-          //this.$message("请正确填写表单");
-          //return;
+          this.$message("请正确填写表单");
+          return;
         }
 
         this.$store.dispatch('resiteBaseInfoPeople',[this.formData.age,this.formData.gender,1]);
@@ -1526,22 +1537,17 @@
 
         let formData = {...finalData};
 
-        that.$router.push({
-                path: "/person/contrastList"
-               });
-
-
-        // this.$axios.post("/childrenhealth", formData).then(
-        //   data => {
-        //     that.$store.dispatch("resiteFormData", data);
-        //     that.$router.push({
-        //       path: "/person/contrastList"
-        //     });
-        //   },
-        //   err => {
-        //     console.log(err);
-        //   }
-        // );
+        this.$axios.post("/familyinfo", formData).then(
+          data => {
+            that.$store.dispatch("resiteFormData", data);
+            that.$router.push({
+              path: "/person/contrastList"
+            });
+          },
+          err => {
+            console.log(err);
+          }
+        );
       }
     }
   };

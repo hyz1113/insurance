@@ -349,28 +349,28 @@ export default {
     };
     switch (this.$store.state.hasChildNum) {
       case 0:
-      {
-        this.countCulumn.push("age5");
-        this.tableConfig[5].secondTh[0].label = "男宝10岁";
-      }
+        {
+          this.countCulumn.push("age5");
+          this.tableConfig[5].secondTh[0].label = "男宝10岁";
+        }
         break;
       case 1:
-      {
-        this.tableConfig[5].secondTh[0] = {
-          label: "男宝10岁",
-          value: "age0",
-          width: "30px"
-        };
-      }
+        {
+          this.tableConfig[5].secondTh[0] = {
+            label: "男宝10岁",
+            value: "age0",
+            width: "30px"
+          };
+        }
         break;
       case 2:
-      {
-        this.countCulumn.push("age5");
-        this.tableConfig[5].secondTh[0] = record1;
-        this.tableConfig[5].secondTh.push(record2);
-      }
+        {
+          this.countCulumn.push("age5");
+          this.tableConfig[5].secondTh[0] = record1;
+          this.tableConfig[5].secondTh.push(record2);
+        }
         break;
     }
-  },
+  }
 };
 </script>
