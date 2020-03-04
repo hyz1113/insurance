@@ -18,7 +18,8 @@ export default new Vuex.Store({
     },//存储人的年龄和性别信息
     formResponseData: null, //存储表单提交数据
     formType: null,//存储表单类型，个人，家庭，孩子
-    failyType: ""//存储表单类型，个人，家庭，孩子
+    failyType: "",//存储表单类型，个人，家庭，孩子
+    childCasetableData:null,//孩子对应方案表格数据
   },
   mutations: {
     modifyNum(state, num) {
@@ -57,9 +58,16 @@ export default new Vuex.Store({
         }
           break;
       }
+    },
+    modifycaseTable(state, data){
+      state.childCasetableData=data;
     }
   },
   actions: {
+    resitCaseTable({ commit }, data){
+      window.sessionStorage.childCasetableData=data;
+      commit("modifycaseTable", data);
+    },
     resiteChildNum({ commit }, num) {
       window.sessionStorage.hasChildNum=num;
       commit("modifyNum", num);
@@ -79,7 +87,7 @@ export default new Vuex.Store({
     resiteBaseInfoPeople({ commit }, data) {
       window.sessionStorage.baseinfo=data;
       commit("modifyBaseinfo", data);
-    }
+    },
   },
   getters:{
     getChildNum(state){

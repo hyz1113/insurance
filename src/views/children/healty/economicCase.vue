@@ -320,103 +320,112 @@
 
 <script>
 export default {
-  name: "economicCase",
   data() {
     return {
-      countCulumn: ["age0"],
+      countCulumn: ["year_payment"],
       tableConfig: [
         {
           label: "保险类型",
-          value: "type",
-          width: "40px"
+          value: "insure_version"
         },
         {
           label: "产品名称",
-          value: "name"
+          value: "insure_name",
+          width: "50px"
         },
         {
           label: "保额",
-          value: "money",
+          value: "insure_quota",
           width: "50px"
         },
         {
           label: "保障期限",
-          value: "year",
+          value: "insure_endyear",
           width: "40px"
         },
         {
           label: "缴费年限",
-          value: "yearValue",
+          value: "paytotal_year",
           width: "40px"
         },
         {
           label: "年交保费",
           width: "60px",
+          value: "year_payment",
           secondTh: [
             {
               label: "男宝0岁",
-              value: "age0",
+              value: "year_payment",
               width: "30px"
             }
           ]
         }
       ],
-      tableData: [
-        {
-          type: "中国人保",
-          name: "好医保·长期医疗（新版）",
-          money: 21,
-          year: 12,
-          yearValue: 12,
-          age0: "23元",
-          age5: "24元"
-        },
-        {
-          type: "中国人保",
-          name: "好医保·长期医疗（新版）",
-          money: 21,
-          year: 12,
-          yearValue: 12,
-          age0: "23元",
-          age5: "24元"
-        }
-      ]
+      tableData: []
     };
   },
   mounted() {
-    let record1 = {
-      label: "大孩男宝10岁",
-      value: "age0",
-      width: "30px"
-    };
-    let record2 = {
-      label: "二孩男宝15岁",
-      value: "age5",
-      width: "30px"
-    };
-    switch (this.$store.state.hasChildNum) {
-      case 0:
+    if (this.$store.state.formType == "family") {
+      this.dealTableHeader(this.$store.state.baseinfo);
+    } else {
+      this.dealTableParam();
+    }
+    this.reSiteTableData();
+  },
+  methods: {
+    dealTableParam() {
+      let val = this.$route.query;
+      let sex;
+      sex = val.sex == 1 ? "男" : "女";
+      this.tableConfig[5].secondTh[0] = {
+        label: `${sex}宝${val.age}岁`,
+        value: "year_payment",
+        width: "30px"
+      };
+    },
+    dealTableHeader(data) {
+      let val;
+      val = data;
+
+      switch (this.$store.state.hasChildNum) {
+        case 1:
         {
-          this.countCulumn.push("age5");
-          this.tableConfig[5].secondTh[0].label = "男宝10岁";
-        }
-        break;
-      case 1:
-        {
+          let sex1 = val.childFirst_sex == 1 ? "男" : "女";
           this.tableConfig[5].secondTh[0] = {
-            label: "男宝10岁",
-            value: "age0",
-            width: "30px"
+            label: `${sex1}宝${val.childFirst_age}岁`,
+            value: "year_payment"
           };
         }
-        break;
-      case 2:
+          break;
+        case 2:
         {
-          this.countCulumn.push("age5");
+          let sex1 = val.childFirst_sex == 1 ? "男" : "女";
+          let sex2 = val.childSecond_sex == 1 ? "男" : "女";
+          let record1 = {
+            label: `大孩${sex1}宝${val.childFirst_age}岁`,
+            value: "year_payment",
+            width: "30px"
+          };
+          let record2 = {
+            label: `二孩${sex2}宝${val.childSecond_age}岁`,
+            value: "year_payment01",
+            width: "30px"
+          };
+          this.countCulumn.push("year_payment01");
           this.tableConfig[5].secondTh[0] = record1;
           this.tableConfig[5].secondTh.push(record2);
         }
-        break;
+          break;
+      }
+    },
+    reSiteTableData() {
+      this.tableData = this.$store.state.childCasetableData; //经济型
+    },
+    tableRowClassName({ rowIndex }) {
+      if (rowIndex % 2 == 0) {
+        return "event-row";
+      }
+      return "";
     }
   }
 };

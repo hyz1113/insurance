@@ -103,34 +103,30 @@
           </div>
 
           <div class="article-block">
-            <p>产品名称：慧馨安-健康保少儿版</p>
-            <p>承保公司：昆仑健康保险</p>
+            <p>产品名称：妈咪保贝</p>
+            <p>承保公司：复星联合健康保险</p>
             <p>终身儿童重疾险的「顶配」。终身保，还加上了儿童特定疾病。</p>
             <p>
-              这是一款典型的少儿重疾险，含有全面的轻、重、中疾病保障，并对于少儿多发的白血病、严重手足口、川崎病等等实施了双赔约定。
+              当然，罕见病的发病率极低，属于锦上添花。 </p>
+            <div>
+              <p>
+                <img src="../../../assets/u25.jpg" class="w-100-c" />
+              </p>
+            </div>
+            <p>
+              妈咪保贝，第一款保中症的儿童重疾险，重中轻疾病保障齐全，重疾赔1次，中症、轻症都可以赔2次。不幸死亡，退已交保费。 </p>
+            <p>
+              18种少儿特定重疾，额外赔50万。加上重疾保额，一共赔100万。 </p>
+            <p>
+              而且，这些疾病的含金量相当高。16种少儿高发的疾病，妈咪保贝覆盖了15种。
             </p>
             <p>
-              第一点：常见轻疾的覆盖，昆仑健康的慧馨安健康保少儿重疾险，对于高发重症对应的5类重疾都提供，且值得一提的是把【轻微脑中风后遗症】划分到中症赔付里，之前赔基本保额30%提升到赔保额50%，也其他少儿重疾险对于这类疾病就是买30万，本身只赔9万元，现在这款产品对于轻微脑中风后遗症可以赔15万，这是一大亮点。
-            </p>
-            <p>
-              第二点：白血病是否翻倍赔，少儿目前第一首发重疾是白血病，如果是做骨髓移植+康排异治疗，医疗费轻松上百万，在这款产品中，白血病即属于“恶性肿瘤”，也属于“少儿特定疾病”，可以赔双赔保额，也就是重疾保额买50万元，赔100万元。
-            </p>
-            <p>
-              第三点：特色亮点，附加恶性肿瘤保险金：疾病定义宽松，对于癌症的转移、持续、复发都能赔，且首次发生癌症，间隔3年赔付保额100%，非癌症间隔180天就能赔付基本保额。孩子年龄小，未来的路还有诸多不确定因素，加上恶性肿瘤多赔约定，相对会更保险；
-            </p>
-            <p>
-              特别关爱保险金：这一条区别于其他的同类产品，约定为22-70周岁，轻疾、重疾和中症能够翻倍保额，还是非常实用，适用于孩子长大之后如果发生慢性病，买健康险就比较困难了，这条可以加大重疾保额使用。
-            </p>
-            <p>
-              对于全面保障的需求而言，从风险规避、终身全面保障等多个维度来看，这款产品比较适合家庭经济条件丰厚且对孩子未来健康规划偏完美型的用户选择。
-            </p>
-            <p>
-              此外，如对保障的额度对还不够满意，作为重疾险，其实还可的以在购买慧馨安-健康保少儿版的基础之上再选择同时购买妈咪宝贝的基础款每年增加500元的保费，保额则再增加50万。
-            </p>
+              另外，5种少儿罕见病，额外赔100万。这5种罕见病也在重疾清单里，得了罕见病，加上重疾保额，一共赔150万。 </p>
+
 
             <div class="title text-center">
               <b class="g-error text-center b">
-                你若购买首年保费：3500元
+                你若购买首年保费：2460元
               </b>
             </div>
 
@@ -323,100 +319,110 @@ export default {
   name: "securityCase",
   data() {
     return {
-      countCulumn: ["age0"],
+      countCulumn: ["year_payment"],
       tableConfig: [
         {
           label: "保险类型",
-          value: "type",
-          width: "40px"
+          value: "insure_version"
         },
         {
           label: "产品名称",
-          value: "name"
+          value: "insure_name",
+          width: "50px"
         },
         {
           label: "保额",
-          value: "money",
+          value: "insure_quota",
           width: "50px"
         },
         {
           label: "保障期限",
-          value: "year",
+          value: "insure_endyear",
           width: "40px"
         },
         {
           label: "缴费年限",
-          value: "yearValue",
+          value: "paytotal_year",
           width: "40px"
         },
         {
           label: "年交保费",
           width: "60px",
+          value: "year_payment",
           secondTh: [
             {
               label: "男宝0岁",
-              value: "age0",
+              value: "year_payment",
               width: "30px"
             }
           ]
         }
       ],
-      tableData: [
-        {
-          type: "中国人保",
-          name: "好医保·长期医疗（新版）",
-          money: 21,
-          year: 12,
-          yearValue: 12,
-          age0: "23元",
-          age5: "24元"
-        },
-        {
-          type: "中国人保",
-          name: "好医保·长期医疗（新版）",
-          money: 21,
-          year: 12,
-          yearValue: 12,
-          age0: "23元",
-          age5: "24元"
-        }
-      ]
+      tableData: []
     };
   },
   mounted() {
-    let record1 = {
-      label: "大孩男宝10岁",
-      value: "age0",
-      width: "30px"
-    };
-    let record2 = {
-      label: "二孩男宝15岁",
-      value: "age5",
-      width: "30px"
-    };
-    switch (this.$store.state.hasChildNum) {
-      case 0:
+    if (this.$store.state.formType == "family") {
+      this.dealTableHeader(this.$store.state.baseinfo);
+    } else {
+      this.dealTableParam();
+    }
+    this.reSiteTableData();
+  },
+  methods: {
+    dealTableParam() {
+      let val = this.$route.query;
+      let sex;
+      sex = val.sex == 1 ? "男" : "女";
+      this.tableConfig[5].secondTh[0] = {
+        label: `${sex}宝${val.age}岁`,
+        value: "year_payment",
+        width: "30px"
+      };
+    },
+    dealTableHeader(data) {
+      let val;
+      val = data;
+
+      switch (this.$store.state.hasChildNum) {
+        case 1:
         {
-          this.countCulumn.push("age5");
-          this.tableConfig[5].secondTh[0].label = "男宝10岁";
-        }
-        break;
-      case 1:
-        {
+          let sex1 = val.childFirst_sex == 1 ? "男" : "女";
           this.tableConfig[5].secondTh[0] = {
-            label: "男宝10岁",
-            value: "age0",
-            width: "30px"
+            label: `${sex1}宝${val.childFirst_age}岁`,
+            value: "year_payment"
           };
         }
-        break;
-      case 2:
+          break;
+        case 2:
         {
-          this.countCulumn.push("age5");
+          let sex1 = val.childFirst_sex == 1 ? "男" : "女";
+          let sex2 = val.childSecond_sex == 1 ? "男" : "女";
+          let record1 = {
+            label: `大孩${sex1}宝${val.childFirst_age}岁`,
+            value: "year_payment",
+            width: "30px"
+          };
+          let record2 = {
+            label: `二孩${sex2}宝${val.childSecond_age}岁`,
+            value: "year_payment01",
+            width: "30px"
+          };
+          this.countCulumn.push("year_payment01");
           this.tableConfig[5].secondTh[0] = record1;
           this.tableConfig[5].secondTh.push(record2);
         }
-        break;
+          break;
+      }
+    },
+    reSiteTableData() {
+      this.tableData = this.$store.state.childCasetableData; //经济型
+    },
+    tableRowClassName({ rowIndex }) {
+      if (rowIndex % 2 == 0) {
+        return "event-row";
+      }
+      return "";
     }
   }
 };

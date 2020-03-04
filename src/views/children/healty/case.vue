@@ -94,7 +94,7 @@
           round
           size="mini"
           class="row-align-center"
-          @click="$router.push({ path: '/children/healty/economicCase' })"
+          @click="goCaseDetail('economicCase',1)"
           >经济型方案 点击进入
         </el-button>
       </div>
@@ -124,7 +124,7 @@
           round
           size="mini"
           class="row-align-center"
-          @click="$router.push({ path: '/children/healty/advancedCase' })"
+          @click="goCaseDetail('advancedCase',2)"
           >进阶型方案详解 点击进入
         </el-button>
       </div>
@@ -154,7 +154,7 @@
           round
           size="mini"
           class="row-align-center"
-          @click="$router.push({ path: '/children/healty/securityCase' })"
+          @click="goCaseDetail('securityCase',3)"
           >充分保障型方案详解 点击进入
         </el-button>
       </div>
@@ -234,12 +234,32 @@ export default {
     this.reSiteTableData();
   },
   methods: {
+    goCaseDetail(url,type){ //跳转对应详情页面
+      switch (type) {
+        case 1:{
+          this.$store.dispatch('resitCaseTable',this.tableData);
+        } break;
+        case 2:{
+          this.$store.dispatch('resitCaseTable',this.tableData1);
+        } break;
+        case 3:{
+          this.$store.dispatch('resitCaseTable',this.tableData2);
+        } break;
+      }
+      this.$router.push({
+        path:`/children/healty/${url}`,
+        query:{
+          sex:this.$route.query.sex,
+          age:this.$route.query.age
+        }
+      });
+    },
     dealTableParam() {
       let val = this.$route.query;
       let sex;
       sex = val.sex == 1 ? "男" : "女";
       this.tableConfig[5].secondTh[0] = {
-        label: `${val.sex}宝${val.age}岁`,
+        label: `${sex}宝${val.age}岁`,
         value: "year_payment",
         width: "30px"
       };
@@ -247,7 +267,7 @@ export default {
     dealTableHeader(data) {
       let val;
       val = data;
-      debugger
+
       switch (this.$store.state.hasChildNum) {
         // case 0: {
         //   let sex = data.sex == 1 ? "男" : "女";
@@ -287,15 +307,14 @@ export default {
     },
     reSiteTableData() {
       let tableData;
-      debugger
+
 
       if (this.$store.state.formType == "family") {
-        debugger
-        debugger
+
         switch (this.$store.state.hasChildNum) {
           case 1:
             {
-              debugger
+
               tableData = this.$store.state.formResponseData.data.baby;
               //tableData = window.sessionStorage.formResponseData;
             }

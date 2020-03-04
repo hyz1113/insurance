@@ -162,7 +162,6 @@
       };
     },
     mounted() {
-      this.$store.state.formType = "family";
       if (this.$store.state.formType == "family") {
         this.title = "家庭保护伞（成人）";
       }

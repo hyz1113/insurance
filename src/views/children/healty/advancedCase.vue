@@ -151,22 +151,24 @@
           </div>
 
           <div class="article-block">
-            <p>产品名称：超越保医疗保险 计划一</p>
-            <p>承保公司：复星联合保险公司</p>
+            <p>产品名称：尊享e生2019版</p>
+            <p>承保公司：众安保险公司</p>
             <p>
-              超越保医疗保险，保障全，保费低，健康告知宽松。住院最高可以报销200万，社保不报的自费药、进口药，都能报销。
+              尊享e生2019版。住院报销额度更高，增值服务更多，质子重离子能100%报销。
             </p>
-            <p>
-              责任包括：住院医疗、特殊门诊、门诊手术、住院前7日至后30日的门急诊。
-            </p>
-            <p>
-              产品亮点：保障200万保证续保期间内，如未发生过理赔，下年度年免赔额减少1000元，最高可减少5000元；如已发生理赔，则不再递减，并维持上一年度年免赔额
-              。
-            </p>
-            <p>医院范围：二级及以上医院普通部。</p>
+            <div>
+              <p>
+                <img src="../../../assets/u25.jpg" class="w-100-c" />
+              </p>
+            </div>
+            <p>全家一起下单，一家子共享1万免赔额，但全家得同时符合健康告知！</p>
+            <p>尊享e生2019版，健康告知严格到哭，不符合的就投奔尊享e生旗舰版吧。健告宽松一点，保障略有差异，但也能全家共享免赔额。</p>
+            <p>儿童投保方案，没优选旗舰版，是因为5-10岁的孩子，2019版保费更低。</p>
+
+
             <div class="title text-center">
               <b class="g-error text-center b">
-                你若购买首年保费：845元
+                你若购买首年保费：266元
               </b>
             </div>
 
@@ -259,6 +261,40 @@
         </div>
       </div>
       <div class="bgf p-10">
+        <div class="bg-light-green p-10">
+          <div class="title text-center">
+            <b class="b">小额住院医疗险备选产品</b>
+          </div>
+
+          <div class="article-block">
+            <p>产品名称：平安少儿住院万元护</p>
+            <p>承保公司：中国平安</p>
+            <p>平安小顽童，可以闭眼买的儿童意外险，来自平安，每年保费只要60块。</p>
+
+            <p>不幸意外死亡，赔20万；意外伤残，按伤残等级赔钱。</p>
+            <p>当然，娃的意外险，重点关注意外医疗。小顽童挺优秀，0元起赔，报销比例100%，最高报1万，社保外的自费项目也能报。</p>
+
+            <div class="title text-center">
+              <b class="g-error text-center b">
+                你若购买首年保费：120元
+              </b>
+            </div>
+
+            <div class="table-block m-t-10 row-align-center">
+              <el-button
+                      type="success"
+                      round
+                      size="mini"
+                      class="row-align-center"
+                      @click="$router.push({ path: '/' })"
+              >备选产品在线销售通道----点击进入
+              </el-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bgf p-10">
         <div class="title text-center"><b class="b">最后结束语：</b></div>
         <div class="article-block">
           根据您所填信息建议您使用：
@@ -267,6 +303,7 @@
           </b>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -276,100 +313,110 @@ export default {
   name: "economicCase",
   data() {
     return {
-      countCulumn: ["age0"],
+      countCulumn: ["year_payment"],
       tableConfig: [
         {
           label: "保险类型",
-          value: "type",
-          width: "40px"
+          value: "insure_version"
         },
         {
           label: "产品名称",
-          value: "name"
+          value: "insure_name",
+          width: "50px"
         },
         {
           label: "保额",
-          value: "money",
+          value: "insure_quota",
           width: "50px"
         },
         {
           label: "保障期限",
-          value: "year",
+          value: "insure_endyear",
           width: "40px"
         },
         {
           label: "缴费年限",
-          value: "yearValue",
+          value: "paytotal_year",
           width: "40px"
         },
         {
           label: "年交保费",
           width: "60px",
+          value: "year_payment",
           secondTh: [
             {
               label: "男宝0岁",
-              value: "age0",
+              value: "year_payment",
               width: "30px"
             }
           ]
         }
       ],
-      tableData: [
-        {
-          type: "中国人保",
-          name: "好医保·长期医疗（新版）",
-          money: 21,
-          year: 12,
-          yearValue: 12,
-          age0: "23元",
-          age5: "24元"
-        },
-        {
-          type: "中国人保",
-          name: "好医保·长期医疗（新版）",
-          money: 21,
-          year: 12,
-          yearValue: 12,
-          age0: "23元",
-          age5: "24元"
-        }
-      ]
+      tableData: []
     };
   },
   mounted() {
-    let record1 = {
-      label: "大孩男宝10岁",
-      value: "age0",
-      width: "30px"
-    };
-    let record2 = {
-      label: "二孩男宝15岁",
-      value: "age5",
-      width: "30px"
-    };
-    switch (this.$store.state.hasChildNum) {
-      case 0:
+    if (this.$store.state.formType == "family") {
+      this.dealTableHeader(this.$store.state.baseinfo);
+    } else {
+      this.dealTableParam();
+    }
+    this.reSiteTableData();
+  },
+  methods: {
+    dealTableParam() {
+      let val = this.$route.query;
+      let sex;
+      sex = val.sex == 1 ? "男" : "女";
+      this.tableConfig[5].secondTh[0] = {
+        label: `${sex}宝${val.age}岁`,
+        value: "year_payment",
+        width: "30px"
+      };
+    },
+    dealTableHeader(data) {
+      let val;
+      val = data;
+
+      switch (this.$store.state.hasChildNum) {
+        case 1:
         {
-          this.countCulumn.push("age5");
-          this.tableConfig[5].secondTh[0].label = "男宝10岁";
-        }
-        break;
-      case 1:
-        {
+          let sex1 = val.childFirst_sex == 1 ? "男" : "女";
           this.tableConfig[5].secondTh[0] = {
-            label: "男宝10岁",
-            value: "age0",
-            width: "30px"
+            label: `${sex1}宝${val.childFirst_age}岁`,
+            value: "year_payment"
           };
         }
-        break;
-      case 2:
+          break;
+        case 2:
         {
-          this.countCulumn.push("age5");
+          let sex1 = val.childFirst_sex == 1 ? "男" : "女";
+          let sex2 = val.childSecond_sex == 1 ? "男" : "女";
+          let record1 = {
+            label: `大孩${sex1}宝${val.childFirst_age}岁`,
+            value: "year_payment",
+            width: "30px"
+          };
+          let record2 = {
+            label: `二孩${sex2}宝${val.childSecond_age}岁`,
+            value: "year_payment01",
+            width: "30px"
+          };
+          this.countCulumn.push("year_payment01");
           this.tableConfig[5].secondTh[0] = record1;
           this.tableConfig[5].secondTh.push(record2);
         }
-        break;
+          break;
+      }
+    },
+    reSiteTableData() {
+      this.tableData = this.$store.state.childCasetableData; //经济型
+    },
+    tableRowClassName({ rowIndex }) {
+      if (rowIndex % 2 == 0) {
+        return "event-row";
+      }
+      return "";
     }
   }
 };

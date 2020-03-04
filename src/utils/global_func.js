@@ -42,10 +42,8 @@ function validatef(formArr) {
 
 function dealTablef(data){
   let tableData=[];
-
   if(data.length){
     for(let i in  data){
-
       let item=data[i];
       let rowData=dealTypef(item);
       item.insure_version=rowData.type;
@@ -56,16 +54,15 @@ function dealTablef(data){
       tableData.push(item);
     }
   }
-
   return tableData;
 }
+
 
 function dealTypef(row){
   let obj={
     type:'',
     time:'',
   };
-
   switch (row.insure_version) {
     case 0:{ obj.type='意外险'; obj.time=row.pay_year;}break;
     case 1:{obj.type='重疾险'; obj.time=row.pay_year;}break;
@@ -73,7 +70,6 @@ function dealTypef(row){
     case 3:{obj.type='寿险'; obj.time=row.pay_year;}break;
     case 4:{obj.type='少儿小额医疗'; obj.time=row.ensure_pay;}break;
   }
-
   return obj;
 }
 

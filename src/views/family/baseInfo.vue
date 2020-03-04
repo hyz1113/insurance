@@ -1372,7 +1372,7 @@
             message: '请选择家庭收入稳定性',
           }
         },
-        isSubmit: false,
+        isSubmit: true,
       };
     },
     mounted() {
@@ -1541,10 +1541,7 @@
           data => {
             that.$store.dispatch("resiteFormData", data);
             that.$router.push({
-              path: "/person/contrastList",
-              query:{
-                peopleNum:2
-              }
+              path: "/person/contrastList"
             });
           },
           err => {
