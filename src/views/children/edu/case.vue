@@ -60,19 +60,10 @@
               :tableData="tableData"
       ></base-table>
 
-      <div class="table-block m-t-10 row-align-center">
-        <el-button
-                type="success"
-                round
-                size="mini"
-                class="row-align-center"
-                @click="$router.push({ path: '/children/edu/caseDetail' })"
-        >经济型方案 点击进入
-        </el-button>
-      </div>
+
     </div>
 
-    <div class="bgf p-10 m-t-10">
+    <div class="bgf p-10">
       <div class="title"><b class="b">少儿教育金国外上学版方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
@@ -91,7 +82,7 @@
                 size="mini"
                 class="row-align-center"
                 @click="$router.push({ path: '/children/edu/caseDetail'})"
-        >进阶型方案详解 点击进入
+        >方案详解   点击进入
         </el-button>
       </div>
     </div>
@@ -103,7 +94,7 @@
       <div class="article-block">
         根据您所填信息建议您使用：
         <b class="g-error">
-          进阶型方案
+          国内上学方案
         </b>
         <p>不存在百搭的保险方案，每个家庭、每个人都很独特，挑选合适自己的。</p>
         <p>
