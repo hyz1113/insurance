@@ -988,7 +988,7 @@ export default {
       return "";
     },
     goCase() {
-      if (this.$store.formType == "family") {
+      if (this.$store.state.formType == "family") {
         this.$router.push({
           path: "/family/case",
           query: {
