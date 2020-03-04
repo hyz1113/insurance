@@ -212,7 +212,7 @@
               tableData[i].forEach((item, index) => {
                 //debugger
                 if (tableDataSpouse[i][index]) {
-                  if (tableDataSpouse[i][index].insure_version != 2) {
+                  if (tableDataSpouse[i][index].insure_version != 2 && tableDataSpouse[i][index].insure_version != 4) {
                     item["year_payment01"] = tableDataSpouse[i][index]["pay_year"];
 
                   } else {

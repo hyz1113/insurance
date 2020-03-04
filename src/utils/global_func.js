@@ -45,6 +45,7 @@ function dealTablef(data){
 
   if(data.length){
     for(let i in  data){
+
       let item=data[i];
       let rowData=dealTypef(item);
       item.insure_version=rowData.type;
@@ -64,6 +65,7 @@ function dealTypef(row){
     type:'',
     time:'',
   };
+
   switch (row.insure_version) {
     case 0:{ obj.type='意外险'; obj.time=row.pay_year;}break;
     case 1:{obj.type='重疾险'; obj.time=row.pay_year;}break;

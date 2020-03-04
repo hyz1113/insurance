@@ -287,27 +287,66 @@ export default {
     },
     reSiteTableData() {
       let tableData;
-      debugger;
+      debugger
+
       if (this.$store.state.formType == "family") {
+        debugger
+        debugger
         switch (this.$store.state.hasChildNum) {
           case 1:
             {
+              debugger
               tableData = this.$store.state.formResponseData.data.baby;
+              //tableData = window.sessionStorage.formResponseData;
             }
             break;
           case 2:
             {
               tableData = this.$store.state.formResponseData.data.baby;
               let tableDataScBaby = this.$store.state.formResponseData.data.secbaby;
+              let newData = {};
               for (let i in tableData) {
-                tableData[i].forEach(item => {
-                  tableDataScBaby[i].forEach(itm => {
-                    item["year_payment01"] = itm.pay_year;
+
+                if (tableData[i].length>=tableDataScBaby[i].length) {
+
+                  tableData[i].forEach((item, index) => {
+                    //debugger
+                    if (tableDataScBaby[i][index]) {
+                      if (tableDataScBaby[i][index].insure_version != 2 && tableDataScBaby[i][index].insure_version != 4) {
+                        item["year_payment01"] = tableDataScBaby[i][index]["pay_year"];
+
+                      } else {
+                        item["year_payment01"] = tableDataScBaby[i][index]["ensure_pay"];
+
+                      }
+                    } else {
+                      item["year_payment01"] = "";
+                    }
+                    return item;
                   });
-                });
+                  newData[i] = tableData[i];
+                } else {
+
+                  tableDataScBaby[i].forEach((item, index) => {
+                    //debugger
+                    if (tableData[i][index]) {
+                      if (tableData[i][index].insure_version != 2) {
+                        item["year_payment01"] = tableData[i][index]["pay_year"];
+
+                      } else {
+                        item["year_payment01"] = tableData[i][index]["ensure_pay"];
+                        //item["pay_year"] = tableData[i][index]["ensure_pay"];
+                      }
+                    } else {
+                      item["year_payment01"] = "";
+                    }
+                    return item;
+                  });
+                  newData[i] = tableDataScBaby[i];
+                }
               }
 
-
+              tableData = newData;
             }
             break;
         }
