@@ -317,7 +317,7 @@ export default {
       tableConfig: [
         {
           label: "保险类型",
-          value: "insure_version"
+          value: "insure_ver"
         },
         {
           label: "产品名称",

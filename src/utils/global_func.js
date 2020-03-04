@@ -46,7 +46,7 @@ function dealTablef(data){
     for(let i in  data){
       let item=data[i];
       let rowData=dealTypef(item);
-      item.insure_version=rowData.type;
+      item.insure_ver=rowData.type;
       item.year_payment=rowData.time;
       let insuranceTime=item.insure_desc.includes('/')?item.insure_desc.split('/'):'';
       item.insure_endyear=insuranceTime?insuranceTime[0].replace('保障',''):"";

@@ -120,7 +120,7 @@
         tableConfig: [
           {
             label: "保险类型",
-            value: "insure_version",
+            value: "insure_ver",
             width: "50px"
           },
           {
