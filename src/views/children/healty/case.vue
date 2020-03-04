@@ -185,8 +185,7 @@ export default {
       tableConfig: [
         {
           label: "保险类型",
-          value: "insure_version",
-          width: "40px"
+          value: "insure_version"
         },
         {
           label: "产品名称",
@@ -248,6 +247,7 @@ export default {
     dealTableHeader(data) {
       let val;
       val = data;
+      debugger
       switch (this.$store.state.hasChildNum) {
         // case 0: {
         //   let sex = data.sex == 1 ? "男" : "女";
@@ -260,8 +260,7 @@ export default {
             let sex1 = val.childFirst_sex == 1 ? "男" : "女";
             this.tableConfig[5].secondTh[0] = {
               label: `${sex1}宝${val.childFirst_age}岁`,
-              value: "year_payment",
-              width: "30px"
+              value: "year_payment"
             };
           }
           break;
@@ -299,8 +298,7 @@ export default {
           case 2:
             {
               tableData = this.$store.state.formResponseData.data.baby;
-              let tableDataScBaby = this.$store.state.formResponseData.data
-                .secbaby;
+              let tableDataScBaby = this.$store.state.formResponseData.data.secbaby;
               for (let i in tableData) {
                 tableData[i].forEach(item => {
                   tableDataScBaby[i].forEach(itm => {
@@ -309,14 +307,14 @@ export default {
                 });
               }
 
-              debugger;
+
             }
             break;
         }
       } else {
         tableData = this.$store.state.formResponseData.data;
       }
-      debugger;
+
       this.tableData = this.dealTableData(tableData.cheapInsure); //经济型
       this.tableData1 = this.dealTableData(tableData.mediumInsure); //进阶型
       this.tableData2 = this.dealTableData(tableData.highInsure); //豪华型

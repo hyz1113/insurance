@@ -206,9 +206,9 @@
           //debugger
           let tableDataSpouse = remSession.data.spouse;
           for (let i in tableData) {
-            //debugger
-            if (Math.max(tableData[i].length, tableDataSpouse[i].length)) {
-              let num = tableData[i].length;
+
+            if (tableData[i].length>=tableDataSpouse[i].length) {
+
               tableData[i].forEach((item, index) => {
                 //debugger
                 if (tableDataSpouse[i][index]) {
@@ -226,26 +226,26 @@
               });
               newData[i] = tableData[i];
             } else {
-              let num = tableDataSpouse[i].length;
+
               tableDataSpouse[i].forEach((item, index) => {
                 //debugger
                 if (tableData[i][index]) {
                   if (tableData[i][index].insure_version != 2) {
                     item["year_payment01"] = tableData[i][index]["pay_year"];
+
                   } else {
                     item["year_payment01"] = tableData[i][index]["ensure_pay"];
+                    //item["pay_year"] = tableData[i][index]["ensure_pay"];
                   }
-
                 } else {
                   item["year_payment01"] = "";
                 }
-
                 return item;
               });
               newData[i] = tableDataSpouse[i];
             }
           }
-          //debugger
+
           tableData = newData;
         } else {
           this.setPersonHeader();
