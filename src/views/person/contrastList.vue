@@ -62,7 +62,7 @@
           :tableData="tableData2"
         ></base-table>
       </div>
-      <div class="m-t-10 row-align-center" v-if="$store.state.hasChildNum">
+      <div class="m-t-10 row-align-center" v-if="$store.state.formType=='family' && $store.state.hasChildNum">
         <el-button
           class="row-align-center"
           size="mini"
