@@ -4,9 +4,6 @@
       <el-divider>
         <el-link type="info" plain size="mini">少儿保护伞规划</el-link>
       </el-divider>
-    </div>
-
-    <div class="bgf p-10">
       <div class="title"><b class="b">规划前言</b></div>
       <div class="article-block">
         孩子面临的风险，不外乎生病+意外，能提供保护伞的保险，只需要根据经济状况进行额度或年限调整即可。

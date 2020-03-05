@@ -4,24 +4,23 @@
       <el-divider>
         <el-link type="info" plain size="mini">少儿进阶型方案</el-link>
       </el-divider>
-      <div class="bgf p-10 m-t-10">
-        <div class="title">
-          <el-link type="success" class="f-12-i"
-            >预算三千元左右 给娃一辈子的重疾保障
-          </el-link>
-        </div>
-        <base-table
-          :countCulumn="countCulumn"
-          :showSummary="true"
-          :tableConfig="tableConfig"
-          :tableData="tableData"
-        ></base-table>
-        <base-tableFooter
-          :tableData="tableData"
-          :resource="tableData"
-          label="payment"
-        ></base-tableFooter>
+      <div class="title">
+        <el-link type="success" class="f-12-i"
+        >预算三千元左右 给娃一辈子的重疾保障
+        </el-link>
       </div>
+      <base-table
+              :countCulumn="countCulumn"
+              :showSummary="true"
+              :tableConfig="tableConfig"
+              :tableData="tableData"
+      ></base-table>
+      <base-tableFooter
+              :tableData="tableData"
+              :resource="tableData"
+              label="payment"
+      ></base-tableFooter>
+    </div>
 
       <div class="bgf p-10 m-t-10">
         <div class="bg-light-green p-10">
@@ -42,43 +41,7 @@
             </p>
             <div class="title text-center">
               <b class="g-error text-center b">
-                你若购买首年保费：60元
-              </b>
-            </div>
-
-            <div class="table-block m-t-10 row-align-center">
-              <el-button
-                type="success"
-                round
-                size="mini"
-                class="row-align-center"
-                @click="$router.push({ path: '/children/healty/economicCase' })"
-                >该款产品在线销售通道----点击进入
-              </el-button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bgf p-10">
-        <div class="bg-light-green p-10">
-          <div class="title text-center">
-            <b class="b">意外险备选产品</b>
-          </div>
-
-          <div class="article-block">
-            <p>产品名称：平安小顽童2</p>
-            <p>承保公司：中国平安</p>
-            <p>
-              平安小顽童，可以闭眼买的儿童意外险，来自平安，每年保费只要60块。
-            </p>
-            <p>不幸意外死亡，赔20万；意外伤残，按伤残等级赔钱。</p>
-            <p>
-              当然，娃的意外险，重点关注意外医疗。小顽童挺优秀，0元起赔，报销比例100%，最高报1万，社保外的自费项目也能报。
-            </p>
-            <div class="title text-center">
-              <b class="g-error text-center b">
-                你若购买首年保费：70元
+                你若购买首年保费：{{insurance_payYear.ywx}}元
               </b>
             </div>
 
@@ -89,14 +52,16 @@
                 size="mini"
                 class="row-align-center"
                 @click="$router.push({ path: '/' })"
-                >备选产品在线销售通道----点击进入
+                >该款产品在线销售通道----点击进入
               </el-button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="bgf p-10">
+
+
+      <div class="bgf p-10 m-t-10">
         <div class="bg-light-green p-10">
           <div class="title text-center">
             <b class="b">终身重疾险 </b>
@@ -126,7 +91,7 @@
             </p>
             <div class="title text-center">
               <b class="g-error text-center b">
-                你若购买首年保费：2460元
+                你若购买首年保费：{{insurance_payYear.zjx}}元
               </b>
             </div>
 
@@ -144,7 +109,7 @@
         </div>
       </div>
 
-      <div class="bgf p-10">
+      <div class="bgf p-10 m-t-10">
         <div class="bg-light-green p-10">
           <div class="title text-center">
             <b class="b">百万医疗险</b>
@@ -168,7 +133,7 @@
 
             <div class="title text-center">
               <b class="g-error text-center b">
-                你若购买首年保费：266元
+                你若购买首年保费：{{insurance_payYear.bwyl}}元
               </b>
             </div>
 
@@ -186,46 +151,9 @@
         </div>
       </div>
 
-      <div class="bgf p-10">
-        <div class="bg-light-green p-10">
-          <div class="title text-center">
-            <b class="b">百万医疗险备选产品</b>
-          </div>
 
-          <div class="article-block">
-            <p>产品名称：好医保·长期医疗险</p>
-            <p>承保公司：支付宝保险公司</p>
-            <p>
-              好医保·长期医疗，保障全，保费低，健康告知宽松。住院最高可以报销200万，社保不报的自费药、进口药，都能报销。
-            </p>
 
-            <p>
-              注意有1万免赔额，社保报销完，再自费1万，其他的好医保100%报销。不过保证6年续保，6年共享1万免赔额，6年内累计住院、自费破万就能报，变相降低理赔门槛。
-            </p>
-            <p>
-              如果是因为癌症等100种重疾住院，最高能报销400万，0免赔额。质子重离子治疗，也能报销60%，这是治疗癌症最先进的技术。
-            </p>
-            <div class="title text-center">
-              <b class="g-error text-center b">
-                你若购买首年保费：166元
-              </b>
-            </div>
-
-            <div class="table-block m-t-10 row-align-center">
-              <el-button
-                type="success"
-                round
-                size="mini"
-                class="row-align-center"
-                @click="$router.push({ path: '/' })"
-                >备选产品在线销售通道----点击进入
-              </el-button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bgf p-10">
+      <div class="bgf p-10 m-t-10">
         <div class="bg-light-green p-10">
           <div class="title text-center">
             <b class="b">小额住院医疗险</b>
@@ -243,7 +171,7 @@
             </p>
             <div class="title text-center">
               <b class="g-error text-center b">
-                你若购买首年保费：100元
+                你若购买首年保费：{{insurance_payYear.xeyl}}元
               </b>
             </div>
 
@@ -260,41 +188,9 @@
           </div>
         </div>
       </div>
-      <div class="bgf p-10">
-        <div class="bg-light-green p-10">
-          <div class="title text-center">
-            <b class="b">小额住院医疗险备选产品</b>
-          </div>
 
-          <div class="article-block">
-            <p>产品名称：平安少儿住院万元护</p>
-            <p>承保公司：中国平安</p>
-            <p>平安小顽童，可以闭眼买的儿童意外险，来自平安，每年保费只要60块。</p>
 
-            <p>不幸意外死亡，赔20万；意外伤残，按伤残等级赔钱。</p>
-            <p>当然，娃的意外险，重点关注意外医疗。小顽童挺优秀，0元起赔，报销比例100%，最高报1万，社保外的自费项目也能报。</p>
-
-            <div class="title text-center">
-              <b class="g-error text-center b">
-                你若购买首年保费：120元
-              </b>
-            </div>
-
-            <div class="table-block m-t-10 row-align-center">
-              <el-button
-                      type="success"
-                      round
-                      size="mini"
-                      class="row-align-center"
-                      @click="$router.push({ path: '/' })"
-              >备选产品在线销售通道----点击进入
-              </el-button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bgf p-10">
+      <div class="bgf p-10 m-t-10">
         <div class="title text-center"><b class="b">最后结束语：</b></div>
         <div class="article-block">
           根据您所填信息建议您使用：
@@ -305,7 +201,7 @@
       </div>
 
     </div>
-  </div>
+
 </template>
 
 <script>
@@ -352,7 +248,13 @@ export default {
           ]
         }
       ],
-      tableData: []
+        tableData: [],
+        insurance_payYear: {
+          ywx: null,
+          zjx: null,
+          bwyl: null,
+          xeyl: null
+        }
     };
   },
   mounted() {
@@ -362,8 +264,33 @@ export default {
       this.dealTableParam();
     }
     this.reSiteTableData();
+      this.dealYearPay();
   },
   methods: {
+      dealYearPay() {
+        this.tableData.forEach(item => {
+          switch (item.insure_ver) {
+            case "意外险": {
+              this.insurance_payYear.ywx=item.pay_year;
+            }
+              break;
+            case "重疾险": {
+              this.insurance_payYear.zjx=item.pay_year;
+            }
+              break;
+            case "百万医疗险": {
+              this.insurance_payYear.bwyl=item.ensure_pay;
+            }
+              break;
+            case "少儿小额医疗": {
+              this.insurance_payYear.xeyl=item.pay_year;
+            }
+              break;
+
+          }
+        });
+
+      },
     dealTableParam() {
       let val = this.$route.query;
       let sex;
@@ -410,7 +337,12 @@ export default {
       }
     },
     reSiteTableData() {
-      this.tableData = this.$store.state.childCasetableData; //经济型
+        if (this.$store.state.childCasetableData.length) {
+          this.tableData = this.$store.state.childCasetableData; //经济型
+
+        } else {
+          this.tableData = [];
+        }
     },
     tableRowClassName({ rowIndex }) {
       if (rowIndex % 2 == 0) {

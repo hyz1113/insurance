@@ -4,9 +4,6 @@
       <el-divider>
         <el-link type="info" plain size="mini">家庭保护伞规划</el-link>
       </el-divider>
-    </div>
-
-    <div class="bgf p-10">
       <div class="title"><b class="b">规划前言</b></div>
       <div class="article-block">
         我们面临的风险，不外乎生病+意外，能提供保护伞的保险，只需要根据经济状况进行额度或年限调整即可。
@@ -16,6 +13,7 @@
         </p>
       </div>
     </div>
+
 
     <div class="bgf p-10 m-t-10">
       <div class="title"><b class="b">家庭保护伞规划所需险种概述：</b></div>

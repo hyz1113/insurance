@@ -268,8 +268,6 @@
     methods: {
       dealYearPay() {
         this.tableData.forEach(item => {
-          debugger
-          debugger
           switch (item.insure_ver) {
             case "意外险": {
               this.insurance_payYear.ywx=item.pay_year;
