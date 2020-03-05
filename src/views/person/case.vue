@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bgf">
+    <div class="bgf p-10">
       <el-divider>
         <el-link type="info" plain size="mini">个人保护伞规划</el-link>
       </el-divider>
@@ -192,7 +192,7 @@
         val = this.$route.query;
         sex = val.sex;
         val = val.age;
-        sex = sex.sex == 1 ? "男" : "女";
+        sex = sex == 1 ? "男" : "女";
         this.tableConfig[5].secondTh[0].label = `${sex}性 ${val}岁`;
       },
       reSiteTableData() {
@@ -211,7 +211,7 @@
               tableData[i].forEach((item, index) => {
                 //debugger
                 if (tableDataSpouse[i][index]) {
-                  if (tableDataSpouse[i][index].insure_version != 2 && tableDataSpouse[i][index].insure_version != 4) {
+                  if (tableDataSpouse[i][index].insure_version != 2) {
                     item["year_payment01"] = tableDataSpouse[i][index]["pay_year"];
 
                   } else {

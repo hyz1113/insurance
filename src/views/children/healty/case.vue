@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bgf">
+    <div class="bgf p-10">
       <el-divider>
         <el-link type="info" plain size="mini">少儿保护伞规划</el-link>
       </el-divider>
@@ -327,7 +327,7 @@ export default {
                   tableData[i].forEach((item, index) => {
                     //debugger
                     if (tableDataScBaby[i][index]) {
-                      if (tableDataScBaby[i][index].insure_version != 2 && tableDataScBaby[i][index].insure_version != 4) {
+                      if (tableDataScBaby[i][index].insure_version != 2) {
                         item["year_payment01"] = tableDataScBaby[i][index]["pay_year"];
 
                       } else {

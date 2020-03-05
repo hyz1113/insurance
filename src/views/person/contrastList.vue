@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bgf">
+    <div class="bgf p-10">
       <el-divider>
         <el-link type="info" plain size="mini">保险产品对比流程</el-link>
       </el-divider>

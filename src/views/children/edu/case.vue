@@ -75,7 +75,7 @@
       <div class="title"><b class="b">少儿教育金国外上学版方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >预算三千元左右 给娃一辈子的重疾保障
+        >预算10万左右  国外上学任意选
         </el-link>
       </div>
       <base-table

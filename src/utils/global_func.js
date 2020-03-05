@@ -64,11 +64,11 @@ function dealTypef(row){
     time:'',
   };
   switch (row.insure_version) {
-    case 0:{ obj.type='意外险'; obj.time=row.pay_year;}break;
+    case 0:{obj.type='意外险'; obj.time=row.pay_year;}break;
     case 1:{obj.type='重疾险'; obj.time=row.pay_year;}break;
     case 2:{obj.type='百万医疗险'; obj.time=row.ensure_pay;}break;
     case 3:{obj.type='寿险'; obj.time=row.pay_year;}break;
-    case 4:{obj.type='少儿小额医疗'; obj.time=row.ensure_pay;}break;
+    case 4:{obj.type='少儿小额医疗'; obj.time=row.pay_year;}break;
   }
   return obj;
 }
