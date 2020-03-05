@@ -65,7 +65,7 @@
       <div class="article-block">
         <p>根据福先生的基本信息，计算出3套不同风格的规划方案。</p>
         <p>但根据该家庭有两个孩子的实际情况，考虑到目前孩子的整个抚育期经济成本其实非常大，建议
-        <div>福先生选择：<b class="g-error">经济型方案</b></div>
+           <div>福先生选择：<b class="g-error">经济型方案</b></div>
         </p>
         <p> 不存在百搭的保险方案，每个家庭、每个孩子都很独特，挑选合适自己的。</p>
 
@@ -90,15 +90,8 @@
               :resource="tableData"
               label="payment"
       ></base-tableFooter>
-      <div class="table-block m-t-10 row-align-center">
-        <el-button
-                type="success"
-                round
-                size="mini"
-                class="row-align-center"
-                @click="$router.push({ path: '/' })"
-        >经济型方案详解----详见下方
-        </el-button>
+      <div class="m-t-10 row-align-center">
+        <b class="f-12 g-error">经济型方案详解----详见下方</b>
       </div>
     </div>
     <div class="bgf p-10 m-t-10">
@@ -339,12 +332,12 @@
             value: "",
             secondTh: [
               {
-                label: "男宝0岁",
+                label: "0岁",
                 value: "age1",
                 width: "20px"
               },
               {
-                label: "男宝5岁",
+                label: "5岁",
                 value: "age2",
                 width: "20px"
               }
