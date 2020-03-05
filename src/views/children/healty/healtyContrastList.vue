@@ -21,9 +21,7 @@
 
     <div class="bgf p-10 m-t-10">
       <div class="title">3、市场在售少儿重疾类产品对比（价格排名）：</div>
-      <div class="table-block">
-        <el-button type="primary" round size="mini">下载本表</el-button>
-      </div>
+
       <div class="m-t-10">
         <base-table
           :tableConfig="tableConfig"
@@ -39,9 +37,7 @@
           >少儿百万医疗险性价比排名
         </el-link>
       </div>
-      <div class="table-block">
-        <el-button type="primary" round size="mini">下载本表</el-button>
-      </div>
+
       <div class="m-t-10">
         <base-table
           :tableConfig="tableConfig1"
@@ -57,9 +53,7 @@
           >少儿重疾险性价比排名
         </el-link>
       </div>
-      <div class="table-block">
-        <el-button type="primary" round size="mini">下载本表</el-button>
-      </div>
+
 
       <div class="m-t-10">
         <base-table
