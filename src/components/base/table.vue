@@ -1,11 +1,10 @@
 <template>
-  <div>
-    <el-table
+
+  <el-table
       size="mini"
       border
       :show-summary="showSummary"
       :data="tableData"
-      :height="height"
       :row-class-name="tableRowClassName"
       :summary-method="getSummaries"
     >
@@ -29,7 +28,7 @@
         </template>
       </el-table-column>
      </el-table>
-  </div>
+
 </template>
 
 <script>
