@@ -97,6 +97,16 @@
               label="payment"
       ></base-tableFooter>
     </div>
+    <div class="m-t-10 row-align-center" v-if="$store.state.formType == 'family' && $store.state.hasChildNum">
+
+      <el-button
+              class="row-align-center"
+              size="mini"
+              type="success"
+              @click="$router.push({path:'/children/healty/case'})"
+      >下一页 孩子的保障方案
+      </el-button>
+    </div>
 
     <div class="bgf p-10 m-t-10">
       <div class="title"><b class="b">最后结束语：</b></div>

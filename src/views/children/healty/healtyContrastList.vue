@@ -988,9 +988,10 @@ export default {
       return "";
     },
     goCase() {
+
       if (this.$store.state.formType == "family") {
         this.$router.push({
-          path: "/family/case",
+          path: "/person/case",
           query: {
             age: this.$route.query.age,
             sex: this.$route.query.sex
