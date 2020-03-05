@@ -11,6 +11,9 @@
         <p class="g-error" v-show="$store.state.showFontFg">
           【您的医保目前是在保状态，不要忘记续保即可】
         </p>
+        <p class="g-error" v-show="!$store.state.showFontFg">
+          您的医保目前还没有，建议先办理医保，这样商业险更省钱。
+        </p>
       </div>
     </div>
 

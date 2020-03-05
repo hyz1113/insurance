@@ -11,6 +11,9 @@
         <p class="g-error" v-show="$store.state.showFontFg">
           【您的孩子已有一老一小少儿医保，不要忘记续保即可】
         </p>
+        <p class="g-error" v-show="!$store.state.showFontFg">
+          您的孩子没有一老一小少儿医保，建议先办理医保，这样商业险更省。。
+        </p>
       </div>
     </div>
 
