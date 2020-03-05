@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bgf">
+    <div class="bgf p-10">
       <el-divider>
         <el-link type="info" plain size="mini">少儿教育金规划</el-link>
       </el-divider>
@@ -59,8 +59,16 @@
               :tableConfig="tableConfig"
               :tableData="tableData"
       ></base-table>
-
-
+      <div class="table-block m-t-10 row-align-center">
+        <el-button
+                type="success"
+                round
+                size="mini"
+                class="row-align-center"
+                @click="$router.push({ path: '/children/edu/caseDetail'})"
+        >方案详解   点击进入
+        </el-button>
+      </div>
     </div>
 
     <div class="bgf p-10">
@@ -74,17 +82,6 @@
               :tableConfig="tableConfig1"
               :tableData="tableData1"
       ></base-table>
-
-      <div class="table-block m-t-10 row-align-center">
-        <el-button
-                type="success"
-                round
-                size="mini"
-                class="row-align-center"
-                @click="$router.push({ path: '/children/edu/caseDetail'})"
-        >方案详解   点击进入
-        </el-button>
-      </div>
     </div>
 
 
@@ -94,7 +91,7 @@
       <div class="article-block">
         根据您所填信息建议您使用：
         <b class="g-error">
-          国内上学方案
+          {{$store.state.familyincome}}
         </b>
         <p>不存在百搭的保险方案，每个家庭、每个人都很独特，挑选合适自己的。</p>
         <p>

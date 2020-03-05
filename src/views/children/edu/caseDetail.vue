@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bgf">
+    <div class="bgf p-10">
       <el-divider>
         <el-link type="info" plain size="mini">国内教育金方案</el-link>
       </el-divider>

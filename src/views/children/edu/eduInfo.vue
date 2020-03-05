@@ -174,6 +174,9 @@
         for (let i in newForm) {
           dataParam[`${i}`] = newForm[i];
         }
+
+        this.$store.dispatch('resiteFamilyincome',this.form.familyincome)
+
         this.$axios.post("/childrenedu", dataParam).then(
           data => {
             console.log(data);

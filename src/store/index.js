@@ -19,9 +19,10 @@ export default new Vuex.Store({
     formResponseData: null, //存储表单提交数据
     formType: null,//存储表单类型，个人，家庭，孩子
     failyType: "",//存储表单类型，个人，家庭，孩子
-    childCasetableData:null,//孩子对应方案表格数据
-    insurType:null,//推荐保险的类型
-    showFontFg:false,//是否显示规划页面，红字部分
+    childCasetableData: null,//孩子对应方案表格数据
+    insurType: null,//推荐保险的类型
+    showFontFg: false,//是否显示规划页面，红字部分
+    familyincome: false//孩子家庭教育金规划
   },
   mutations: {
     modifyNum(state, num) {
@@ -61,56 +62,78 @@ export default new Vuex.Store({
           break;
       }
     },
-    modifycaseTable(state, data){
-      state.childCasetableData=data;
+    modifycaseTable(state, data) {
+      state.childCasetableData = data;
     },
-    modifyInsurType(state,data){
-      let str='';
+    modifyInsurType(state, data) {
+      let str = "";
       switch (data) {
-        case 1:{str='豪华型';} break;
-        case 2:{str='进阶型';} break;
-        case 3:{str='经济型';} break;
+        case 1: {
+          str = "豪华型";
+        }
+          break;
+        case 2: {
+          str = "进阶型";
+        }
+          break;
+        case 3: {
+          str = "经济型";
+        }
+          break;
       }
-      state.insurType=str;
+      state.insurType = str;
     },
-    modifyShowffg(state,data){
-      state.showFontFg=data;
+    modifyShowffg(state, data) {
+      state.showFontFg = data;
+    },
+    modifyFamilyincome(state, data) {
+      data = parseFloat(data);
+      if (data <= 20) {
+        state.familyincome = "不推荐购买教育金";
+      } else if (20 < data && data <= 60) {
+        state.familyincome = "推荐国内上学方案";
+      } else {
+        state.familyincome = "推荐国外上学方案";
+      }
     }
   },
   actions: {
-    resitCaseTable({ commit }, data){
-      window.sessionStorage.childCasetableData=data;
+    resitCaseTable({ commit }, data) {
+      window.sessionStorage.childCasetableData = data;
       commit("modifycaseTable", data);
     },
     resiteChildNum({ commit }, num) {
-      window.sessionStorage.hasChildNum=num;
+      window.sessionStorage.hasChildNum = num;
       commit("modifyNum", num);
     },
     resiteType({ commit }, num) {
-      window.sessionStorage.failyType=num;
+      window.sessionStorage.failyType = num;
       commit("modifyType", num);
     },
     resiteFormData({ commit }, data) {
-      window.sessionStorage.formResponseData=data;
+      window.sessionStorage.formResponseData = data;
       commit("modifyFormRespData", data);
     },
     resiteFormType({ commit }, data) {
-      window.sessionStorage.formType=data;
+      window.sessionStorage.formType = data;
       commit("modifyFormType", data);
     },
     resiteBaseInfoPeople({ commit }, data) {
-      window.sessionStorage.baseinfo=data;
+      window.sessionStorage.baseinfo = data;
       commit("modifyBaseinfo", data);
     },
-    resiteInsurType({ commit }, data){
+    resiteInsurType({ commit }, data) {
       commit("modifyInsurType", data);
     },
-    resiteShowFontFg({ commit }, data){
+    resiteShowFontFg({ commit }, data) {
       commit("modifyShowffg", data);
+    },
+    resiteFamilyincome({ commit }, data) {
+      commit("modifyFamilyincome", data);
     }
   },
-  getters:{
-    getChildNum(state){
+  getters: {
+    getChildNum(state) {
       return state.hasChildNum;
       // if(state.hasChildNum!=0){
       //   return state.hasChildNum;
@@ -118,13 +141,13 @@ export default new Vuex.Store({
       //   return window.sessionStorage.hasChildNum;
       // }
     },
-    getFomData(state){
+    getFomData(state) {
       return state.formResponseData;
     },
-    getBaseInfo(state){
+    getBaseInfo(state) {
       return state.baseinfo;
     },
-    getFormType(state){
+    getFormType(state) {
       return state.formType;
     }
   },
