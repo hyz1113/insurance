@@ -151,7 +151,7 @@ export default {
         chronicdisease: {
           required: true,
           trigger: "blur",
-          message: "请选择有无慢性病或家族遗传病史"
+          message: "请选择有无慢性病或遗传病史"
         },
         physicalexam: {
           required: true,

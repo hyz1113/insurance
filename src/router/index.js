@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "@/views/Home.vue";
+import CaseShow from "@/views/caseShow.vue";
 import confirmPg from "@/views/confirmPage.vue";
 import partRouter from "./partRouter";
 
@@ -12,6 +13,14 @@ const routes = [
     component: Home,
     meta:{
       title:'保险方案推荐',
+    }
+  },
+  {
+    path: "/case",
+    name: "home",
+    component: CaseShow,
+    meta:{
+      title:'案例展示',
     }
   },
   {

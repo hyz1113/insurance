@@ -437,7 +437,7 @@ export default {
         housingex: {
           required: true,
           trigger: "blur",
-          message: "请选择房贷或房租支出"
+          message: "请输入房贷或房租支出"
         },
         otherloan: {
           required: true,
@@ -452,7 +452,7 @@ export default {
         chronicdisease: {
           required: true,
           trigger: "blur",
-          message: "请选择有无慢性病或家族遗传病史"
+          message: "请选择有无慢性病或遗传病史"
         },
         physicalexam: {
           required: true,
