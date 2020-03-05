@@ -24,19 +24,11 @@ module.exports = {
       },
       "/childrenedu": {
         target: "http://119.18.207.134:8080/api/childrenedu",
-        changeOrigin: true,
-        ws: true, // proxy websockets
-        pathRewrite: {
-          "^/childrenedu": ""
-        }
+        changeOrigin: true
       },
       "/personalinfo": {
         target: "http://119.18.207.134:8080/api/personalinfo",
         changeOrigin: true,
-        ws: true, // proxy websockets
-        pathRewrite: {
-          "^/personalinfo": ""
-        }
       },
     }
   },

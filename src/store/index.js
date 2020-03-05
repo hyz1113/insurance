@@ -21,6 +21,7 @@ export default new Vuex.Store({
     failyType: "",//存储表单类型，个人，家庭，孩子
     childCasetableData:null,//孩子对应方案表格数据
     insurType:null,//推荐保险的类型
+    showFontFg:false,//是否显示规划页面，红字部分
   },
   mutations: {
     modifyNum(state, num) {
@@ -71,6 +72,9 @@ export default new Vuex.Store({
         case 3:{str='经济型';} break;
       }
       state.insurType=str;
+    },
+    modifyShowffg(state,data){
+      state.showFontFg=data;
     }
   },
   actions: {
@@ -100,6 +104,9 @@ export default new Vuex.Store({
     },
     resiteInsurType({ commit }, data){
       commit("modifyInsurType", data);
+    },
+    resiteShowFontFg({ commit }, data){
+      commit("modifyShowffg", data);
     }
   },
   getters:{

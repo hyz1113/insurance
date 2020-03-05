@@ -8,7 +8,8 @@ import axios from "axios";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 
-import baseFunc from '@/utils/global_func.js'
+import baseFunc from '@/utils/global_func.js';
+// axios.defaults.baseURL="http://119.18.207.134:8080/api/";
 
 // 引用基础组件
 import "@/components";

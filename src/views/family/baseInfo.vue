@@ -1535,6 +1535,7 @@
           family:this.formDatafamily,
         };
         this.$store.dispatch('resiteInsurType',this.formDatafamily.householdincomestab)
+        this.$store.dispatch('resiteShowFontFg',0);
 
 
         let formData = {...finalData};
