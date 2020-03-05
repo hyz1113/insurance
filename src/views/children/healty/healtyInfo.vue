@@ -460,6 +460,8 @@ export default {
       for (let i in newForm) {
         dataParam[`${i}`] = newForm[i];
       }
+      debugger
+      this.$store.dispatch('resiteInsurType',this.form.householdincomestab);
 
       this.$axios.post("/childrenhealth", dataParam).then(
         data => {

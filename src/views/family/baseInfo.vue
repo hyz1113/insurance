@@ -1534,6 +1534,8 @@
           secbaby:this.dealPerson(this.formDataScChild, "secbaby"),
           family:this.formDatafamily,
         };
+        this.$store.dispatch('resiteInsurType',this.formDatafamily.householdincomestab)
+
 
         let formData = {...finalData};
 

@@ -112,7 +112,7 @@
       <div class="article-block">
         根据您所填信息建议您使用：
         <b class="g-error">
-          进阶型方案
+          {{$store.state.insurType}}
         </b>
         <p>不存在百搭的保险方案，每个家庭、每个人都很独特，挑选合适自己的。</p>
       </div>

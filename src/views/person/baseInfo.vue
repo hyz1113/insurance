@@ -526,6 +526,7 @@ export default {
       for (let i in newForm) {
         dataParam[`${i}`] = newForm[i];
       }
+      this.$store.dispatch('resiteInsurType',this.form.jobfeature)
 
       this.$axios.post("/personalinfo", dataParam).then(
         data => {

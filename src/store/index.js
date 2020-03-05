@@ -20,6 +20,7 @@ export default new Vuex.Store({
     formType: null,//存储表单类型，个人，家庭，孩子
     failyType: "",//存储表单类型，个人，家庭，孩子
     childCasetableData:null,//孩子对应方案表格数据
+    insurType:null,//推荐保险的类型
   },
   mutations: {
     modifyNum(state, num) {
@@ -61,6 +62,15 @@ export default new Vuex.Store({
     },
     modifycaseTable(state, data){
       state.childCasetableData=data;
+    },
+    modifyInsurType(state,data){
+      let str='';
+      switch (data) {
+        case 1:{str='豪华型';} break;
+        case 2:{str='进阶型';} break;
+        case 3:{str='经济型';} break;
+      }
+      state.insurType=str;
     }
   },
   actions: {
@@ -88,6 +98,9 @@ export default new Vuex.Store({
       window.sessionStorage.baseinfo=data;
       commit("modifyBaseinfo", data);
     },
+    resiteInsurType({ commit }, data){
+      commit("modifyInsurType", data);
+    }
   },
   getters:{
     getChildNum(state){

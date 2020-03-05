@@ -39,7 +39,7 @@
       <div class="title"><b class="b">{{title}}经济型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >预算千元左右 保障不差白菜价
+        >预算两三千  保障不差白菜价
         </el-link
         >
       </div>
@@ -60,7 +60,7 @@
       <div class="title"><b class="b">{{title}}进阶型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >预算三千元左右 给娃一辈子的重疾保障
+        >预算万元左右  一辈子的重疾保障
         </el-link
         >
       </div>
@@ -81,7 +81,7 @@
       <div class="title"><b class="b">{{title}}充分保障型方案：</b></div>
       <div class="title">
         <el-link type="success" class="f-12-i"
-        >每年5000元左右 坐拥400万+顶配保障
+        >每年一万五   坐拥400万+顶配保障
         </el-link
         >
       </div>
@@ -103,7 +103,7 @@
       <div class="article-block">
         根据您所填信息建议您使用：
         <b class="g-error">
-          进阶型方案
+          {{$store.state.insurType}}方案
         </b>
         <p>不存在百搭的保险方案，每个家庭、每个人都很独特，挑选合适自己的。</p>
       </div>
