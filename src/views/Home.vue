@@ -3,15 +3,16 @@
     <div class="banner-index">
       <img src="../assets/banner.jpg"/>
     </div>
-    <div class="bgf p-tag">
-      <p>
-        安心选：收集上千产品信息，人工智能云计算量体裁衣，给一份适合你的保险规划。
+    <div class="bgf p-tag article-block">
+      <p class="text-center">
+         <b>安心选：给孩子和家庭免费定制终身保护规划</b>
       </p>
+
       <p>
-        需要对您的实际情况进行了解，问卷填答耗时3分钟左右，我们会做好信息保密.
+        需要对您的实际情况进行了解，规划师系统对比市场中千款保险产品，量身定制出3套规划方案供参考。问卷填答耗时3分钟左右。
       </p>
       <router-link to="/case" class="align-right">
-        <el-button type="text" plain size="mini">案例展示—点击查看</el-button>
+        <el-button type="success" plain size="mini">案例展示—点击查看</el-button>
       </router-link>
     </div>
     <div class="m-t-10 bgf">
