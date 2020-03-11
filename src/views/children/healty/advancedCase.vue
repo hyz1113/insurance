@@ -51,7 +51,6 @@
                 round
                 size="mini"
                 class="row-align-center"
-                @click="$router.push({ path: '/' })"
                 >该款产品在线销售通道----点击进入
               </el-button>
             </div>
@@ -101,7 +100,6 @@
                 round
                 size="mini"
                 class="row-align-center"
-                @click="$router.push({ path: '/' })"
                 >该款产品在线销售通道----点击进入
               </el-button>
             </div>
