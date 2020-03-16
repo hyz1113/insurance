@@ -215,7 +215,7 @@
 
 
     <div class="bgf p-10 m-t-10 no-bottom">
-      <base-inputTel @getTel="getTel"></base-inputTel>
+
       <div class="m-t-10 row-align-center">
         <el-button
                 :disabled="isSubmit"
@@ -1385,6 +1385,7 @@
         this.hasSecond = true;
         this.isFirst = true;
       }
+      this.getTel();
     },
     watch: {
       "formData.comminsurance"() {
@@ -1432,8 +1433,8 @@
           });
         });
       },
-      getTel(tel) {
-        this.formData.invitenumber = tel;
+      getTel() {
+        this.formData.invitenumber = this.$store.state.userTel;
         this.isSubmit = false;
       },
 

@@ -94,7 +94,6 @@
     </div>
 
     <div class="bgf p-10 m-t-10 no-bottom">
-      <base-inputTel @getTel="getTel"></base-inputTel>
 
       <div class="m-t-10 row-align-center">
         <el-button
@@ -484,9 +483,12 @@ export default {
       });
     }
   },
+  mounted(){
+    this.getTel();
+  },
   methods: {
-    getTel(tel) {
-      this.form.invitenumber = tel;
+    getTel() {
+      this.form.invitenumber = this.$store.state.userTel;
       this.isSubmit = false;
     },
 

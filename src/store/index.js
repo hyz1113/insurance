@@ -22,7 +22,8 @@ export default new Vuex.Store({
     childCasetableData: null,//孩子对应方案表格数据
     insurType: null,//推荐保险的类型
     showFontFg: false,//是否显示规划页面，红字部分
-    familyincome: false//孩子家庭教育金规划
+    familyincome: false,//孩子家庭教育金规划
+    userTel:13911719908,//用户电话号码
   },
   mutations: {
     modifyNum(state, num) {
