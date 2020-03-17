@@ -422,6 +422,19 @@ export default {
   mounted(){
     this.getTel();
   },
+  beforeRouteEnter(to,form,next){
+    next(vm=>{
+      vm.$axios.post("/page_visit", {
+        "confirm_from":"baby_visit"
+      });
+    });
+  },
+  beforeRouteLeave(to,form,next){
+    this.$axios.post("/page_back", {
+      "confirm_from":"baby_back"
+    })
+    next();
+  },
   methods: {
     getTel() {
       this.form.invitenumber = this.$store.state.userTel;

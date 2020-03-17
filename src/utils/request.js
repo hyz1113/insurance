@@ -18,8 +18,7 @@ const get = function(url, params = {}) {
 
 const post = function(url, data = {}) {
   return new Promise((resolve, reject) => {
-    let url1='http://119.18.207.134:8080/api/familyinfo';
-    axios.post(url1, data,
+    axios.post(url, data,
       {
         headers: {
           "Content-Type": "application/json;charset=UTF-8"

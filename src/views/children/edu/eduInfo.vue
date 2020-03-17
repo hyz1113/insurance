@@ -146,6 +146,19 @@
         this.formConfigD[1].hide = !this.formConfigD[1].hide;
       }
     },
+    beforeRouteEnter(to,form,next){
+      next(vm=>{
+        vm.$axios.post("/page_visit", {
+          "confirm_from":"babyedu_visit"
+        });
+      });
+    },
+    beforeRouteLeave(to,form,next){
+      this.$axios.post("/page_back", {
+        "confirm_from":"babyedu_back"
+      })
+      next();
+    },
     mounted(){
       this.getTel();
     },

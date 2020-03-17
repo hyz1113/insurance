@@ -1375,6 +1375,19 @@
         isSubmit: true,
       };
     },
+    beforeRouteEnter(to,form,next){
+      next(vm=>{
+        vm.$axios.post("/page_visit", {
+          "confirm_from":"family_visit"
+        });
+      });
+    },
+    beforeRouteLeave(to,form,next){
+      this.$axios.post("/page_back", {
+        "confirm_from":"family_back"
+      })
+      next();
+    },
     mounted() {
       //debugger
       const value = this.$store.state.hasChildNum;

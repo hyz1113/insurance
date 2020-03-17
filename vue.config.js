@@ -24,11 +24,35 @@ module.exports = {
       },
       "/childrenedu": {
         target: "http://119.18.207.134:8080/api/childrenedu",
-        changeOrigin: true
+        changeOrigin: true,
+        ws: true, // proxy websockets
+        pathRewrite: {
+          "^/childrenedu": ""
+        }
       },
       "/personalinfo": {
         target: "http://119.18.207.134:8080/api/personalinfo",
         changeOrigin: true,
+        ws: true, // proxy websockets
+        pathRewrite: {
+          "^/personalinfo": ""
+        }
+      },
+      "/page_visit": {
+        target: "http://119.18.207.134:8080/api/page_visit",
+        changeOrigin: true,
+        ws: true, // proxy websockets
+        pathRewrite: {
+          "^/page_visit": ""
+        }
+      },
+      "/page_back": {
+        target: "http://119.18.207.134:8080/api/page_back",
+        changeOrigin: true,
+        ws: true, // proxy websockets
+        pathRewrite: {
+          "^/page_back": ""
+        }
       },
     }
   },
