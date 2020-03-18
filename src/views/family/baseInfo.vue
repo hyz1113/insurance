@@ -223,7 +223,7 @@
                 size="mini"
                 type="success"
                 @click="submit"
-        >提交
+        >下一步
         </el-button>
         <el-button
                 class="row-align-center"
@@ -233,9 +233,7 @@
         >返回
         </el-button>
       </div>
-      <div class="f-12 m-t-10 g-6">
-        规划结果查询,请在提交后,查询页输入,接收到内测短信的手机号码
-      </div>
+
       <div class="f-12 m-t-10 g-6">
         本工具目前为公开内测版本,允许安心选跟踪联系表单满意度
       </div>
