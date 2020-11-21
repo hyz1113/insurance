@@ -7,7 +7,7 @@ module.exports = {
     //port: 8080, // 这里是我们本地设置的一个端口号
     proxy: {
       "/familyinfo": {
-        target: "http://119.18.207.134:8080/api/familyinfo ",
+        target: "http://www.xxxxx.com:8080/api/familyinfo ",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {
@@ -15,7 +15,7 @@ module.exports = {
         }
       },
       "/childrenhealth": {
-        target: "http://119.18.207.134:8080/api/childrenhealth",
+        target: "http://www.xxxxx.com:8080/api/childrenhealth",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {
@@ -23,7 +23,7 @@ module.exports = {
         }
       },
       "/childrenedu": {
-        target: "http://119.18.207.134:8080/api/childrenedu",
+        target: "http://www.xxxxx.com:8080/api/childrenedu",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {
@@ -31,7 +31,7 @@ module.exports = {
         }
       },
       "/personalinfo": {
-        target: "http://119.18.207.134:8080/api/personalinfo",
+        target: "http://www.xxxxx.com:8080/api/personalinfo",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {
@@ -39,7 +39,7 @@ module.exports = {
         }
       },
       "/page_visit": {
-        target: "http://119.18.207.134:8080/api/page_visit",
+        target: "http://www.xxxxx.com:8080/api/page_visit",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {
@@ -47,7 +47,7 @@ module.exports = {
         }
       },
       "/page_back": {
-        target: "http://119.18.207.134:8080/api/page_back",
+        target: "http://www.xxxxx.com:8080/api/page_back",
         changeOrigin: true,
         ws: true, // proxy websockets
         pathRewrite: {
